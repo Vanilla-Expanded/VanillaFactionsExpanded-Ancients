@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <VFEAncients.SolarPowerUp>Solar flare power up</VFEAncients.SolarPowerUp>
+    <VFEAncients.TabPowers>Powers</VFEAncients.TabPowers>
+    <VFEAncients.Superpowers>Superpowers</VFEAncients.Superpowers>
+    <VFEAncients.Weaknesses>Weaknesses</VFEAncients.Weaknesses>
+    <VFEAncients.Effects>Effects:</VFEAncients.Effects>
+    <VFEAncients.Effect.AddAbility>Give ability: {0}</VFEAncients.Effect.AddAbility>
+    <VFEAncients.Effect.AddHediff>Add health condition: {0}</VFEAncients.Effect.AddHediff>
+    <VFEAncients.Effect.NullThought>Nullify thought: {0}</VFEAncients.Effect.NullThought>
+    <VFEAncients.MarksmanshipTooltip>100% (Marksmanship)</VFEAncients.MarksmanshipTooltip>
+    <VFEAncients.Reason.KilledSomeone>Reason: Killed someone</VFEAncients.Reason.KilledSomeone>
+    <VFEAncients.Reason.Rejected>Reason: Rebuffed by {0}</VFEAncients.Reason.Rejected>
+    <VFEAncients.CannotPrioritizeAudacious>Cannot prioritize: {0} is audacious</VFEAncients.CannotPrioritizeAudacious>
+    <VFEAncients.IncapableOfTooltipPower>Caused by power: {0}</VFEAncients.IncapableOfTooltipPower>
+    <VFEAncients.NotInMentalState>Not in mental state</VFEAncients.NotInMentalState>
+    <VFEAncients.NotAnimal>Not an animal</VFEAncients.NotAnimal>
+    <VFEAncients.Tame>Not applicable to tame animals</VFEAncients.Tame>
+    <VFEAncients.NoTargets>No possible targets</VFEAncients.NoTargets>
+    <VFEAncients.RefillsIn>Refills in {0}</VFEAncients.RefillsIn>
+    <VFEAncients.EnterGeneTailoringPod>Enter gene-tailoring pod</VFEAncients.EnterGeneTailoringPod>
+    <VFEAncients.CarryToGeneTailoringPod>Carry {0} to gene-tailoring pod</VFEAncients.CarryToGeneTailoringPod>
+    <VFEAncients.CarryToBioBattery>Carry {0} to bio battery</VFEAncients.CarryToBioBattery>
+    <VFEAncients.Empower>Add superpower</VFEAncients.Empower>
+    <VFEAncients.RemoveWeakness>Remove weakness</VFEAncients.RemoveWeakness>
+    <VFEAncients.Empowered.Label>Experiment Success: {0}</VFEAncients.Empowered.Label>
+    <VFEAncients.Empowered.Text>The experiment in the gene-tailoring pod has been a success! {0} has gained the power {1}. However, they have also gained the weakness {2}.</VFEAncients.Empowered.Text>
+    <VFEAncients.RemoveWeakness.Label>Experiment Success: {0}</VFEAncients.RemoveWeakness.Label>
+    <VFEAncients.RemoveWeakness.Text>The experiment in the gene-tailoring pod has been a success! {0} has lost the weakness {1}.</VFEAncients.RemoveWeakness.Text>
+    <VFEAncients.StartOperation>Start Operation</VFEAncients.StartOperation>
+    <VFEAncients.CurrentOperation>Current operation</VFEAncients.CurrentOperation>
+    <VFEAncients.ExperimentFailed>Experiment failed</VFEAncients.ExperimentFailed>
+    <VFEAncients.Death>Death</VFEAncients.Death>
+    <VFEAncients.ExperimentFailed.Death>Subject has died and the experiment failed. No new powers were granted.</VFEAncients.ExperimentFailed.Death>
+    <VFEAncients.Berserk>Berserk</VFEAncients.Berserk>
+    <VFEAncients.ExperimentFailed.Berserk>Subject has suffered severe brain damage and has gone mad. No new powers were granted.</VFEAncients.ExperimentFailed.Berserk>
+    <VFEAncients.BrainDeath>Brain death</VFEAncients.BrainDeath>
+    <VFEAncients.ExperimentFailed.BrainDeath>Subject has suffered complete failure of brain functions and is now brain dead. No new powers were granted.</VFEAncients.ExperimentFailed.BrainDeath>
+    <VFEAncients.LaunchSupplies>Launch Supplies</VFEAncients.LaunchSupplies>
+    <VFEAncients.ExpiryIn>Self-destructs in {0}</VFEAncients.ExpiryIn>
+    <VFEAncients.MessageNoWardenCapableOfRecruitment>No warden is capable of this recruitment.</VFEAncients.MessageNoWardenCapableOfRecruitment>
+    <VFEAncients.InterrogationSuccess>Interrogation Success</VFEAncients.InterrogationSuccess>
+    <VFEAncients.InterrogationSuccessDetail>{0} has successfully interrogated {1}, who has revealed the location of {2}.</VFEAncients.InterrogationSuccessDetail>
+    <VFEAncients.InterrogationFailure>Interrogation failed!</VFEAncients.InterrogationFailure>
+    <VFEAncients.DeterioratingUncontained>uncontained</VFEAncients.DeterioratingUncontained>
+    <VFEAncients.FireAtPods>Fire at drop pods</VFEAncients.FireAtPods>
+    <VFEAncients.FireAtPawns>Fire at enemies</VFEAncients.FireAtPawns>
+    <VFEAncients.FireAtProjectiles>Fire at explosive projectiles</VFEAncients.FireAtProjectiles>
+    <VFEAncients.FireAtPodsDesc>Allow the point-defense turret to fire at incoming drop pods that contain enemy raiders.</VFEAncients.FireAtPodsDesc>
+    <VFEAncients.FireAtPawnsDesc>Allow the point-defense turret to fire at enemy pawns within range, like a normal turret would.</VFEAncients.FireAtPawnsDesc>
+    <VFEAncients.FireAtProjectilesDesc>Allow the point-defense turret to fire at incoming explosive projectiles, such as rockets and mortar shells.</VFEAncients.FireAtProjectilesDesc>
+    <VFEAncients.PowerChoice>The process of injecting super-nanites has finished. Because your lab equipment includes a nanite sampler, you may now select between the two power and weakness pairs for {0} to obtain.</VFEAncients.PowerChoice>
+    <VFEAncients.Select>Select</VFEAncients.Select>
+    <VFEAncients.MassLeft>Mass Left: {0} / {1} ({2})</VFEAncients.MassLeft>
+    <VFEAncients.AlreadyMetaMorph>Already in an animal form</VFEAncients.AlreadyMetaMorph>
+    <VFEAncients.CancelOp>Cancel operation</VFEAncients.CancelOp>
+    <VFEAncients.ConfirmSendPawn>This supply slingshot contains the pawn {PAWN_labelShort}. You will not be able to get {PAWN_pronoun} back if you send {PAWN_pronoun} away. Launch anyway?</VFEAncients.ConfirmSendPawn>
+    <VFEAncients.CancelOpDesc>Decide not to do an operation on {PAWN} and eject {PAWN_pronoun} from the gene-tailroing pod.</VFEAncients.CancelOpDesc>
+    <VFEAncients.ExperimentFailureWarning>Running this experiment has a {0} chance of failure. This is due to:{4}\n\nThis could be reduced by finding and installing some of these buildings:\n{1}\n\nThe experiment will take {2} and cannot be stopped once started. This is affected by:{3}</VFEAncients.ExperimentFailureWarning>
+	<VFEAncients.SupplyCrateArrived>A supply crate is touching down nearby. It's a trade from another vault, and will contain items of equal value to the items you've sent</VFEAncients.SupplyCrateArrived>
+	<VFEAncients.EnableGloryKillMusic>Enable glory kill music</VFEAncients.EnableGloryKillMusic>
+	<VFEAncient.GeneTailorNoFuel>Gene-tailoring pod is not fueled.</VFEAncient.GeneTailorNoFuel>
+	<VFEAncient.MustBeHumanlike>Must be human</VFEAncient.MustBeHumanlike>
+	<VFEAncient.GeneTailorOccupied>Gene-tailoring pod is occupied.</VFEAncient.GeneTailorOccupied>
+	<VFEAncient.AvailableOperationsCannotBeApplied>Available operations cannot be applied on</VFEAncient.AvailableOperationsCannotBeApplied>
+    <VFEAncients.RepairMat>Repair item</VFEAncients.RepairMat>
+    <VFEAncients.MatForRepair>What material must be used to repair this at a mending table.</VFEAncients.MatForRepair>
+    <VFEAncients.ResurrectsIn>Resurrects in</VFEAncients.ResurrectsIn>
+</LanguageData>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>Bigot</defName>
+        <label>bigot</label>
+        <description>The subject has become bigotted, believing the rule of their community is absolute and refuses to deal with prisoners unless they’re at the end of a knife or gun.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Bigot</texPath>
+        <disabledWorkTags><li>Social</li></disabledWorkTags>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ConscientiousObjector</defName>
+        <label>conscientious objector</label>
+        <description>The subject has become incredibly conscientious and refuses to use weapons or even defend themselves in the face of violence.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_ConscientiousObjector</texPath>
+        <disabledWorkTags><li>Violent</li></disabledWorkTags>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Egotistical</defName>
+        <label>egotistical</label>
+        <description>The subject has developed a massive ego and refuses to do any and all work, viewing it as beneath them.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Egotistical</texPath>
+        <disabledWorkTags><li>AllWork</li></disabledWorkTags>
+    </VFEAncients.PowerDef>
+</Defs>

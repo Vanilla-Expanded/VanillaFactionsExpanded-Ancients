@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <ModMetaData>
+	<name>Vanilla Factions Expanded - Ancients</name>
+	<author>Oskar Potocki, xrushha, legodude17</author>
+	<url></url>
+    <supportedVersions>
+		<li>1.3</li>
+	</supportedVersions>
+	<packageId>VanillaExpanded.VFEA</packageId>
+	<description>One faction we have never really tinkered with before is the Ancients. You might know them from popping out of the cryptosleep caskets in Ancient dangers, but what really is their story remains a mystery. With Ideology DLC, players can see the entire ancient battlefields of twisted metal, broken down warwalkers and shells of ancient mechanoids. What really happened is also, as you’re probably aware, a mystery. Well look no further.
+
+Vanilla Factions Expanded: Ancients allows you to discover hidden vaults that don’t announce their presence, staying perfectly hidden until you intercept one of the ancient burst signals they send between each other. You can now break open the huge, armored doors and see the technology of the ancients first hand. You should, however, do so carefully. Whilst there are many Looted vaults scattered around the world, with barely any danger in them, some of those vaults are still mysteriously sealed, with nothing but hum of machinery coming out of them when you get close. 
+
+Uncover the ancient technology used long ago in a war almost no one remembers anymore. Collect remnants of the ancient tech to assemble a workshop made to inject your pawns with a mysterious strain of super nanites, granting them powers of super-humans with a risk of severe brain damage. Explore new ancient locations, including freshly unlocked ancient vaults, potentially guarded by super-soldiers who believe the war is still ongoing, awaiting every day for new commands from HQ that no longer exist.
+
+This mod will expand on the ancient ruins in vanilla games, adding new ancient structures, clutter, debris and much, much more. Alternatively, start a new scenario as these very supersoldiers guarding an ancient vault. Decide if you want to wake your fellow soldiers up despite the food shortage, or let them sleep in the cryptosleep caskets until the colony is prepared to take them in.
+</description>
+        <modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Ideology</packageId>
+			<displayName>Ideology</displayName>
+		</li>
+        <li>
+            <packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+            <displayName>Vanilla Expanded Framework</displayName>
+            <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+        </li>
+		</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+	</loadAfter>
+ </ModMetaData>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>VFEA_SuperNanites</defName>
+    <label>super-nanites</label>
+    <description>A container with extremely volatile ancient supernanites. Whilst a large percentage of these nano-robots are faulty, dead or corrupted, a small amount is known to be fully operational, enhancing the person injected with them with unique powers. Super-nanites were used by the long forgotten governments to create supersoldiers, now outlawed by the galactic law.</description>
+    <graphicData>
+      <texPath>Things/Item/Special/SuperNanites/SuperNanites</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>3400</MarketValue>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>1</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>20</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <comps>
+      <li Class="VFEAncients.CompProperties_NeedsContainment">
+        <validContainers>
+          <li>VFEA_SuperNaniteContainment</li>
+        </validContainers>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

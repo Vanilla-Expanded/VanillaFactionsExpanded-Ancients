@@ -1,0 +1,16 @@
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot/subNodes</xpath>
+        <value>
+            <li Class="ThinkNode_ConditionalMentalState">
+                <state>VFEA_Hallucinations</state>
+                <subNodes>
+                    <li Class="VFEAncients.JobGiver_Hallucinations" />
+                    <li Class="JobGiver_WanderAnywhere">
+                        <maxDanger>Deadly</maxDanger>
+                    </li>
+                </subNodes>
+            </li>
+        </value>
+    </Operation>
+</Patch>

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBAFABF1-D772-4803-8760-390259675DE4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VFEAncients</RootNamespace>
+    <AssemblyName>VFEAncients</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\1.3\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HeavyWeapons">
+      <HintPath>..\..\..\VanillaExpandedFramework\1.3\Assemblies\HeavyWeapons.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VFECore">
+      <HintPath>..\..\..\VanillaExpandedFramework\1.3\Assemblies\VFECore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\Ability.cs" />
+    <Compile Include="Abilities\Ability_Animal.cs" />
+    <Compile Include="Abilities\Ability_Berserk.cs" />
+    <Compile Include="Abilities\Ability_Calm.cs" />
+    <Compile Include="Abilities\Ability_GloryKill.cs" />
+    <Compile Include="Abilities\Ability_Heal.cs" />
+    <Compile Include="Abilities\Ability_Jump.cs" />
+    <Compile Include="Abilities\Ability_MetaMorph.cs" />
+    <Compile Include="Abilities\Ability_Thought.cs" />
+    <Compile Include="Comps\CompAncientSolar.cs" />
+    <Compile Include="Comps\CompBioBattery.cs" />
+    <Compile Include="Comps\CompQuestOnHacked.cs" />
+    <Compile Include="Comps\HediffComp_SoundOnRemove.cs" />
+    <Compile Include="Comps\PreceptComp_DisableIncident.cs" />
+    <Compile Include="Comps\StorytellerComps.cs" />
+    <Compile Include="Dialog_ChoosePowers.cs" />
+    <Compile Include="HarmonyPatches\Helpers.cs" />
+    <Compile Include="HarmonyPatches\MendingPatches.cs" />
+    <Compile Include="HarmonyPatches\MetaMorphPatches.cs" />
+    <Compile Include="HarmonyPatches\SolarFlarePowerNet.cs" />
+    <Compile Include="HarmonyPatches\StorytellerPatches.cs" />
+    <Compile Include="Jobs\JobDriver_CarryToBioBattery.cs" />
+    <Compile Include="PowerWorkers\PowerWorker.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Damages.cs" />
+    <Compile Include="ScenPart_ReconnectAllPowerBuildings.cs" />
+    <Compile Include="Things\Building_AncientCryptosleepSarchophagus.cs" />
+    <Compile Include="Things\Building_Cooler.cs" />
+    <Compile Include="Things\Building_PipelineJunction.cs" />
+    <Compile Include="Comps\CompNeedsContainment.cs" />
+    <Compile Include="Comps\CompPowerPlantSteam.cs" />
+    <Compile Include="Comps\CompSupplyCrate.cs" />
+    <Compile Include="Comps\CompSupplySlingshot.cs" />
+    <Compile Include="Comps\CompProperties_Facility_PowerUnlock.cs" />
+    <Compile Include="Comps\CompDisappearOnHacked.cs" />
+    <Compile Include="Comps\CompGeneTailoringPod.cs" />
+    <Compile Include="Comps\CompSolarPowerUp.cs" />
+    <Compile Include="Comps\Fail.cs" />
+    <Compile Include="HarmonyPatches\BuildingPatches.cs" />
+    <Compile Include="HarmonyPatches\PointDefensePatches.cs" />
+    <Compile Include="HarmonyPatches\PreceptPatches.cs" />
+    <Compile Include="Things\Building_TurretPD.cs" />
+    <Compile Include="Things\Building_VaultDoor.cs" />
+    <Compile Include="Things\SuperJumpingPawn.cs" />
+    <Compile Include="Workers\IncidentWorker_SupplyDrop.cs" />
+    <Compile Include="Workers\InteractionWorker_Interrogate.cs" />
+    <Compile Include="Jobs\JobDriver_InterrogatePrisoner.cs" />
+    <Compile Include="Jobs\JobDriver_CarryToGeneTailoringPod.cs" />
+    <Compile Include="Jobs\JobDriver_EnterGeneTailoringPod.cs" />
+    <Compile Include="Jobs\JobDriver_SitFacingBuilding_Learning.cs" />
+    <Compile Include="Things\ElectricityBlast.cs" />
+    <Compile Include="GameComponent_Ancients.cs" />
+    <Compile Include="HarmonyPatches\AbilityPatches.cs" />
+    <Compile Include="Things\IceProjectile.cs" />
+    <Compile Include="Things\LaserEyeBeam.cs" />
+    <Compile Include="Things\LightningSpot.cs" />
+    <Compile Include="Workers\InteractionWorker_RomanceAttemptLustful.cs" />
+    <Compile Include="Jobs\JobDriver_ZealotExecution.cs" />
+    <Compile Include="Workers\MentalBreakWorker_Hallucinations.cs" />
+    <Compile Include="Jobs\JobGiver_Hallucinations.cs" />
+    <Compile Include="Comps\Operation.cs" />
+    <Compile Include="PawnKindExtension_Powers.cs" />
+    <Compile Include="Workers\PlaceWorker_Cooler.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_AlwaysSocialFight.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Bones.cs" />
+    <Compile Include="DebugActionsPowers.cs" />
+    <Compile Include="HarmonyPatches\PowerPatches.cs" />
+    <Compile Include="ITab_Pawn_Powers.cs" />
+    <Compile Include="Pawn_PowerTracker.cs" />
+    <Compile Include="PowerDef.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Blunt.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Break.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_BreakOnKilled.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_BreakOnReject.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Celebrity.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Claws.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Construct.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Craft.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_ForceHit.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Hack.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Hunger.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_LimbRegen.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Loner.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_MeleeSkill.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_NoExplode.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_NoPrioritize.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_PrefersDarkness.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_PretendTrait.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_RecreationDrop.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Resurrect.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Sick.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Strong.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_Tantrum.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_VitalHits.cs" />
+    <Compile Include="PowerWorkers\PowerWorker_WeaponRange.cs" />
+    <Compile Include="PreceptStuff.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workers\RecipeWorker_Mend.cs" />
+    <Compile Include="StatParts.cs" />
+    <Compile Include="ThinkNode_ConditionalPower.cs" />
+    <Compile Include="Workers\ThoughtWorker_OutsideParanoid.cs" />
+    <Compile Include="ThingSetMakers\ThingSetMaker_SubNodes.cs" />
+    <Compile Include="ThingSetMakers\ThingSetMaker_Fixed.cs" />
+    <Compile Include="ThingSetMakers\ThingSetMaker_Some.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="VFEAncientsMod.cs" />
+    <Compile Include="VFEA_DefOf.cs" />
+    <Compile Include="Jobs\JobGiver_ZealotExecution.cs" />
+    <Compile Include="Jobs\WorkGiver_Warden_Interrogate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer">
+      <Version>1.0.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.3.3209-beta</Version>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.1.1</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
