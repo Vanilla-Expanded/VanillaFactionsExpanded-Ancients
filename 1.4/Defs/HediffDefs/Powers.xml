@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef Name="WeaknessHediffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.35, 0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <isBad>true</isBad>
+  </HediffDef>
+  <HediffDef Name="SuperpowerHediffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.0, 1.0, 0.35)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <isBad>false</isBad>
+  </HediffDef>
+  <HediffDef ParentName="WeaknessHediffBase">
+    <defName>Power_Blind</defName>
+    <label>blind</label>
+    <description>The center in the subject’s brain that is responsible for processing optical data has been stunted, causing them to be fully blind despite having functional eyesight.</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="WeaknessHediffBase">
+    <defName>Power_Deaf</defName>
+    <label>deaf</label>
+    <description>The center in the subject’s brain that is responsible for processing auditory data has been stunted, causing them to be fully deaf despite having functional inner ear canals.</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Hearing</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="WeaknessHediffBase">
+    <defName>Power_Mute</defName>
+    <label>mute</label>
+    <description>The subject has developed a mental block and can no longer create sounds with their mouth or vocal chords, eliminating all forms of speech.</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="WeaknessHediffBase">
+    <defName>Power_Paralysis</defName>
+    <label>psychological paralysis</label>
+    <description>The center of the subject’s brain responsible for motor control in the legs has become stunted, effectively rendering them a paraplegic.</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="WeaknessHediffBase">
+    <defName>Power_PainHypersensitivity</defName>
+    <label>pain hypersensitivity</label>
+    <description>The center in the subject’s brain that is responsible for pain sensation has been overdeveloped, causing even a papercut to feel like their finger is being chewed on by a wild animal.</description>
+    <stages>
+      <li>
+        <painFactor>3</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="WeaknessHediffBase">
+    <defName>Power_Hypermetabolism</defName>
+    <label>hypermetabolism</label>
+    <description>The subject’s metabolism has gone into overdrive, requiring them to eat twice as much food as they did before even if they don’t need that much extra energy.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>2</hungerRateFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="SuperpowerHediffBase">
+    <defName>Power_Unstoppable</defName>
+    <label>unstoppable</label>
+    <description>The subject’s brain is no longer able to process the sensation of pain. This allows them to accomplish more but stops their body from being able to shut down from suffering excessive damage until it is destroyed.</description>
+    <stages>
+      <li>
+        <painFactor>0</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>VFEA_PlasteelClaw</defName>
+    <label>plasteel claw</label>
+    <labelNoun>a plasteel claw</labelNoun>
+    <description>A combat-oriented hand mutation created by super-nanites. It cuts deep, and it is strong enough to crush a skull like a hand crushes an egg. The claws can be retracted.</description>
+    <stages>
+      <li>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>plasteel claw</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>32</power>
+            <cooldownTime>2</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            <soundMeleeHit>Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+            <soundMeleeMiss>Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>VFEA_RegrowingPart</defName>
+    <defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
+    <description>This body part is regenerating.</description>
+    <isBad>false</isBad>
+    <label>regenerating</label>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <label>bones</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-1.0</partEfficiencyOffset>
+        <painOffset>0.2</painOffset>
+        <statOffsets>
+          <PawnBeauty>-2</PawnBeauty>
+        </statOffsets>
+      </li>
+      <li>
+        <label>muscles</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-1.0</partEfficiencyOffset>
+        <minSeverity>0.1</minSeverity>
+        <painOffset>0.2</painOffset>
+        <statOffsets>
+          <PawnBeauty>-2</PawnBeauty>
+        </statOffsets>
+      </li>
+      <li>
+        <label>nerves</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+        <minSeverity>0.5</minSeverity>
+        <painOffset>0.5</painOffset>
+        <statOffsets>
+          <PawnBeauty>-2</PawnBeauty>
+        </statOffsets>
+      </li>
+      <li>
+        <label>skin</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-0.5</partEfficiencyOffset>
+        <minSeverity>0.75</minSeverity>
+        <painOffset>0.1</painOffset>
+        <statOffsets>
+          <PawnBeauty>-1</PawnBeauty>
+        </statOffsets>
+      </li>
+      <li>
+        <label>finishing</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>0</partEfficiencyOffset>
+        <minSeverity>1</minSeverity>
+        <painOffset>0.05</painOffset>
+        <statOffsets>
+          <PawnBeauty>-1</PawnBeauty>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

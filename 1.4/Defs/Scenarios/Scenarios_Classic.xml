@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ScenarioDef Name="VFEA_NewVault">
+    <defName>RE_NewVault</defName>
+    <label>Sealed Vault</label>
+    <description>With each passing day you stare at your fellow companions hibernating in cryptosleep sarcophagi. One day, when your life is nearing its end, you will wake your successor, and his watch will begin. Every day for the last hundreds of years your outpost was awaiting orders from High Command which may no longer exist. Will today be the day you not only wake up, but also open your eyes?
+	
+Note: Since you start alone with random superpowers and weaknesses, this is a difficult scenario.</description>
+    <scenario>
+      <summary>A lone super-soldier guarding his post. A classic VFE - Ancients experience.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>VFEA_NewVault</factionDef>
+      </playerFaction>
+      <parts>
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>With each passing day you stare at your fellow companions hibernating in cryptosleep sarcophagi. One day, when your life is nearing its end, you will wake your successor, and his watch will begin. Every day for the last hundreds of years your outpost was awaiting orders from High Command which may no longer exist. Will today be the day you not only wake up, but also open your eyes?</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+        <li Class="KCSG.ScenPart_AddStartingStructure">
+          <def>VFEC_AddStartingStructure</def>
+          <structureLabel>A sealed vault</structureLabel>
+          <spawnConduits>False</spawnConduits>
+          <nearMapCenter>True</nearMapCenter>
+          <fullClear>True</fullClear>
+          <chooseFrom>
+            <li>VFEA_SealedVaultAlpha</li>
+            <li>VFEA_SealedVaultBravo</li>
+            <li>VFEA_SealedVaultCharlie</li>
+            <li>VFEA_SealedVaultDelta</li>
+            <li>VFEA_SealedVaultEpsilon</li>
+            <li>VFEA_SealedVaultF</li>
+            <li>VFEA_SealedVaultG</li>
+            <li>VFEA_SealedVaultH</li>
+            <li>VFEA_SealedVaultI</li>
+            <li>VFEA_SealedVaultJ</li>
+          </chooseFrom>
+          <spawnTheStartingPawn>True</spawnTheStartingPawn>
+          <method>Standing</method>
+        </li>
+        <li Class="VFEAncients.ScenPart_ReconnectAllPowerBuildings">
+			<def>VFEC_ReconnectAllPowerBuildings</def>
+		</li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+  
+  <ScenPartDef>
+    <defName>VFEC_ReconnectAllPowerBuildings</defName>
+    <label>reconnect all power buildings in the starting map</label>
+    <category>Misc</category>
+    <scenPartClass>VFEAncients.ScenPart_ReconnectAllPowerBuildings</scenPartClass>
+    <maxUses>1</maxUses>
+  </ScenPartDef>
+  
+  <ScenarioDef>
+    <defName>VFEA_CargoCult</defName>
+    <label>Cargo Cult</label>
+    <description>It was a fortuitous find: The tribe's foragers were looking for some berries, and stumbled upon the mysterious hole in the ground. Was it man-made, or built by the gods themselves? We soon discovered that it was obviously the latter, as offerings made to the wondrous structure were magically catapulted to the heavens, and returned as something else entirely as a reward for our devotion.\n\nNote: You'll start poor and lack technology, but having the supply slingshot means it will be easier than a standard tribal start.</description>
+    <scenario>
+      <summary>Five lost tribespeople stumble upon a supply slingshot and start revering it. Moderate-High difficulty.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>PlayerTribe</factionDef>
+      </playerFaction>
+      <parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>5</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+		
+		 <li Class="KCSG.ScenPart_AddStartingStructure">
+          <def>VFEC_AddStartingStructure</def>
+          <structureLabel>An abandoned supply slingshot</structureLabel>
+          <spawnConduits>False</spawnConduits>
+          <nearMapCenter>True</nearMapCenter>
+          <fullClear>True</fullClear>
+          <chooseFrom>
+            <li>VFEA_AbandonedSupplySlingshot</li>
+           
+          </chooseFrom>
+         
+        </li>
+
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Standing</method>
+        </li>
+
+        <!-- Player pawns modifiers -->
+        <li Class="ScenPart_ForcedHediff">
+          <def>ForcedHediff</def>
+          <visible>false</visible>
+          <context>PlayerStarter</context>
+          <chance>0.5</chance>
+          <hediff>Malnutrition</hediff>
+          <severityRange>0.2~0.4</severityRange>
+        </li>
+        <li Class="ScenPart_SetNeedLevel">
+          <def>SetNeedLevel</def>
+          <visible>false</visible>
+          <context>PlayerStarter</context>
+          <chance>1.0</chance>
+          <need>Food</need>
+          <levelRange>0~0.1</levelRange>
+        </li>
+
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>400</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Club</thingDef>
+          <stuff>WoodLog</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Ikwa</thingDef>
+          <stuff>Steel</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Knife</thingDef>
+          <stuff>Jade</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Bow_Short</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pila</thingDef>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>1</count>
+          <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+        </li>
+
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
+
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>It was a fortuitous find: The tribe's foragers were looking for some berries, and stumbled upon the mysterious hole in the ground. Was it man-made, or built by the gods themselves? We soon discovered that it was obviously the latter, as offerings made to the wondrous structure were magically catapulted to the heavens, and returned as something else entirely as a reward for our devotion.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

@@ -1,69 +1,55 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
-namespace VFEAncients
-{
-    public class DebugActionsPowers
-    {
-        [DebugAction("Pawns", "Give power...", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        public static void GivePower()
-        {
-            var list = new List<DebugMenuOption>
-            {
-                new DebugMenuOption("*Fill", DebugMenuOptionMode.Tool, delegate
-                {
-                    foreach (var tracker in from p in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>()
-                        let tracker = p.GetPowerTracker()
-                        where tracker != null
-                        select tracker)
-                    {
-                        var numSuper = ITab_Pawn_Powers.MaxPowers - tracker.AllPowers.Count(p => p.powerType == PowerType.Superpower);
-                        var numWeak = ITab_Pawn_Powers.MaxPowers - tracker.AllPowers.Count(p => p.powerType == PowerType.Weakness);
-                        for (var i = 0; i < numSuper; i++)
-                            if (DefDatabase<PowerDef>.AllDefs.Where(power => power.powerType == PowerType.Superpower && !tracker.HasPower(power)).TryRandomElement(out var super))
-                                tracker.AddPower(super);
-                        for (var i = 0; i < numWeak; i++)
-                            if (DefDatabase<PowerDef>.AllDefs.Where(power => power.powerType == PowerType.Weakness && !tracker.HasPower(power)).TryRandomElement(out var weak))
-                                tracker.AddPower(weak);
-                    }
-                }),
-                new DebugMenuOption("*Fill Superpowers", DebugMenuOptionMode.Tool, delegate
-                {
-                    foreach (var tracker in from p in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>()
-                        let tracker = p.GetPowerTracker()
-                        where tracker != null
-                        select tracker)
-                    {
-                        var numSuper = ITab_Pawn_Powers.MaxPowers - tracker.AllPowers.Count(p => p.powerType == PowerType.Superpower);
-                        for (var i = 0; i < numSuper; i++)
-                            if (DefDatabase<PowerDef>.AllDefs.Where(power => power.powerType == PowerType.Superpower && !tracker.HasPower(power)).TryRandomElement(out var super))
-                                tracker.AddPower(super);
-                    }
-                }),
-                new DebugMenuOption("*Fill Weaknesses", DebugMenuOptionMode.Tool, delegate
-                {
-                    foreach (var tracker in from p in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>()
-                        let tracker = p.GetPowerTracker()
-                        where tracker != null
-                        select tracker)
-                    {
-                        var numWeak = ITab_Pawn_Powers.MaxPowers - tracker.AllPowers.Count(p => p.powerType == PowerType.Weakness);
-                        for (var i = 0; i < numWeak; i++)
-                            if (DefDatabase<PowerDef>.AllDefs.Where(power => power.powerType == PowerType.Weakness && !tracker.HasPower(power)).TryRandomElement(out var weak))
-                                tracker.AddPower(weak);
-                    }
-                })
-            };
-            list.AddRange(DefDatabase<PowerDef>.AllDefs.OrderBy(def => def.label).Select(def => new DebugMenuOption(def.label, DebugMenuOptionMode.Tool, delegate
-            {
-                foreach (var tracker in from p in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>()
-                    let tracker = p.GetPowerTracker()
-                    where tracker != null
-                    select tracker) tracker.AddPower(def);
-            })));
+namespace VFEAncients;
 
-            Find.WindowStack.Add(new Dialog_DebugOptionListLister(list));
-        }
+public static class DebugActionsPowers
+{
+    [DebugAction("Pawns", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+    public static List<DebugActionNode> GivePower()
+    {
+        var list = new List<DebugActionNode>
+        {
+            new("*Fill", DebugActionType.ToolMap, AddPowers(FillPowers(PowerType.Superpower).And(FillPowers(PowerType.Weakness)))),
+            new("*Fill Superpowers", DebugActionType.ToolMap, AddPowers(FillPowers(PowerType.Superpower))),
+            new("*Fill Weaknesses", DebugActionType.ToolMap, AddPowers(FillPowers(PowerType.Weakness)))
+        };
+        list.AddRange(DefDatabase<PowerDef>.AllDefs.OrderBy(def => def.label).Select(def =>
+            new DebugActionNode(def.label, DebugActionType.ToolMap, AddPowers(tracker => tracker.AddPower(def)))));
+        return list;
+    }
+
+    private static Action AddPowers(Action<Pawn_PowerTracker> add)
+    {
+        return () =>
+        {
+            foreach (var tracker in from p in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>()
+                     let tracker = p.GetPowerTracker()
+                     where tracker != null
+                     select tracker) add(tracker);
+        };
+    }
+
+    private static Action<Pawn_PowerTracker> FillPowers(PowerType type)
+    {
+        return tracker =>
+        {
+            var count = ITab_Pawn_Powers.MaxPowers - tracker.AllPowers.Count(p => p.powerType == type);
+            for (var i = 0; i < count; i++)
+                if (DefDatabase<PowerDef>.AllDefs.Where(power => power.powerType == type && !tracker.HasPower(power))
+                    .TryRandomElement(out var weak))
+                    tracker.AddPower(weak);
+        };
+    }
+
+    private static Action<T> And<T>(this Action<T> action1, Action<T> action2)
+    {
+        return obj =>
+        {
+            action1(obj);
+            action2(obj);
+        };
     }
 }

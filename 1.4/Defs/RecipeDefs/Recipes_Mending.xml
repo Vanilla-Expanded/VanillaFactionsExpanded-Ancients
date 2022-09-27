@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <defName>VFEA_MendWeapon</defName>
+    <label>mend weapon</label>
+    <description>Repair a weapon, using some materials</description>
+    <jobString>Mending weapon.</jobString>
+    <workSkill>Crafting</workSkill>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <workerClass>VFEAncients.RecipeWorker_Mend</workerClass>
+    <workAmount>1000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Weapons</li>
+      </categories>
+    </fixedIngredientFilter>
+    <recipeUsers>
+        <li>VFEA_ElectricMendingStation</li>
+        <li>VFEA_FueledMendingStation</li>
+    </recipeUsers>
+    <modExtensions>
+        <li Class="VFEAncients.RecipeExtension_Mend">
+            <Fraction>0.1</Fraction>
+            <WorkPerHP>10</WorkPerHP>
+        </li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>VFEA_MendApparel</defName>
+    <label>mend apparel</label>
+    <description>Repair clothing using some materials</description>
+    <jobString>Mending apparel.</jobString>
+    <workSkill>Crafting</workSkill>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <workerClass>VFEAncients.RecipeWorker_Mend</workerClass>
+    <workAmount>1000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Apparel</li>
+          </categories>
+          <disallowedCategories>
+              <li>ApparelArmor</li>
+          </disallowedCategories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Apparel</li>
+      </categories>
+    </fixedIngredientFilter>
+    <recipeUsers>
+        <li>VFEA_ElectricMendingStation</li>
+        <li>VFEA_FueledMendingStation</li>
+    </recipeUsers>
+    <modExtensions>
+        <li Class="VFEAncients.RecipeExtension_Mend">
+            <Fraction>0.1</Fraction>
+            <WorkPerHP>10</WorkPerHP>
+        </li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>VFEA_MendArmor</defName>
+    <label>mend armor</label>
+    <description>Repair armor using some materials</description>
+    <jobString>Mending armor.</jobString>
+    <workSkill>Crafting</workSkill>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <workerClass>VFEAncients.RecipeWorker_Mend</workerClass>
+    <workAmount>1000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>ApparelArmor</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>ApparelArmor</li>
+      </categories>
+    </fixedIngredientFilter>
+    <recipeUsers>
+        <li>VFEA_ElectricMendingStation</li>
+        <li>VFEA_FueledMendingStation</li>
+    </recipeUsers>
+    <modExtensions>
+        <li Class="VFEAncients.RecipeExtension_Mend">
+            <Fraction>0.1</Fraction>
+            <WorkPerHP>10</WorkPerHP>
+        </li>
+    </modExtensions>
+  </RecipeDef>
+</Defs>

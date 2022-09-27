@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VFEA_LightningSpot</defName>
+        <label>lightning spot</label>
+        <thingClass>VFEAncients.LightningSpot</thingClass>
+        <graphicData>
+            <texPath>Things/Mote/Transparent</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <altitudeLayer>Projectile</altitudeLayer>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
+        <category>Building</category>
+        <comps>
+            <li>
+                <compClass>VFECore.Abilities.CompSpawnedBuilding</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+    <ThingDef>
+        <defName>VFEA_LaserEyeBeamDraw</defName>
+        <thingClass>VFEAncients.LaserEyeBeamDraw</thingClass>
+        <drawOffscreen>true</drawOffscreen>
+        <label>laser beam</label>
+        <category>Projectile</category>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <useHitPoints>False</useHitPoints>
+        <neverMultiSelect>True</neverMultiSelect>
+    </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VFEA_ElectricBlast</defName>
+        <label>electricity blase</label>
+        <thingClass>VFEAncients.ElectricBlast</thingClass>
+        <drawerType>RealtimeOnly</drawerType>
+        <tickerType>Normal</tickerType>
+        <graphicData>
+            <texPath>Projectile/Lightning</texPath>
+            <graphicClass>Graphic_Flicker</graphicClass>
+        </graphicData>
+    </ThingDef>
+    <ThingDef ParentName="PawnFlyerBase">
+        <defName>VFEA_SuperJumpingPawn</defName>
+        <thingClass>VFEAncients.SuperJumpingPawn</thingClass>
+        <pawnFlyer>
+            <flightDurationMin>0.1</flightDurationMin>
+            <flightSpeed>30</flightSpeed>
+        </pawnFlyer>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBrokenDefensiveTurret_North</defName>
+    <thing>VFEA_AncientBrokenDefensiveTurret</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_Turret_AncientPointDefense</defName>
+    <thing>VFEA_Turret_AncientPointDefense</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBustedTurretPlatform_North</defName>
+    <thing>VFEA_AncientBustedTurretPlatform</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_VaultWall</defName>
+    <thing>VFEA_VaultWall</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_LargeLockedDoor_North</defName>
+    <thing>VFEA_LargeLockedDoor</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_WallLamp_South</defName>
+    <thing>VFEA_WallLamp</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBattery_East</defName>
+    <thing>VFEA_AncientBattery</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientHydroponicFarm</defName>
+    <thing>VFEA_AncientHydroponicFarm</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_VaultDoor</defName>
+    <thing>VFEA_VaultDoor</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientComputerDesk_South</defName>
+    <thing>VFEA_AncientComputerDesk</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientInputTerminal_South</defName>
+    <thing>VFEA_AncientInputTerminal</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientMachinery</defName>
+    <thing>VFEA_AncientMachinery</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientGeothermalPlant</defName>
+    <thing>VFEA_AncientGeothermalPlant</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBroadcastStation_South</defName>
+    <thing>VFEA_AncientBroadcastStation</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientFuelTank_East</defName>
+    <thing>VFEA_AncientFuelTank</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCooler_North</defName>
+    <thing>VFEA_AncientCooler</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientInputTerminal_North</defName>
+    <thing>VFEA_AncientInputTerminal</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientChemfuelPoweredGenerator</defName>
+    <thing>VFEA_AncientChemfuelPoweredGenerator</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientFuelTank_North</defName>
+    <thing>VFEA_AncientFuelTank</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBattery_South</defName>
+    <thing>VFEA_AncientBattery</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientMonitorBank_South</defName>
+    <thing>VFEA_AncientMonitorBank</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientHeater</defName>
+    <thing>VFEA_AncientHeater</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientComputerDesk_North</defName>
+    <thing>VFEA_AncientComputerDesk</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCookingStation_South</defName>
+    <thing>VFEA_AncientCookingStation</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_LargeLockedDoor_West</defName>
+    <thing>VFEA_LargeLockedDoor</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_Turret_AncientSecurityTurret</defName>
+    <thing>VFEA_Turret_AncientSecurityTurret</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientFoosballTable_North</defName>
+    <thing>VFEA_AncientFoosballTable</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SimulationDrive_South</defName>
+    <thing>VFEA_SimulationDrive</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCryptosleepSuspender_South</defName>
+    <thing>VFEA_AncientCryptosleepSuspender</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientSupplySlingshot</defName>
+    <thing>VFEA_AncientSupplySlingshot</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientEducator_East</defName>
+    <thing>VFEA_AncientEducator</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientEducator_West</defName>
+    <thing>VFEA_AncientEducator</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteCentrifuge</defName>
+    <thing>VFEA_SuperNaniteCentrifuge</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_ElectricMendingStation_West</defName>
+    <thing>VFEA_ElectricMendingStation</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteDialyzer_West</defName>
+    <thing>VFEA_SuperNaniteDialyzer</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_LargeLockedDoor_East</defName>
+    <thing>VFEA_LargeLockedDoor</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_GeneTailoringPod_South</defName>
+    <thing>VFEA_GeneTailoringPod</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNanites</defName>
+    <thing>VFEA_SuperNanites</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteContainment_South</defName>
+    <thing>VFEA_SuperNaniteContainment</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteInjectorPump</defName>
+    <thing>VFEA_SuperNaniteInjectorPump</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_LargeLockedDoor_South</defName>
+    <thing>VFEA_LargeLockedDoor</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBed_North</defName>
+    <thing>VFEA_AncientBed</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBed_South</defName>
+    <thing>VFEA_AncientBed</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBed_East</defName>
+    <thing>VFEA_AncientBed</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBed_West</defName>
+    <thing>VFEA_AncientBed</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_PipelineJunction</defName>
+    <thing>VFEA_PipelineJunction</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientSolarGenerator</defName>
+    <thing>VFEA_AncientSolarGenerator</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_WallLamp_North</defName>
+    <thing>VFEA_WallLamp</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCryptosleepSuspender_West</defName>
+    <thing>VFEA_AncientCryptosleepSuspender</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_StabilisedMucusInducer</defName>
+    <thing>VFEA_StabilisedMucusInducer</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_GenomeStabilizer</defName>
+    <thing>VFEA_GenomeStabilizer</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientVitalsMonitor_South</defName>
+    <thing>VFEA_AncientVitalsMonitor</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCookingStation_East</defName>
+    <thing>VFEA_AncientCookingStation</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientWaterFilter_North</defName>
+    <thing>VFEA_AncientWaterFilter</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_WallLamp_East</defName>
+    <thing>VFEA_WallLamp</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientWorkshop_South</defName>
+    <thing>VFEA_AncientWorkshop</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientMonitorBank_North</defName>
+    <thing>VFEA_AncientMonitorBank</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBattery_North</defName>
+    <thing>VFEA_AncientBattery</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientFoosballTable_East</defName>
+    <thing>VFEA_AncientFoosballTable</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientTransmitter_North</defName>
+    <thing>VFEA_AncientTransmitter</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientShuttle_North</defName>
+    <thing>VFEA_AncientShuttle</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientEducator_South</defName>
+    <thing>VFEA_AncientEducator</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBroadcastStation_West</defName>
+    <thing>VFEA_AncientBroadcastStation</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_WallLamp_West</defName>
+    <thing>VFEA_WallLamp</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientWorkshop_East</defName>
+    <thing>VFEA_AncientWorkshop</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCookingStation_West</defName>
+    <thing>VFEA_AncientCookingStation</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <!-- Casket & crates -->
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCryptosleepSarcophagus_South</defName>
+    <thing>VFEA_AncientCryptosleepSarcophagus</thing>
+    <containPawnKindAnyOf>
+      <li>VFEA_AncientSoldierOneAbility</li>
+      <li>VFEA_AncientSoldierTwoAbilities</li>
+    </containPawnKindAnyOf>
+    <containPawnKindForPlayerAnyOf>
+      <li>VFEA_PlayerAncientSoldierOneAbility</li>
+    </containPawnKindForPlayerAnyOf>
+    <chanceToContainPawn>0.1</chanceToContainPawn>
+    <spawnPartOfFaction>true</spawnPartOfFaction>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCryptosleepSarcophagus_North</defName>
+    <thing>VFEA_AncientCryptosleepSarcophagus</thing>
+    <containPawnKindAnyOf>
+      <li>VFEA_AncientSoldierOneAbility</li>
+      <li>VFEA_AncientSoldierTwoAbilities</li>
+    </containPawnKindAnyOf>
+    <containPawnKindForPlayerAnyOf>
+      <li>VFEA_PlayerAncientSoldierOneAbility</li>
+    </containPawnKindForPlayerAnyOf>
+    <chanceToContainPawn>0.2</chanceToContainPawn>
+    <spawnPartOfFaction>true</spawnPartOfFaction>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCryptosleepSarcophagus_West</defName>
+    <thing>VFEA_AncientCryptosleepSarcophagus</thing>
+    <containPawnKindAnyOf>
+      <li>VFEA_AncientSoldierOneAbility</li>
+      <li>VFEA_AncientSoldierTwoAbilities</li>
+    </containPawnKindAnyOf>
+    <containPawnKindForPlayerAnyOf>
+      <li>VFEA_PlayerAncientSoldierOneAbility</li>
+    </containPawnKindForPlayerAnyOf>
+    <chanceToContainPawn>0.2</chanceToContainPawn>
+    <spawnPartOfFaction>true</spawnPartOfFaction>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCryptosleepSarcophagus_East</defName>
+    <thing>VFEA_AncientCryptosleepSarcophagus</thing>
+    <containPawnKindAnyOf>
+      <li>VFEA_AncientSoldierOneAbility</li>
+      <li>VFEA_AncientSoldierTwoAbilities</li>
+    </containPawnKindAnyOf>
+    <containPawnKindForPlayerAnyOf>
+      <li>VFEA_PlayerAncientSoldierOneAbility</li>
+    </containPawnKindForPlayerAnyOf>
+    <chanceToContainPawn>0.2</chanceToContainPawn>
+    <spawnPartOfFaction>true</spawnPartOfFaction>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientHermeticCrate_North</defName>
+    <thing>AncientHermeticCrate</thing>
+    <rotation>North</rotation>
+    <thingSetMakerDef>MapGen_AncientComplex_SecurityCrate</thingSetMakerDef>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_LargeSupplyCrate_North</defName>
+    <thing>VFEA_LargeSupplyCrate</thing>
+    <rotation>North</rotation>
+    <thingSetMakerDef>MapGen_AncientComplex_SecurityCrate</thingSetMakerDef>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_GenomeMacrothermometer</defName>
+    <thing>VFEA_GenomeMacrothermometer</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientMonitorBank_West</defName>
+    <thing>VFEA_AncientMonitorBank</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCooler_East</defName>
+    <thing>VFEA_AncientCooler</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_NaniteSampler</defName>
+    <thing>VFEA_NaniteSampler</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCookingStation_North</defName>
+    <thing>VFEA_AncientCookingStation</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientInputTerminal_West</defName>
+    <thing>VFEA_AncientInputTerminal</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBioBatteryTank</defName>
+    <thing>VFEA_AncientBioBatteryTank</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientWorkshop_North</defName>
+    <thing>VFEA_AncientWorkshop</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientVitalsMonitor_East</defName>
+    <thing>VFEA_AncientVitalsMonitor</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_NanotechRetractor</defName>
+    <thing>VFEA_NanotechRetractor</thing>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_ElectricMendingStation_South</defName>
+    <thing>VFEA_ElectricMendingStation</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteContainment_North</defName>
+    <thing>VFEA_SuperNaniteContainment</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteDialyzer_South</defName>
+    <thing>VFEA_SuperNaniteDialyzer</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_LargeSupplyCrate_South</defName>
+    <thing>VFEA_LargeSupplyCrate</thing>
+    <rotation>South</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_GeneTailoringPod_West</defName>
+    <thing>VFEA_GeneTailoringPod</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientInputTerminal_East</defName>
+    <thing>VFEA_AncientInputTerminal</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCryptosleepSuspender_East</defName>
+    <thing>VFEA_AncientCryptosleepSuspender</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientVitalsMonitor_West</defName>
+    <thing>VFEA_AncientVitalsMonitor</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientBattery_West</defName>
+    <thing>VFEA_AncientBattery</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientSupplyCrate_North</defName>
+    <thing>VFEA_AncientSupplyCrate</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientWorkshop_West</defName>
+    <thing>VFEA_AncientWorkshop</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientFuelTank_West</defName>
+    <thing>VFEA_AncientFuelTank</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientCooler_West</defName>
+    <thing>VFEA_AncientCooler</thing>
+    <rotation>West</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteDialyzer_North</defName>
+    <thing>VFEA_SuperNaniteDialyzer</thing>
+    <rotation>North</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_AncientMonitorBank_East</defName>
+    <thing>VFEA_AncientMonitorBank</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEA_SuperNaniteDialyzer_East</defName>
+    <thing>VFEA_SuperNaniteDialyzer</thing>
+    <rotation>East</rotation>
+  </KCSG.SymbolDef>
+
+</Defs>

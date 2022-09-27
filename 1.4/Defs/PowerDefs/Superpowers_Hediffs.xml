@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>PlasteelClaws</defName>
+        <label>plasteel claws</label>
+        <description>The subject has developed bone claws sheathed in Plasteel within their hands, which can be extended through vertical slits between the fingers. They serve as fast, reactive and deadly melee weapons.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_PlasteelClaws</texPath>
+        <workerClass>VFEAncients.PowerWorker_Claws</workerClass>
+        <effectDescription>Powerful, retractable claws. Deal high damage in melee combat.</effectDescription>
+        <tickerType>Long</tickerType>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Unstoppable</defName>
+        <label>unstoppable</label>
+        <description>The subject’s brain is no longer able to process the sensation of pain. This allows them to accomplish more but stops their body from being able to shut down from suffering excessive damage until it is destroyed.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Unstoppable</texPath>
+        <hediffs><li>Power_Unstoppable</li></hediffs>
+        <effectDescription>100% Pain resistance.</effectDescription>
+    </VFEAncients.PowerDef>
+</Defs>

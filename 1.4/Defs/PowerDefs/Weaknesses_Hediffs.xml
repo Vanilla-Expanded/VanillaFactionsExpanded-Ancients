@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>Blind</defName>
+        <label>blind</label>
+        <description>The center in the subject’s brain that is responsible for processing optical data has been stunted, causing them to be fully blind despite having functional eyesight.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Blind</texPath>
+        <hediffs><li>Power_Blind</li></hediffs>
+		<effectDescription>Sight capped at 0%.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Deaf</defName>
+        <label>deaf</label>
+        <description>The center in the subject’s brain that is responsible for processing auditory data has been stunted, causing them to be fully deaf despite having functional inner ear canals.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Deaf</texPath>
+        <hediffs><li>Power_Deaf</li></hediffs>
+		<effectDescription>Hearing capped at 0%.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Mute</defName>
+        <label>mute</label>
+        <description>The subject has developed a mental block and can no longer create sounds with their mouth or vocal chords, eliminating all forms of speech.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Mute</texPath>
+        <hediffs><li>Power_Mute</li></hediffs>
+		<effectDescription>Talking capped at 0%.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>PsychologicalParalysis</defName>
+        <label>psychological paralysis</label>
+        <description>The center of the subject’s brain responsible for motor control in the legs has become stunted, effectively rendering them a paraplegic.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_PsychologicalParalysis</texPath>
+        <hediffs><li>Power_Paralysis</li></hediffs>
+		<effectDescription>Pawn cannot walk.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>PainHypersensitivity</defName>
+        <label>pain hypersensitivity</label>
+        <description>The center in the subject’s brain that is responsible for pain sensation has been overdeveloped, causing even a papercut to feel like their finger is being chewed on by a wild animal.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_PainHypersensitivity</texPath>
+        <hediffs><li>Power_PainHypersensitivity</li></hediffs>
+		<effectDescription>Pain multiplied by 300%.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Hypermetabolism</defName>
+        <label>hypermetabolism</label>
+        <description>The subject’s metabolism has gone into overdrive, requiring them to eat twice as much food as they did before even if they don’t need that much extra energy.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Hypermetabolism</texPath>
+        <hediffs><li>Power_Hypermetabolism</li></hediffs>
+        <effectDescription>Hunger rate multiplied by 200%</effectDescription>
+    </VFEAncients.PowerDef>
+</Defs>

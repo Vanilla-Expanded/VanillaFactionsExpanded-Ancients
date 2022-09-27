@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>Prideful</defName>
+        <label>prideful</label>
+        <description>The subject has developed a possibly misplaced sense of pride due to their gene therapy and doesn't take rejection well, sometimes violently so. Being rejected can cause a murderer mental state against the love interest.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Prideful</texPath>
+        <workerClass>VFEAncients.PowerWorker_BreakOnReject</workerClass>
+        <workerData Class="VFEAncients.WorkerData_Break">
+            <BreakChance>0.1</BreakChance>
+            <Break>MurderousRage</Break>
+        </workerData>
+        <effectDescription>When rebuffed, has a 10% chance to go into murderer mental state against the person who rebuffed them.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Bloodlust</defName>
+        <label>bloodlust</label>
+        <description>The subject’s hormone glands have become hypersensitive, and causing the death of someone causes a massive spike in dopamine and feels incredibly pleasurable, effectively becoming an addict to murder. This in turn can lead to one kill becoming a long chain of berserk rage-induced slaughter.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Bloodlust</texPath>
+        <workerClass>VFEAncients.PowerWorker_BreakOnKilled</workerClass>
+        <workerData Class="VFEAncients.WorkerData_Break">
+            <BreakChance>0.5</BreakChance>
+            <Break>Berserk</Break>
+        </workerData>
+        <effectDescription>Upon killing, might enter a berserk mental state (50% chance).</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Paranoid</defName>
+        <label>paranoid</label>
+        <description>The subject has developed a massive case of homesickness, and only ever feels safe whenever they’re inside what they consider home.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Paranoid</texPath>
+        <effectDescription>If outside of the Home area, pawn suffers a mood debuff.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Audacious</defName>
+        <label>audacious</label>
+        <description>The subject has developed a complete disregard for any authority except their own and will only do whatever they want to.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Audacious</texPath>
+        <workerClass>VFEAncients.PowerWorker_NoPrioritize</workerClass>
+        <effectDescription>Pawn cannot be TOLD to do something (right clicking and forcing tasks disabled).</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Callous</defName>
+        <label>callous</label>
+        <description>The subject has become callous and disregards the sanctity of life, butchering former colleagues or even friendly banter. As long as they have somewhere to sit, they don’t care.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Callous</texPath>
+        <nullifiedThoughts>
+            <li>KnowGuestExecuted</li>
+            <li>KnowColonistExecuted</li>
+            <li>KnowPrisonerDiedInnocent</li>
+            <li>KnowColonistDied</li>
+            <li>BondedAnimalDied</li>
+            <li>PawnWithGoodOpinionDied</li>
+            <li>ColonistLost</li>
+            <li>BondedAnimalReleased</li>
+            <li>BondedAnimalLost</li>
+            <li>PawnWithGoodOpinionLost</li>
+            <li>KnowPrisonerSold</li>
+            <li>ReleasedHealthyPrisoner</li>
+            <li>KnowGuestOrganHarvested</li>
+            <li>KnowColonistOrganHarvested</li>
+            <li>Nuzzled</li>
+            <li>ButcheredHumanlikeCorpse</li>
+            <li>KnowButcheredHumanlikeCorpse</li>
+            <li>ButcheredHumanlikeCorpseOpinion</li>
+            <li>ObservedLayingCorpse</li>
+            <li>WitnessedDeathAlly</li>
+            <li>WitnessedDeathNonAlly</li>
+            <li>WitnessedDeathFamily</li>
+            <li>DeniedJoining</li>
+            <li>ColonistBanished</li>
+            <li>ColonistBanishedToDie</li>
+            <li>PrisonerBanishedToDie</li>
+            <li>ColonyPrisonerEscaped</li>
+            <li>BondedAnimalBanished</li>
+            <li>Chitchat</li>
+            <li>DeepTalk</li>
+            <li>HumanLeatherApparelSad</li>
+            <li>SoldPrisoner</li>
+            <li>BondedAnimalMaster</li>
+            <li>NotBondedAnimalMaster</li>
+            <li>ColonistLeftUnburied</li>
+        </nullifiedThoughts>
+        <workerClass>VFEAncients.PowerWorker_PretendTrait</workerClass>
+        <workerData Class="VFEAncients.WorkerData_Trait"><Trait>Psychopath</Trait></workerData>
+        <effectDescription>Mood not affected by sight of death, unburied colonists, prisoners sold into slavery, organ harvesting, butchering of humans or friendly chats. Essentially a vanilla psychopath.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Immature</defName>
+        <label>immature</label>
+        <description>The subject has lost several methods of expressing their emotions, only able to get their point across by throwing tantrums.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Immature</texPath>
+        <workerClass>VFEAncients.PowerWorker_Tantrum</workerClass>
+        <effectDescription>Majority of mental breaks are Tantrums.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>EasilyBored</defName>
+        <label>easily bored</label>
+        <description>The subject’s cognitive functions have become over developed and require twice the rate of recreational stimulation to delay mind-numbing boredom.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_EasilyBored</texPath>
+        <workerClass>VFEAncients.PowerWorker_RecreationDrop</workerClass>
+        <effectDescription>Pawn Recreation drops at 2x the speed.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>EasilyEnraged</defName>
+        <label>easily enraged</label>
+        <description>The subject has developed a possibly misplaced sense of pride due to their gene therapy and doesn't take criticism well, causing them to fall into a psychotic rage every time they are slighted.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_EasilyEnraged</texPath>
+        <workerClass>VFEAncients.PowerWorker_AlwaysSocialFight</workerClass>
+        <effectDescription>Pawn will initiate social fights every time they’re slighted.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Sickly</defName>
+        <label>sickly</label>
+        <description>The subject’s immune response has been ruined, requiring frequent trips to the doctor as they constantly gain new illnesses just as they’ve recovered from the previous one.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Sickly</texPath>
+        <workerClass>VFEAncients.PowerWorker_Sick</workerClass>
+        <effectDescription>Becomes ill very often.</effectDescription>
+        <tickerType>Long</tickerType>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Zealot</defName>
+        <label>zealot</label>
+        <description>The subject has developed an intense state of zealotry, that all who are against the will of the colony do not deserve to live.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Zealot</texPath>
+        <effectDescription>Will instantly kill all prisoners.</effectDescription>
+        <nullifiedThoughts><li>ExecutedPrisoner</li></nullifiedThoughts>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Lustful</defName>
+        <label>lustful</label>
+        <description>The subject’s hormone production has gone into overdrive, causing them to constantly make revolting remarks or gestures and generating bad blood between them and their colleagues.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Lustful</texPath>
+        <effectDescription>Constantly flirts with others, but Flirts are always rejected. This drops relations with the flirt subjects.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Hallucinations</defName>
+        <label>hallucinations</label>
+        <description>The subject regularly suffers from auditory and optical hallucinations, completely convinced they are seeing something that isn’t there. Sometimes they try to make them go away by firing their weapons at them.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Hallucinations</texPath>
+        <workerClass>VFEAncients.PowerWorker_Break</workerClass>
+        <workerData Class="VFEAncients.WorkerData_Break">
+            <BreakChance>0.05</BreakChance>
+            <Break>VFEA_Hallucinations</Break>
+        </workerData>
+        <effectDescription>Casually enters a silent mental break called ‘Seeing things’, where they will walk around aimlessly, potentially pulling out a weapon and firing once or twice. Such a mental break only lasts a short while and will NOT produce a letter announcing it.</effectDescription>
+        <tickerType>Long</tickerType>
+    </VFEAncients.PowerDef>
+</Defs>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>SuperJump</defName>
+        <label>super jump</label>
+        <description>The muscles in this subject’s legs have been enhanced with spindles of dense fibre and their skeleton is more resistant to impact. This allows them to leap dozens of meters and land without injury.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SuperJump</texPath>
+        <abilities><li>VFEA_SuperJump</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Telepathy</defName>
+        <label>telepathy</label>
+        <description>The subject is capable of mentally overwhelming a target’s mind.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Telepathy</texPath>
+        <abilities><li>VFEA_Berserk</li><li>VFEA_Calm</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>PsychicShock</defName>
+        <label>psychic shock</label>
+        <description>The subject is capable of shocking a target’s mind with chaotic images, blocking coherent perception and dropping them into a state of psychic shock.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_PsychicShock</texPath>
+        <abilities><li>VFEA_PsychicShock</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Invisibility</defName>
+        <label>invisibility</label>
+        <description>The subject is capable of generating a psychic field around their body that prevents others from seeing them or even acknowledging their existence for a brief time.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Invisibility</texPath>
+        <abilities><li>VFEA_Invisibility</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>SelfControl</defName>
+        <label>self-control</label>
+        <description>The subject has achieved a mastery of self control, capable of actively deciding on stopping any mental breaks by psychically forcing themself to relive a cherished memory that snaps them back to reality. Afterwards, they will need 2 days to settle on a different memory.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SelfControl</texPath>
+        <abilities><li>VFEA_SelfControl</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Overshield</defName>
+        <label>overshield</label>
+        <description>The subject is capable of projecting a localised, unidirectional skipshield for 30 seconds, sending all incoming ground-level projectiles far away. The process is extremely draining for the user and will take 3 minutes before being able to project again.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Overshield</texPath>
+        <abilities><li>VFEA_Overshield</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>SummonLightning</defName>
+        <label>summon lightning</label>
+        <description>The subject is capable of generating differential-pressure skipgates in the atmosphere to generate a localized flashstorm. The psychically-connected organ is located at the base of the skull and can only be used once every 2 minutes.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SummonLightning</texPath>
+        <abilities><li>VFEA_SummonLightning</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>AnimalSpeech</defName>
+        <label>animal speech</label>
+        <description>The subject is capable of psychically overloading an animal's hormone production once per day, convincing them that they are a member of their species. This either snaps the animal out of a manhunting state or convinces them to join the colony.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_AnimalSpeech</texPath>
+        <abilities><li>VFEA_AnimalSpeech</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Empathy</defName>
+        <label>empathy</label>
+        <description>The subject can cause a friendly target’s body to produce a massive amount of endorphins through the emission of hormones. The surge lasts for an entire day and can be done once a day.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Empathy</texPath>
+        <abilities><li>VFEA_Empathy</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>HealOthers</defName>
+        <label>heal others</label>
+        <description>The subject can cause a friendly target’s body to rapidly regenerate from any wounds through the emission of hormones and a nutrient-rich mist.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_HealOthers</texPath>
+        <abilities><li>VFEA_Heal</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>GloryKill</defName>
+        <label>glory kill</label>
+        <description>The subject is able to force themselves into a fight or flight response and receive a massive dose of adrenaline permissible through an enlarged adrenal gland. This surge in strength allows them to randomly attack a nearby enemy and tear them to pieces, however it is so exhausting the user needs to spend 5 days recovering.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_GloryKill</texPath>
+        <abilities><li>VFEA_GloryKill</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ElectromagneticPulse</defName>
+        <label>electro-magnetic pulse</label>
+        <description>The subject has developed a gland that is capable of absorbing surrounding energy and storing it. It also has a nodule protrusion that can be rapidly irritated to generate a burst of electromagnetic radiation.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_ElectromagneticPulse</texPath>
+        <abilities><li>VFEA_ElectromagneticPulse</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>FireBreath</defName>
+        <label>fire breath</label>
+        <description>The subject has developed a mucus gland in the back of their throat and sacs of chemfuel in their chest. By contracting their chest when spitting, they shoot out a medium-range jet of flame that sets everything in its path alight.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Firebreath</texPath>
+        <abilities><li>VFEA_FireBreath</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>IceBreath</defName>
+        <label>ice breath</label>
+        <description>The subject has developed a mucus gland in the back of their throat and sacs of neutroamine in their chest. By contracting their chest when spitting, they shoot out a medium-range jet of liquid that rapidly evaporates, slowing targets and inducing hypothermia.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Icebreath</texPath>
+        <abilities><li>VFEA_IceBreath</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>LaserEyes</defName>
+        <label>laser eyes</label>
+        <description>The subject is capable of psychically generating two temporary, microscopic skipgates linked to the core of a nearby neutron star. This energy is directed by whatever the subject is looking at, generating a powerful blast of energy over a medium distance.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_LaserEyes</texPath>
+        <abilities><li>VFEA_LaserEyes</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>MatterPhasing</defName>
+        <label>matter phasing</label>
+        <description>The subject is capable of psychically convincing their body that they are able to exist in the same space-time position as another object, specifically they can walk through walls. This can be extremely distressing on the body and can only be done for bursts of 10 seconds with a 60 second intermission.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_MatterPhasing</texPath>
+        <abilities><li>VFEA_MatterPhasing</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ElectricityBlast</defName>
+        <label>electricity blast</label>
+        <description>The subject is capable of producing a massive electrical current in a chain of targets by psychically stripping their bodies of electrons and then directing a focused lightning strike using their own body as a conductor. Very effective against robotic enemies but needs 60 seconds to recharge.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_ElectricityBlast</texPath>
+        <abilities><li>VFEA_ElectricityBlast</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>SpeedBurst</defName>
+        <label>speed burst</label>
+        <description>The subject is able to force themselves into a fight or flight response and receive a massive dose of adrenaline permissible through an enlarged adrenal gland.  This in turn allows them to strike twice as fast in melee combat, as well as quadruples their movement speed.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SpeedBurst</texPath>
+        <abilities><li>VFEA_SpeedBurst</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>AcidSpitting</defName>
+        <label>acid spitting</label>
+        <description>The subject has developed sacs of concentrated chemicals in their chest. The sacs are connected via tubes to the corners of their mouth and can be squirted out by contracting their chest when spitting, reacting with oxygen and forming globs of caustic jelly.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_AcidSpitting</texPath>
+        <abilities><li>VFEA_AcidBreath</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Fireball</defName>
+        <label>fireball</label>
+        <description>The subject has developed a sac of jellied chemfuel in the palm of their hand along with numerous glands. Once every 30 seconds, these glands extrude a glob of napalm into a closed fist which can then be tossed out to ignite with the air, before landing and setting a small area on fire.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Fireball</texPath>
+        <abilities><li>VFEA_Fireball</li></abilities>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Metamorphosis</defName>
+        <label>metamorphosis</label>
+        <description>The subject is capable of temporarily exerting a psychic force which forces their body to take the shape of what the mind is convinced it should be.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Metamorphosis</texPath>
+        <abilities><li>VFEA_MetamorphosisTurtle</li><li>VFEA_MetamorphosisWarg</li></abilities>
+    </VFEAncients.PowerDef>
+</Defs>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_VaultWall</defName>
+    <label>vault wall</label>
+    <description>A thick, triple-reinforced steel wall. Nearly indestructible.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/Linked/VaultWall</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/VaultWall/VaultWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>12000</MaxHitPoints>
+      <WorkToBuild>135</WorkToBuild>
+      <Flammability>0.0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <costList>
+	    <Steel>15</Steel>
+	</costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+	  <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Minimal</li>
+        </focusTypes>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="DoorBase">
+    <defName>VFEA_VaultDoor</defName>
+    <label>vault door</label>
+    <thingClass>VFEAncients.Building_VaultDoor</thingClass>
+    <description>A thick vault auto-door, which takes a very long time to open and close, but is nearly indestructible. If the power is cut, it will remain locked.</description>
+    <statBases>
+      <WorkToBuild>1100</WorkToBuild>
+	  <MaxHitPoints>10000</MaxHitPoints>
+	  <DoorOpenSpeed>0.2</DoorOpenSpeed>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/VaultDoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/TechistAutodoor_MenuIcon</uiIconPath>
+	<stuffCategories Inherit="False"/>
+	<useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <building>
+	  <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="VFEAncients.CompProperties_SolarPowerUp"/>
+    </comps>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	<designationCategory inherit="False"/>
+  </ThingDef>
+
+</Defs>
