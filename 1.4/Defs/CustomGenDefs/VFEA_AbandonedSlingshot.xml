@@ -47,27 +47,25 @@
       </li>
     </layouts>
     <terrainGrid>
-      <li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
-      </li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,BrokenAsphalt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
     </terrainGrid>
   </KCSG.StructureLayoutDef>
 </Defs>
