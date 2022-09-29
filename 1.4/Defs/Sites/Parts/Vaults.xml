@@ -39,13 +39,12 @@
         <li>VFEA_LootedVaultI</li>
         <li>VFEA_LootedVaultJ</li>
       </structureLayoutDefs>
-      <shouldRuin>true</shouldRuin>
       <filthTypes>
         <li>Filth_Dirt</li>
         <li>Filth_Trash</li>
         <li>Filth_RubbleBuilding</li>
       </filthTypes>
-      <ruinSymbolResolvers>
+      <symbolResolvers>
         <li>kcsg_randomdamage</li>
         <li>kcsg_randomfilth</li>
         <li>kcsg_randomterrainremoval</li>
@@ -53,7 +52,8 @@
         <li>kcsg_randomitemremoval</li>
         <li>kcsg_removeperishable</li>
         <li>kcsg_destroyrefuelablelightsource</li>
-      </ruinSymbolResolvers>
+      </symbolResolvers>
+      <preventBridgeable>true</preventBridgeable>
     </genStep>
   </GenStepDef>
 
@@ -74,6 +74,7 @@
         <li>VFEA_SealedVaultI</li>
         <li>VFEA_SealedVaultJ</li>
       </structureLayoutDefs>
+      <preventBridgeable>true</preventBridgeable>
     </genStep>
   </GenStepDef>
 
