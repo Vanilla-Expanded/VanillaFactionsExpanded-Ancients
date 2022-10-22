@@ -51,8 +51,9 @@ public static class PreceptPatches
     {
         if (__result && prisoner is Pawn { guest.interactionMode: { } } pawn && warden.Ideo != null)
         {
-            if (PrisonerHistory[pawn.guest.interactionMode] is { } eventDef)
+            if (PrisonerHistory.ContainsKey(pawn.guest.interactionMode) )
             {
+                var eventDef = PrisonerHistory[pawn.guest.interactionMode];
                 var ev = new HistoryEvent(eventDef, warden.Named(HistoryEventArgsNames.Doer), pawn.Named(HistoryEventArgsNames.Victim),
                     pawn.Faction.Named(HistoryEventArgsNames.AffectedFaction));
                 if (!ev.DoerWillingToDo()) __result = false;
@@ -81,7 +82,7 @@ public static class PreceptPatches
         if (!__result) return;
         if (PrisonerHistory.TryGetValue(mode, out var eventDef) &&
             !new HistoryEvent(eventDef, pawn.Named(HistoryEventArgsNames.Victim)).VictimWillingToDo()) __result = false;
-        if (pawn.MapHeld is { } map && PrisonerHistory[mode]?.GetModExtension<RequirePrecept>()?.precept is { } precept &&
+        if (pawn.MapHeld is { } map && PrisonerHistory.TryGetValue(mode)?.GetModExtension<RequirePrecept>()?.precept is { } precept &&
             !map.mapPawns.FreeColonistsSpawned.Any(p => p.workSettings.WorkIsActive(WorkTypeDefOf.Warden) && p.Ideo != null && p.Ideo.HasPrecept(precept)))
             __result = false;
     }
