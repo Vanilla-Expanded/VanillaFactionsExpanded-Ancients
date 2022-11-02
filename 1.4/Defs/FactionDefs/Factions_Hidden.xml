@@ -46,6 +46,13 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
     </disallowedMemes>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0.015</Sanguophage>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.6</Hussar>
+        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.1</Genie>
+      </xenotypeChances>
+    </xenotypeSet>
   </FactionDef>
 
   <FactionDef ParentName="AncientSoldiersBase">
