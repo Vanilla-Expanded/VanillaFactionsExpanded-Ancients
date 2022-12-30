@@ -89,6 +89,8 @@
             <li>
                 <glowRadius>12</glowRadius>
                 <glowColor>(252,187,113,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
             </li>
         </colorOptions>
       </li>
@@ -118,6 +120,8 @@
             <li>
                 <glowRadius>12</glowRadius>
                 <glowColor>(217,80,80,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
             </li>
         </colorOptions>
       </li>
@@ -139,6 +143,8 @@
             <li>
                 <glowRadius>12</glowRadius>
                 <glowColor>(80,217,80,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
             </li>
         </colorOptions>
       </li>
@@ -160,6 +166,8 @@
             <li>
                 <glowRadius>12</glowRadius>
                 <glowColor>(80,80,217,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
             </li>
         </colorOptions>
       </li>
