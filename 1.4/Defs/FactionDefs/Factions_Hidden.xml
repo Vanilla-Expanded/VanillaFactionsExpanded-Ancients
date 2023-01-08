@@ -6,6 +6,9 @@
     <pawnsPlural>ancient super-soldiers</pawnsPlural>
     <categoryTag>Ancient</categoryTag>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <displayInFactionSelection>false</displayInFactionSelection>
     <fixedName>Ancient soldiers</fixedName>
     <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
     <techLevel>Spacer</techLevel>
