@@ -32,6 +32,7 @@
       <VFEA_FailChance>0.5</VFEA_FailChance>
 	  <VFEA_InjectingTimeFactor>1.0</VFEA_InjectingTimeFactor>
     </statBases>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
     <size>(3,2)</size>
     <interactionCellOffset>(0,0,2)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
