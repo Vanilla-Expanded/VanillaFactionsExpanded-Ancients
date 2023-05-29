@@ -87,18 +87,21 @@ namespace VFEAncients
 
         // Make a method that will be easy to hook up into with harmony so other mods can go through and modify the contents,
         // as well as add forced rewards. If someone will want to, they could add a whole bartering system with this.
-        private static Dictionary<ThingDefCount, ThingDef> AddForcedItems(ThingOwner container)
+        private static List<ThingDefStuffCount> AddForcedItems(ThingOwner container)
         {
-            var dict = new Dictionary<ThingDefCount, ThingDef>();
+            var list = new List<ThingDefStuffCount>();
 
             if (ThingDefOf.Wastepack != null)
             {
                 var totalWastePacks = container.TotalStackCountOfDef(ThingDefOf.Wastepack);
                 if (totalWastePacks > 0)
-                    dict[new ThingDefCount(ThingDefOf.Wastepack, totalWastePacks)] = null;
+                {
+                    container.RemoveAll(t => t.def == ThingDefOf.Wastepack);
+                    list.Add(new ThingDefStuffCount(ThingDefOf.Wastepack, totalWastePacks));
+                }
             }
 
-            return dict;
+            return list;
         }
     }
 }
