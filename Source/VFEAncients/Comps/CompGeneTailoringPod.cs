@@ -110,6 +110,14 @@ namespace VFEAncients
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
+            if (innerContainer.Any)
+            {
+                foreach (var thing in innerContainer)
+                {
+                    yield return Building.SelectContainedItemGizmo(parent, thing);
+                }
+            }
+
             if (Occupant != null && HasFuel && PowerOn && ticksTillDone <= 0 && currentOperation == null)
             {
                 yield return new Command_Action
