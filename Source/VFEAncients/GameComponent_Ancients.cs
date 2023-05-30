@@ -68,6 +68,7 @@ namespace VFEAncients
                 info.Cell = DropCellFinder.TryFindDropSpotNear(info.Cell, info.Map, out var cell, false, false, false, VFEA_DefOf.VFEA_SupplyCrateIncoming.size) ? cell : DropCellFinder.TradeDropSpot(info.Map);
                 var things = ThingSetMakerDefOf.Reward_ItemsStandard.root.Generate(new ThingSetMakerParams
                     {podContentsType = PodContentsType.AncientFriendly, totalMarketValueRange = new FloatRange(info.Wealth, info.Wealth)});
+                if (info.ForcedItems != null && info.ForcedItems.Any()) things.AddRange(info.ForcedItems.Select(t => t.MakeThing()));
                 var skyfaller = SkyfallerMaker.SpawnSkyfaller(VFEA_DefOf.VFEA_SupplyCrateIncoming, things, info.Cell, info.Map);
                 Messages.Message("VFEAncients.SupplyCrateArrived".Translate(), skyfaller, MessageTypeDefOf.PositiveEvent);
             }
@@ -89,6 +90,7 @@ namespace VFEAncients
             public Map Map;
             public int ReturnTick;
             public float Wealth;
+            public List<ThingDefStuffCount> ForcedItems;
 
             public void ExposeData()
             {
@@ -96,7 +98,51 @@ namespace VFEAncients
                 Scribe_Values.Look(ref Wealth, "wealth");
                 Scribe_References.Look(ref Map, "map");
                 Scribe_Values.Look(ref Cell, "cell");
+                Scribe_Collections.Look(ref ForcedItems, "forcedItems", LookMode.Deep);
             }
+        }
+    }
+
+    public struct ThingDefStuffCount : IExposable
+    {
+        private ThingDef thingDef;
+        private ThingDef stuffDef;
+        private int count;
+
+        public ThingDef ThingDef => thingDef;
+        public ThingDef StuffDef => stuffDef;
+        public int Count => count;
+
+        public ThingDefStuffCount(ThingDef thingDef, int count) : this(thingDef, null, count)
+        {
+        }
+
+        public ThingDefStuffCount(ThingDef thingDef, ThingDef stuffDef, int count)
+        {
+            if (count < 0)
+            {
+                Log.Warning($"Tried to set {nameof(ThingDefStuffCount)} count to {count}. thingDef={thingDef}, stuffDef={stuffDef}");
+                count = 0;
+            }
+
+            this.thingDef = thingDef;
+            this.count = count;
+            this.stuffDef = stuffDef;
+        }
+
+        public Thing MakeThing()
+        {
+            var thing = ThingMaker.MakeThing(ThingDef, StuffDef);
+            if (Count >= 1)
+                thing.stackCount = Count;
+            return thing;
+        }
+
+        public void ExposeData()
+        {
+            Scribe_Defs.Look(ref thingDef, "thingDef");
+            Scribe_Defs.Look(ref stuffDef, "stuffDef");
+            Scribe_Values.Look(ref count, "count", 1);
         }
     }
 }

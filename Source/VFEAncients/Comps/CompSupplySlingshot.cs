@@ -67,6 +67,7 @@ namespace VFEAncients
             Transporter.TryRemoveLord(parent.Map);
             foreach (var compTransporter in transportersInGroup.ListFullCopy())
             {
+                var forcedItems = AddForcedItems(compTransporter.innerContainer);
                 Current.Game.GetComponent<GameComponent_Ancients>().SlingshotQueue.Enqueue(new GameComponent_Ancients.SlingshotInfo
                 {
                     Cell = parent.Map.listerThings
@@ -75,12 +76,32 @@ namespace VFEAncients
                         .FirstOrDefault()?.Position ?? parent.Position,
                     Map = parent.Map,
                     ReturnTick = Find.TickManager.TicksGame + TicksToReturn,
-                    Wealth = compTransporter.innerContainer.Sum(item => item.MarketValue * item.stackCount)
+                    Wealth = compTransporter.innerContainer.Sum(item => item.MarketValue * item.stackCount),
+                    ForcedItems =  forcedItems,
                 });
                 compTransporter.innerContainer.ClearAndDestroyContents();
                 compTransporter.CancelLoad(parent.Map);
                 SkyfallerMaker.SpawnSkyfaller(VFEA_DefOf.VFEA_SupplyCrateLeaving, compTransporter.parent.Position, parent.Map);
             }
+        }
+
+        // Make a method that will be easy to hook up into with harmony so other mods can go through and modify the contents,
+        // as well as add forced rewards. If someone will want to, they could add a whole bartering system with this.
+        private static List<ThingDefStuffCount> AddForcedItems(ThingOwner container)
+        {
+            var list = new List<ThingDefStuffCount>();
+
+            if (ThingDefOf.Wastepack != null)
+            {
+                var totalWastePacks = container.TotalStackCountOfDef(ThingDefOf.Wastepack);
+                if (totalWastePacks > 0)
+                {
+                    container.RemoveAll(t => t.def == ThingDefOf.Wastepack);
+                    list.Add(new ThingDefStuffCount(ThingDefOf.Wastepack, totalWastePacks));
+                }
+            }
+
+            return list;
         }
     }
 }
