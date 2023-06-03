@@ -144,7 +144,7 @@ namespace VFEAncients
                 };
             }
 
-            if (currentOperation != null && Prefs.DevMode)
+            if (currentOperation != null && DebugSettings.ShowDevGizmos)
             {
                 yield return new Command_Action
                 {
