@@ -69,7 +69,7 @@ public class CompSupplySlingshot : ThingComp
         foreach (var compTransporter in transportersInGroup.ListFullCopy())
         {
             var forcedItems = AddForcedItems(compTransporter.innerContainer);
-            Current.Game.GetComponent<GameComponent_Ancients>().SlingshotQueue.Enqueue(new GameComponent_Ancients.SlingshotInfo
+            Current.Game.GetComponent<GameComponent_Ancients>().SlingshotQueue.Add(new GameComponent_Ancients.SlingshotInfo
             {
                 Cell = parent.Map.listerThings
                    .ThingsOfDef(VFEA_DefOf.VFEA_SlingshotDropOffSpot)?
