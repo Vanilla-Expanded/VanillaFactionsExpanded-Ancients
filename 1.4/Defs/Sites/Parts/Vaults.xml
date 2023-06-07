@@ -6,6 +6,7 @@
     <description>A recently-discovered looted vault.</description>
     <siteTexture>UI/Map/VaultExpanding</siteTexture>
     <expandingIconTexture>UI/Map/QuestIcons/VaultLooted</expandingIconTexture>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
     <tags>
       <li>VFEA_LootedVault</li>
     </tags>
@@ -17,6 +18,7 @@
     <description>A recently-discovered sealed vault.</description>
     <siteTexture>UI/Map/VaultExpanding</siteTexture>
     <expandingIconTexture>UI/Map/QuestIcons/VaultSealed</expandingIconTexture>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
     <tags>
       <li>VFEA_SealedVault</li>
     </tags>
