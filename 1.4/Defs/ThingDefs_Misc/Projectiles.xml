@@ -95,7 +95,7 @@
 		<label>fireball</label>
 		<thingClass>Projectile_Explosive</thingClass>
 		<graphicData>
-			<texPath>Projectile/AcidSpit</texPath>
+			<texPath>Projectile/Fireball</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 		</graphicData>
