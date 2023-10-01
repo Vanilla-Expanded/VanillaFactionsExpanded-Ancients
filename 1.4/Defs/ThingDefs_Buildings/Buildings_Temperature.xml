@@ -93,7 +93,7 @@
     <blockWind>true</blockWind>
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
-    <blockLight>true</blockLight>
+    <blockLight>false</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
