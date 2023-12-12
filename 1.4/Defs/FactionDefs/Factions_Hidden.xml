@@ -53,7 +53,7 @@
       <xenotypeChances>
         <Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0.015</Sanguophage>
         <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.6</Hussar>
-        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.1</Genie>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.6</Baseliner>
       </xenotypeChances>
     </xenotypeSet>
   </FactionDef>
@@ -85,5 +85,12 @@
         </options>
       </li>
     </pawnGroupMakers>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0.015</Sanguophage>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.6</Hussar>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.6</Baseliner>
+      </xenotypeChances>
+    </xenotypeSet>
   </FactionDef>
 </Defs>
