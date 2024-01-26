@@ -149,7 +149,7 @@ namespace VFEAncients
                         Find.WindowStack.Add(new FloatMenu(options));
                     },
                     defaultLabel = "VFEAncients.StartOperation".Translate(),
-                    icon = StartOperationTex,
+                    icon = StartOperationTex
                 };
                 yield return new Command_Action
                 {
