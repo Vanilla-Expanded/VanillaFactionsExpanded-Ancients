@@ -72,5 +72,10 @@ namespace VFEAncients
         {
             return input.Split('\n').Where(str => !str.NullOrEmpty()).Join(delimiter: "\n");
         }
+
+        public static bool IsPowered(this Thing thing)
+        {
+            return !thing.TryGetComp<CompPowerTrader>(out var comp) || comp.PowerOn;
+        }
     }
 }
