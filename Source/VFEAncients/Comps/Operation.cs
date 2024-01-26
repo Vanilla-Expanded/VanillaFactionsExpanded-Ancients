@@ -59,6 +59,7 @@ namespace VFEAncients
 
         public virtual int MaxPowerLevel =>
             Pod.parent.TryGetComp<CompAffectedByFacilities>().LinkedFacilitiesListForReading.OfType<ThingWithComps>().SelectMany(t => t.AllComps)
+                .Where(t => t.parent.IsPowered())
                 .Select(comp => comp.props)
                 .OfType<CompProperties_Facility_PowerUnlock>().Append(new CompProperties_Facility_PowerUnlock {unlockedLevels = 3})
                 .Sum(props => props.unlockedLevels);
@@ -81,7 +82,7 @@ namespace VFEAncients
                     "VFEAncients.Empowered.Text".Translate(tracker.Pawn.NameShortColored, powers.Item1.LabelCap, powers.Item2.LabelCap), LetterDefOf.PositiveEvent, tracker.Pawn);
             };
             GenDebug.LogList(Pod.parent.GetComp<CompAffectedByFacilities>().LinkedFacilitiesListForReading);
-            if (Pod.parent.GetComp<CompAffectedByFacilities>().LinkedFacilitiesListForReading.Any(t => t.def == VFEA_DefOf.VFEA_NaniteSampler))
+            if (Pod.parent.GetComp<CompAffectedByFacilities>().LinkedFacilitiesListForReading.Any(t => t.def == VFEA_DefOf.VFEA_NaniteSampler && t.IsPowered()))
                 Find.WindowStack.Add(new Dialog_ChoosePowers(new List<Tuple<PowerDef, PowerDef>>
                 {
                     new(superpowers.RandomElement(), weaknessess.RandomElement()),
@@ -104,7 +105,7 @@ namespace VFEAncients
 
         public override bool CanRunOnPawn(Pawn pawn)
         {
-            return base.CanRunOnPawn(pawn) && Pod.parent.GetComp<CompAffectedByFacilities>().LinkedFacilitiesListForReading.Any(t => t.def == VFEA_DefOf.VFEA_NanotechRetractor) &&
+            return base.CanRunOnPawn(pawn) && Pod.parent.GetComp<CompAffectedByFacilities>().LinkedFacilitiesListForReading.Any(t => t.def == VFEA_DefOf.VFEA_NanotechRetractor && t.IsPowered()) &&
                    pawn.GetPowerTracker().AllPowers.Any(power => power.powerType == PowerType.Weakness);
         }
 
