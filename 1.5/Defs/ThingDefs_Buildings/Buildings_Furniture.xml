@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>VFEA_AncientBed</defName>
+    <label>ancient bed</label>
+    <description>An old-fashioned metal bed frame with a hard mattress and uncomfortable duvet.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/AncientSingleBed/AncientSingleBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>30</Mass>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.7</Comfort>
+      <ImmunityGainSpeedFactor>1.0</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>45</Steel>
+    </costList>
+    <building>
+      <bed_showSleeperBody>False</bed_showSleeperBody>
+      <bed_healPerDay>3</bed_healPerDay>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>42</pathCost>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <techLevel>Industrial</techLevel>
+    <uiIconScale>0.90</uiIconScale>
+    <designationCategory inherit="False"/>
+  </ThingDef>
+  
+  <ThingDef Abstract="True" Name="VFEA_WallLampBaseA" ParentName="LampBase">
+    <graphicData>
+      <texPath>Things/Building/Furniture/LampStanding</texPath>
+    </graphicData>
+    <tradeability>None</tradeability>
+    <costList>
+      <Steel>20</Steel>
+    </costList>
+    <statBases>
+      <Mass>4</Mass>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>30</basePowerConsumption>
+      </li>
+    </comps>
+	<designationCategory>Furniture</designationCategory>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEA_WallLampBaseA" Name="VFEA_WallLampBase">
+    <defName>VFEA_WallLamp</defName>
+    <label>wall lamp</label>
+    <description>An electrical wall lamp, ideal to light up corridors in a vault.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/VFEWallLamp/VFEWallLamp</texPath>
+	  <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+	<uiIconPath>Things/Building/Furniture/VFEWallLamp/VFEWallLamp_MenuIcon</uiIconPath>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="VanillaFurnitureExpanded.CompProperties_GlowerExtended">
+        <spawnGlowerInFacedCell>true</spawnGlowerInFacedCell>
+        <colorOptions>
+            <li>
+                <glowRadius>12</glowRadius>
+                <glowColor>(252,187,113,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
+            </li>
+        </colorOptions>
+      </li>
+	  <li Class="VanillaFurnitureExpanded.CompProperties_MountableOnWall"/>
+    </comps>
+    <building>
+	  <isInert>true</isInert>
+	  <isEdifice>false</isEdifice>
+	  <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+	<altitudeLayer>BuildingOnTop</altitudeLayer>
+    <placeWorkers>
+	  <li>VanillaFurnitureExpanded.PlaceWorker_OnWall</li>
+    </placeWorkers>
+	<defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+  
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>VFEA_AncientCryptosleepSuspender</defName>
+    <label>ancient cryptosleep suspender</label>
+    <description>An ancient medical pod that uses partial cryptosleep to slow down the degredation of wounds and help the body heal, although with the same side effects of cryptosleep, albeit at a lesser severity.\n\nThis structure was built by a long forgotten civilisation and the technology can no longer be replicated. It will never suffer breakdowns, and it operates more efficiently during solar flare incidents.</description>
+    <!-- <thingClass>AOMoreMedical.Building_CryptoBed</thingClass> -->
+    <graphicData>
+      <texPath>Things/Building/Furniture/AncientCryptosleepSuspender/AncientCryptosleepSuspender</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>2800</WorkToBuild>
+      <Mass>35</Mass>
+      <Flammability>1.0</Flammability>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.90</Comfort>
+      <ImmunityGainSpeedFactor>1.15</ImmunityGainSpeedFactor>
+      <MedicalTendQualityOffset>0.15</MedicalTendQualityOffset>
+      <SurgerySuccessChanceFactor>1.1</SurgerySuccessChanceFactor>
+      <Beauty>5</Beauty>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VitalsMonitor</li>
+          <li>VFEA_AncientVitalsMonitor</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.66</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>80</Steel>
+      <Uranium>2</Uranium>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <bed_healPerDay>30</bed_healPerDay>
+      <bed_defaultMedical>true</bed_defaultMedical>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <researchPrerequisites>
+      <li>Cryptosleep</li>
+    </researchPrerequisites>
+    <techLevel>Spacer</techLevel>
+    <uiIconScale>1</uiIconScale>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>VFEA_OutsideHomeArea</defName>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>1</stackLimit>
+    <workerClass>VFEAncients.ThoughtWorker_OutsideParanoid</workerClass>
+    <stages>
+      <li>
+        <label>outside of home area</label>
+        <description>I'm outside of my home area. Enemies are everywhere, I want to go back.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>VFEA_EmpathyCast</defName>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>1</stackLimit>
+    <durationDays>1</durationDays>
+    <showBubble>true</showBubble>
+    <stages>
+      <li>
+        <label>empathy</label>
+        <description>I feel good despite all the bad things.</description>
+        <baseMoodEffect>16</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

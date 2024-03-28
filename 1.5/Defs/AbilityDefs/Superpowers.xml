@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>VFEA_Fleck_PsychicDistortion</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.03</fadeInTime>
+    <fadeOutTime>0.05</fadeOutTime>
+    <solidTime>0.15</solidTime>
+    <growthRate>1.5</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>1.1</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>2.5</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>RE_Fleck_MatterDistortion</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1.13</fadeInTime>
+    <fadeOutTime>1.15</fadeOutTime>
+    <solidTime>3.8</solidTime>
+    <growthRate>1.5</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>1.1</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>2.5</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_SuperJump</defName>
+    <label>super jump</label>
+    <description>Jump over a short distance (10 cells) within line of sight to close the distance to the enemy.</description>
+    <abilityClass>VFEAncients.Ability_Jump</abilityClass>
+    <targetMode>Location</targetMode>
+    <range>10.9</range>
+    <iconPath>Powers/Superpowers/Power_SuperJump</iconPath>
+    <cooldownTime>180</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_Berserk</defName>
+    <label>berserk (telepathy)</label>
+    <description>Cast on an enemy to turn them on their allies.</description>
+    <abilityClass>VFEAncients.Ability_Berserk</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <range>19.9</range>
+    <iconPath>Powers/Superpowers/Power_TelepathyBerserk</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <castSound>PsychicShockLanceCast</castSound>
+    <targetFlecks>
+      <li>VFEA_Fleck_PsychicDistortion</li>
+    </targetFlecks>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_Calm</defName>
+    <label>calm (telepathy)</label>
+    <description>Cast on a friend to instantly snap them out of a mental break.</description>
+    <abilityClass>VFEAncients.Ability_Calm</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <range>19.9</range>
+    <iconPath>Powers/Superpowers/Power_TelepathyCalm</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <castSound>PsychicSoothePulserCast</castSound>
+    <targetFlecks>
+      <li>VFEA_Fleck_PsychicDistortion</li>
+    </targetFlecks>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_PsychicShock</defName>
+    <label>psychic shock</label>
+    <description>Fire a psychic shock on the enemy, rendering them unconscious.</description>
+    <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <range>19.9</range>
+    <iconPath>Powers/Superpowers/Power_PsychicShock</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <durationTime>7500</durationTime>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+        <hediff>PsychicShock</hediff>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_ClassMigration">
+        <oldClass>VFEAncients.Ability_Psychic</oldClass>
+      </li>
+    </modExtensions>
+    <targetFlecks>
+      <li>VFEA_Fleck_PsychicDistortion</li>
+    </targetFlecks>
+    <castSound>PsychicShockLanceCast</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_Invisibility</defName>
+    <label>invisibility</label>
+    <description>Turns invisible for 60 seconds.</description>
+    <abilityClass>VFEAncients.Ability</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_Invisibility</iconPath>
+    <cooldownTime>7200</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <casterHediff>VFEA_Invisiblity</casterHediff>
+    <castSound>VFEA_Invisibility</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_SelfControl</defName>
+    <label>self-control</label>
+    <description>When activated, immediately stop any mental breaks this pawn is under effect of.</description>
+    <abilityClass>VFEAncients.Ability_Calm</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_SelfControl</iconPath>
+    <cooldownTime>120000</cooldownTime>
+    <castTime>60</castTime>
+    <chance>0</chance>
+    <castSound>PsychicSoothePulserCast</castSound>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_ClassMigration">
+        <oldClass>VFEAncients.Ability_CalmSelf</oldClass>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_Overshield</defName>
+    <label>overshield</label>
+    <description>Generate an impenetrable shield around yourself that lasts 30 seconds.</description>
+    <abilityClass>VFECore.Abilities.Ability_Barrier</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_Overshield</iconPath>
+    <cooldownTime>10800</cooldownTime>
+    <castTime>60</castTime>
+    <chance>0</chance>
+    <power>10000000000000000</power>
+    <durationTime>3600</durationTime>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Shield">
+        <shieldTexPath>Other/ShieldBubble</shieldTexPath>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_OvershieldCast</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_SummonLightning</defName>
+    <label>summon lightning</label>
+    <description>Designate an area that will be blasted by lightning bolts.</description>
+    <abilityClass>VFECore.Abilities.Ability_SpawnBuilding</abilityClass>
+    <targetMode>Location</targetMode>
+    <iconPath>Powers/Superpowers/Power_SummonLightning</iconPath>
+    <cooldownTime>7200</cooldownTime>
+    <castTime>30</castTime>
+    <durationTime>120</durationTime>
+    <chance>0</chance>
+    <radius>1.9</radius>
+    <range>39.9</range>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Building">
+        <building>VFEA_LightningSpot</building>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_AnimalSpeech</defName>
+    <label>animal speech</label>
+    <description>When cast on a man hunting animal, calms it. When cast on a wild animal, tame it.</description>
+    <abilityClass>VFEAncients.Ability_Animal</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_AnimalSpeech</iconPath>
+    <cooldownTime>60000</cooldownTime>
+    <castTime>120</castTime>
+    <chance>0</chance>
+    <range>29.9</range>
+    <castSound>VFEA_AnimalSpeech</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_Empathy</defName>
+    <label>empathy</label>
+    <description>Cast on an ally to give them a strong mood buff lasting 24 hours.</description>
+    <abilityClass>VFEAncients.Ability_Thought</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_Empathy</iconPath>
+    <cooldownTime>60000</cooldownTime>
+    <castTime>120</castTime>
+    <chance>0</chance>
+    <range>14.9</range>
+    <modExtensions>
+      <li Class="VFEAncients.AbilityExtension_Thought">
+        <targetThought>VFEA_EmpathyCast</targetThought>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_Empathy_Cast</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_Heal</defName>
+    <label>heal others</label>
+    <description>Cast on an ally to cure them of all their wounds.</description>
+    <abilityClass>VFEAncients.Ability_Heal</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_HealOthers</iconPath>
+    <cooldownTime>60000</cooldownTime>
+    <castTime>120</castTime>
+    <chance>0</chance>
+    <range>14.9</range>
+    <castSound>DispensePaste</castSound>
+    <castFleck>VFEA_Fleck_HealSmoke</castFleck>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_GloryKill</defName>
+    <label>glory kill</label>
+    <description>Kill a random enemy in 1 cell radius, spawning large amount of blood everywhere, and removing a random amount of their limbs.</description>
+    <abilityClass>VFEAncients.Ability_GloryKill</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_GloryKill</iconPath>
+    <cooldownTime>300000</cooldownTime>
+    <castTime>0</castTime>
+    <chance>0</chance>
+    <castSound>VFEA_GloryKill_Cast</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_ElectromagneticPulse</defName>
+    <label>electro-magnetic pulse</label>
+    <description>Generate a large EMP explosion around yourself, disabling all electronics in radius.</description>
+    <abilityClass>VFECore.Abilities.Ability_Explode</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_ElectromagneticPulse</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Explosion">
+        <explosionDamageDef>EMP</explosionDamageDef>
+        <explosionRadius>39.9</explosionRadius>
+        <explosionDamageAmount>50</explosionDamageAmount>
+        <onCaster>true</onCaster>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_ClassMigration">
+        <oldClass>VFEAncients.Ability_Explode</oldClass>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_FireBreath</defName>
+    <label>fire breath</label>
+    <description>Spew fire up to 12 cells range in front of you, burning enemies and sending them running.</description>
+    <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_Firebreath</iconPath>
+    <cooldownTime>7200</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <range>12</range>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+        <projectile>VFEA_FireBreath</projectile>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_IceBreath_Shot</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_IceBreath</defName>
+    <label>ice breath</label>
+    <description>Spew ice up to 12 cells range in front of you, slowing enemies and applying high hypothermia.</description>
+    <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_Icebreath</iconPath>
+    <cooldownTime>7200</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <range>12</range>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+        <projectile>VFEA_IceBreath</projectile>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_IceBreath_Shot</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_LaserEyes</defName>
+    <label>laser eyes</label>
+    <description>Fire an incredibly powerful beam of energy from your eyes. Maximum range is 35.</description>
+    <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_LaserEyes</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>30</castTime>
+    <chance>0</chance>
+    <range>35</range>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+        <projectile>VFEA_LaserEyeBeam</projectile>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_LaserEyes_Shot</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_MatterPhasing</defName>
+    <label>matter phasing</label>
+    <description>Turn on to phase through walls for 10 seconds.</description>
+    <abilityClass>VFEAncients.Ability</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_MatterPhasing</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>0</castTime>
+    <chance>0</chance>
+    <castFleck>RE_Fleck_MatterDistortion</castFleck>
+    <castSound>VFEA_MatterPhasing_Sustainer</castSound>
+    <casterHediff>VFEA_Phasing</casterHediff>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_ElectricityBlast</defName>
+    <label>electricity blast</label>
+    <description>Fire an arc of lightning that bounced between enemies, burning them and disabling any electronics.</description>
+    <abilityClass>VFEAncients.Ability_ElectricBlast</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_ElectricityBlast</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>30</castTime>
+    <chance>0</chance>
+    <range>24.9</range>
+    <power>30</power>
+    <modExtensions>
+      <li Class="VFEAncients.AbilityExtension_ElectricityBlast">
+        <allowRepeat>false</allowRepeat>
+        <bounceCount>10</bounceCount>
+        <bounceDelay>30</bounceDelay>
+        <bouncePriority>Near</bouncePriority>
+        <damageDef>Flame</damageDef>
+        <explosionDamageDef>EMP</explosionDamageDef>
+        <impactRadius>2.9</impactRadius>
+        <targetFriendly>false</targetFriendly>
+        <addFire>true</addFire>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_SpeedBurst</defName>
+    <label>speed burst</label>
+    <description>4x Movement speed. Melee cooldown halved. Lasts 30 seconds.</description>
+    <abilityClass>VFEAncients.Ability</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_SpeedBurst</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>0</castTime>
+    <chance>0</chance>
+    <casterHediff>VFEA_SpeedBurst</casterHediff>
+    <castSound>VFEA_SpeedBurst</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_AcidBreath</defName>
+    <label>acid spitting</label>
+    <description>The subject has developed sacs of concentrated chemicals in their chest. The sacs are connected via tubes to the corners of their mouth and can be squirted out by contracting their chest when spitting, reacting with oxygen and forming globs of caustic jelly.</description>
+    <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_AcidSpitting</iconPath>
+    <cooldownTime>3600</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <range>12</range>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+        <projectile>VFEA_AcidSpit</projectile>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_AcidSpit_Shot</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_Fireball</defName>
+    <label>fireball</label>
+    <description>The subject has developed a sac of jellied chemfuel in the palm of their hand along with numerous glands. Once every 30 seconds, these glands extrude a glob of napalm into a closed fist which can then be tossed out to ignite with the air, before landing and setting a small area on fire.</description>
+    <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+    <targetMode>Pawn</targetMode>
+    <iconPath>Powers/Superpowers/Power_Fireball</iconPath>
+    <cooldownTime>1800</cooldownTime>
+    <castTime>15</castTime>
+    <chance>0</chance>
+    <range>12</range>
+    <modExtensions>
+      <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+        <projectile>VFEA_Fireball</projectile>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_MetamorphosisTurtle</defName>
+    <label>metamorphosis (turtle)</label>
+    <description>The subject is capable of temporarily exerting a psychic force which forces their body to take the shape of what the mind is convinced it should be. In this case, they adopt the form of a tortoise, with the same health, size and abilities, before their body snaps back into its actual shape after 60 seconds.</description>
+    <abilityClass>VFEAncients.Ability_MetaMorph</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_MetamorphosisTurtle</iconPath>
+    <cooldownTime>120000</cooldownTime>
+    <castTime>60</castTime>
+    <chance>0</chance>
+    <modExtensions>
+      <li Class="VFEAncients.AbilityExtension_MetaMorph">
+        <Target>Tortoise</Target>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_Metamorphosis</castSound>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>VFEA_MetamorphosisWarg</defName>
+    <label>metamorphosis (warg)</label>
+    <description>The subject is capable of temporarily exerting a psychic force which forces their body to take the shape of what the mind is convinced it should be. In this case, they adopt the form of a warg, with the same health, size and abilities, before their body snaps back into its actual shape after 60 seconds.</description>
+    <abilityClass>VFEAncients.Ability_MetaMorph</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Powers/Superpowers/Power_MetamorphosisWarg</iconPath>
+    <cooldownTime>120000</cooldownTime>
+    <castTime>60</castTime>
+    <chance>0</chance>
+    <modExtensions>
+      <li Class="VFEAncients.AbilityExtension_MetaMorph">
+        <Target>Warg</Target>
+      </li>
+    </modExtensions>
+    <castSound>VFEA_Metamorphosis</castSound>
+  </VFECore.Abilities.AbilityDef>
+</Defs>

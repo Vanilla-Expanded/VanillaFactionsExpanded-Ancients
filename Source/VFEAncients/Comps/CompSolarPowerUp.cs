@@ -13,7 +13,7 @@ public class CompSolarPowerUp : ThingComp
 
     public CompProperties_SolarPowerUp Props => props as CompProperties_SolarPowerUp;
 
-    public static bool PowerUpActive(Thing parent) => parent.Spawned && parent.Map.GameConditionManager.ElectricityDisabled;
+    public static bool PowerUpActive(Thing parent) => parent.Spawned && parent.Map.GameConditionManager.ElectricityDisabled(parent.Map);
     public static bool PowerUpActive(CompPower powerComp) => PowerUpActive(powerComp.parent) && SolarPoweredUp.Contains(powerComp);
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -74,13 +74,15 @@ public class StatPart_SolarPowerUp : StatPart
 {
     public override void TransformValue(StatRequest req, ref float val)
     {
-        if (req.HasThing && req.Thing.MapHeld.GameConditionManager.ElectricityDisabled && req.Thing.TryGetComp<CompSolarPowerUp>(out var solarPowerUp))
+        if (req.HasThing && req.Thing.MapHeld.GameConditionManager.ElectricityDisabled(req.Thing.Map)
+                         && req.Thing.TryGetComp<CompSolarPowerUp>(out var solarPowerUp))
             val *= solarPowerUp.Props.WorkSpeedMult;
     }
 
     public override string ExplanationPart(StatRequest req)
     {
-        if (req.HasThing && req.Thing.MapHeld.GameConditionManager.ElectricityDisabled && req.Thing.TryGetComp<CompSolarPowerUp>(out var solarPowerUp))
+        if (req.HasThing && req.Thing.MapHeld.GameConditionManager.ElectricityDisabled(req.Thing.Map)
+                         && req.Thing.TryGetComp<CompSolarPowerUp>(out var solarPowerUp))
             return "VFEAncients.SolarPowerUp".Translate() + ": x" + solarPowerUp.Props.WorkSpeedMult.ToStringPercent();
         return "";
     }

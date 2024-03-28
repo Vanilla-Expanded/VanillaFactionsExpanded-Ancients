@@ -5,10 +5,6 @@ namespace VFEAncients;
 
 public class LaserEyeBeam : Projectile_Explosive
 {
-    public override void Draw()
-    {
-    }
-
     public override void Impact(Thing hitThing, bool blockedByShield = false)
     {
         base.Impact(null, blockedByShield);
@@ -37,7 +33,7 @@ public class LaserEyeBeamDraw : ThingWithComps
         b = destination;
         ticksRemaining = LIFETIME;
         drawMatrix.SetTRS((a + b) / 2 + Vector3.up * AltitudeLayer.MoteOverhead.AltitudeFor(),
-            Quaternion.LookRotation(b - a), new Vector3(5f, 1f, (b - a).magnitude));
+            Quaternion.LookRotation(b - a), new(5f, 1f, (b - a).magnitude));
         GetComp<CompAffectsSky>()?.StartFadeInHoldFadeOut(10, LIFETIME / 2 - 10, LIFETIME / 2);
     }
 
@@ -46,7 +42,7 @@ public class LaserEyeBeamDraw : ThingWithComps
         base.SpawnSetup(map, respawningAfterLoad);
         if (respawningAfterLoad)
             drawMatrix.SetTRS((a + b) / 2 + Vector3.up * AltitudeLayer.MoteOverhead.AltitudeFor(),
-                Quaternion.LookRotation(b - a), new Vector3(5f, 1f, (b - a).magnitude));
+                Quaternion.LookRotation(b - a), new(5f, 1f, (b - a).magnitude));
     }
 
     public override void Tick()
@@ -55,7 +51,7 @@ public class LaserEyeBeamDraw : ThingWithComps
         if (ticksRemaining <= 0) Destroy();
     }
 
-    public override void Draw()
+    public override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
         Graphics.DrawMesh(MeshPool.plane10, drawMatrix,
             FadedMaterialPool.FadedVersionOf(BeamMat, Mathf.Sin((float)ticksRemaining / LIFETIME * Mathf.PI)), 0);

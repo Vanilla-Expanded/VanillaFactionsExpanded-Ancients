@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>SuperLearning</defName>
+        <label>super learning</label>
+        <description>The subject’s brain has become hyper elastic, allowing them to rapidly learn new skills with almost no effort.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SuperLearning</texPath>
+        <statFactors><GlobalLearningFactor>3</GlobalLearningFactor></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ToxicResistance</defName>
+        <label>toxic resistance</label>
+        <description>The subject has become a bastion against chemical effects. Any toxins that are absorbed are immediately processed by their liver, rendering them harmless and thus full immunity to toxic effects.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_ToxicResistance</texPath>
+        <statOffsets><ToxicResistance>1</ToxicResistance></statOffsets>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>PsychicResistance</defName>
+        <label>psychic resistance</label>
+        <description>The subject has become a fortress against psychic attacks. Any psychic effects are blocked due to organic webbing that surrounds and isolates their brain.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_PsychicResistance</texPath>
+        <statFactors><PsychicSensitivity>0</PsychicSensitivity></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Regeneration</defName>
+        <label>regeneration</label>
+        <description>The cellular regeneration rate in this subject has been greatly improved, allowing them to heal from almost any trauma as long as the limbs are still present.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Regeneration</texPath>
+        <statFactors><InjuryHealingFactor>10</InjuryHealingFactor></statFactors>
+		<effectDescription>All wounds heal themselves quite quickly. Cannot regrow limbs.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>SuperSpeed</defName>
+        <label>super speed</label>
+        <description>The muscles and reaction speed in this subject has been improved, allowing them to move 50% faster and be able to use this increase in speed without crashing into things.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SuperSpeed</texPath>
+        <statFactors><MoveSpeed>1.5</MoveSpeed></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>GeniusIntellect</defName>
+        <label>genius intellect</label>
+        <description>The subject’s mental processing speed has been vastly improved, resulting in excellent deductive and analytical abilities. This allows them to research new or existing ideas at triple the speed compared to before.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_GeniusIntellect</texPath>
+        <statFactors><ResearchSpeed>3</ResearchSpeed></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>WeaponExpert</defName>
+        <label>weapons expert</label>
+        <description>The reaction speed in this subject has been improved alongside their hand-eye coordination, halving their weapon warmup and cooldown.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_WeaponExpert</texPath>
+        <statFactors>
+            <AimingDelayFactor>0.5</AimingDelayFactor>
+            <VFEAncients_RangedCooldownFactor>0.5</VFEAncients_RangedCooldownFactor>
+        </statFactors>
+    </VFEAncients.PowerDef>
+</Defs>

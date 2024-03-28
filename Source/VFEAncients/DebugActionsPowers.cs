@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LudeonTK;
 using Verse;
 
 namespace VFEAncients;
@@ -16,8 +17,9 @@ public static class DebugActionsPowers
             new("*Fill Superpowers", DebugActionType.ToolMap, AddPowers(FillPowers(PowerType.Superpower))),
             new("*Fill Weaknesses", DebugActionType.ToolMap, AddPowers(FillPowers(PowerType.Weakness)))
         };
-        list.AddRange(DefDatabase<PowerDef>.AllDefs.OrderBy(def => def.label).Select(def =>
-            new DebugActionNode(def.label, DebugActionType.ToolMap, AddPowers(tracker => tracker.AddPower(def)))));
+        list.AddRange(DefDatabase<PowerDef>.AllDefs.OrderBy(def => def.label)
+           .Select(def =>
+                new DebugActionNode(def.label, DebugActionType.ToolMap, AddPowers(tracker => tracker.AddPower(def)))));
         return list;
     }
 
@@ -39,7 +41,7 @@ public static class DebugActionsPowers
             var count = ITab_Pawn_Powers.MaxPowers - tracker.AllPowers.Count(p => p.powerType == type);
             for (var i = 0; i < count; i++)
                 if (DefDatabase<PowerDef>.AllDefs.Where(power => power.powerType == type && !tracker.HasPower(power))
-                    .TryRandomElement(out var weak))
+                   .TryRandomElement(out var weak))
                     tracker.AddPower(weak);
         };
     }

@@ -2,16 +2,15 @@
 using RimWorld.Planet;
 using Verse;
 
-namespace VFEAncients
+namespace VFEAncients;
+
+public class Ability_Berserk : Ability
 {
-    public class Ability_Berserk : Ability
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        public override void Cast(params GlobalTargetInfo[] targets)
-        {
-            base.Cast(targets);
-            foreach (var target in targets)
-                if (target.HasThing && target.Thing is Pawn pawn)
-                    pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, true, false, null, false, false, true);
-        }
+        base.Cast(targets);
+        foreach (var target in targets)
+            if (target is { HasThing: true, Thing: Pawn pawn })
+                pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, true, false, false, null, false, false, true);
     }
 }

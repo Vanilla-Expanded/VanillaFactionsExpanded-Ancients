@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>VFEA_Play_AncientEducator</defName>
+    <driverClass>VFEAncients.JobDriver_SitFacingBuilding_Learning</driverClass>
+    <reportString>using ancient educator.</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyMaxParticipants>2</joyMaxParticipants>
+    <joyKind>Gaming_Cerebral</joyKind>
+    <taleOnCompletion>PlayedGame</taleOnCompletion>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>VFEA_Play_AncientFoosballTable</defName>
+    <driverClass>JobDriver_PlayBilliards</driverClass>
+    <reportString>playing foosball.</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyMaxParticipants>2</joyMaxParticipants>
+    <joySkill>Shooting</joySkill>
+    <joyXpPerTick>0.004</joyXpPerTick>
+    <joyKind>Gaming_Dexterity</joyKind>
+    <taleOnCompletion>PlayedGame</taleOnCompletion>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+</Defs>

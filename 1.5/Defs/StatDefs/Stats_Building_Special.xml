@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>VFEA_FailChance</defName>
+    <label>fail chance</label>
+    <description>The chance that a nanite injecting operation will fail.</description>
+    <category>Building</category>
+    <defaultBaseValue>0.5</defaultBaseValue>
+    <minValue>0</minValue>
+	<showIfUndefined>false</showIfUndefined>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>5000</displayPriorityInCategory>
+  </StatDef>
+  
+  <StatDef>
+    <defName>VFEA_InjectingTimeFactor</defName>
+    <label>injecting time factor</label>
+    <description>A multiplier on the speed of a gene-tailoring pod. It can be lowered by finding and installing super-nanite injector pumps.</description>
+    <category>Building</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0</minValue>
+	<showIfUndefined>false</showIfUndefined>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>5001</displayPriorityInCategory>
+  </StatDef>
+  
+</Defs>

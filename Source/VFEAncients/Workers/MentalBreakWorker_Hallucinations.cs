@@ -1,13 +1,10 @@
 ﻿using Verse;
 using Verse.AI;
 
-namespace VFEAncients
+namespace VFEAncients;
+
+public class MentalBreakWorker_Hallucinations : MentalBreakWorker
 {
-    public class MentalBreakWorker_Hallucinations : MentalBreakWorker
-    {
-        public override bool TryStart(Pawn pawn, string reason, bool causedByMood)
-        {
-            return pawn?.mindState?.mentalStateHandler?.TryStartMentalState(def.mentalState, reason, true, causedByMood, null, true) ?? false;
-        }
-    }
+    public override bool TryStart(Pawn pawn, string reason, bool causedByMood) =>
+        pawn?.mindState?.mentalStateHandler?.TryStartMentalState(def.mentalState, reason, true, causedByMood, false, null, true) ?? false;
 }

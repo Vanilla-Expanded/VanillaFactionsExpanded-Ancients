@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Dubs Bad Hygiene</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<success>Always</success>
+					<xpath>Defs/ThingDef[defName="VFEA_AncientWaterFilter" and not(comps)]</xpath>
+					<value>
+						<comps/>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<success>Always</success>
+					<xpath>Defs/ThingDef[defName="VFEA_AncientWaterFilter"]</xpath>
+					<value>
+						<tickerType>Normal</tickerType>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VFEA_AncientWaterFilter"]/comps</xpath>
+					<value>
+						<!-- these are the settings for the Save Our Ship 2 life support system. it might be better to nerf these values. -->
+						<li Class="DubsBadHygiene.CompProperties_Pipe">
+							<mode>Sewage</mode>
+						</li>
+						<li Class="DubsBadHygiene.CompProperties_WaterStorage">
+							<WaterStorageCap>1000</WaterStorageCap>
+							<Tickrate>5</Tickrate>
+							<Auto>true</Auto>
+							<AutoGenRate>1.0</AutoGenRate>
+						</li>
+						<li Class="DubsBadHygiene.CompProperties_SepticTank">
+							<TreatedPerDay>1000</TreatedPerDay>
+							<capacity>1000</capacity>
+							<priority>2</priority>
+						</li>
+						<li Class="DubsBadHygiene.CompProperties_WaterFiltration"/>
+						<!-- if it doesn't consume power, it's DEFINITELY overpowered. -->
+						<li Class="CompProperties_Power">
+							<compClass>CompPowerTrader</compClass>
+							<basePowerConsumption>800</basePowerConsumption>
+							<transmitsPower>false</transmitsPower>
+						</li>
+						<li Class="CompProperties_Flickable"/>
+						<!-- it's ancient, so it gets this -->
+						<li Class="VFEAncients.CompProperties_SolarPowerUp" />
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

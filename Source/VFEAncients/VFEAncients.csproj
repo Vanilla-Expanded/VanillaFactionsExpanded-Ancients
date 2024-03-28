@@ -18,7 +18,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\1.4\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -40,7 +40,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="HeavyWeapons">
-      <HintPath>..\..\..\VanillaExpandedFramework\1.4\Assemblies\HeavyWeapons.dll</HintPath>
+      <HintPath>..\..\..\VanillaExpandedFramework\1.5\Assemblies\HeavyWeapons.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -65,7 +65,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="VFECore">
-      <HintPath>..\..\..\VanillaExpandedFramework\1.4\Assemblies\VFECore.dll</HintPath>
+      <HintPath>..\..\..\VanillaExpandedFramework\1.5\Assemblies\VFECore.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -92,8 +92,10 @@
     <Compile Include="HarmonyPatches\SolarFlarePowerNet.cs" />
     <Compile Include="HarmonyPatches\StorytellerPatches.cs" />
     <Compile Include="Jobs\JobDriver_CarryToBioBattery.cs" />
+    <Compile Include="PawnRenderNode_Metamorphed.cs" />
     <Compile Include="PowerWorkers\PowerWorker.cs" />
     <Compile Include="PowerWorkers\PowerWorker_Damages.cs" />
+    <Compile Include="QuestNode_GetFactionOfDef.cs" />
     <Compile Include="ScenPart_ReconnectAllPowerBuildings.cs" />
     <Compile Include="Things\Building_AncientCryptosleepSarchophagus.cs" />
     <Compile Include="Things\Building_Cooler.cs" />
@@ -181,12 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
-      <Version>2.0.1</Version>
+      <Version>2.2.1</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.2.2</Version>
+      <Version>2.3.2</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

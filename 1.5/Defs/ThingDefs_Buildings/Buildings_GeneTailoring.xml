@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_GeneTailoringPod</defName>
+    <label>gene-tailoring pod</label>
+    <description>The primary element in the Ancients’ project of developing super soldiers, the Gene-tailoring Pod is the result of many dubious experiments in order to take on the Mechanoids. Soldiers are expected to lie in the pod and are then injected with single-use nanomachines designed to augment their physiology.\n\nThis is the main module responsible for creating super soldiers, but to improve the quality, efficiency and safety of the project, other equipment needs to be placed in the vicinity of the gene-tailoring pod.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/AncientGeneTailoringPod/AncientGeneTailoringPod</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(2.9,0.6,1.9)</volume>
+      </shadowData>
+      <drawSize>(4, 3)</drawSize>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+	<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>28000</WorkToBuild>
+      <Mass>150</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>-5</Beauty>
+      <VFEA_FailChance>0.5</VFEA_FailChance>
+	  <VFEA_InjectingTimeFactor>1.0</VFEA_InjectingTimeFactor>
+    </statBases>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <size>(3,2)</size>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <costList>
+      <Steel>300</Steel>
+      <Plasteel>125</Plasteel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <haulToContainerDuration>120</haulToContainerDuration>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+          <specialFiltersToDisallow>
+            <li>AllowPlantFood</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+          <disallowedCategories>
+            <li>EggsFertilized</li>
+          </disallowedCategories>
+          <disallowedThingDefs>
+            <li>InsectJelly</li>
+            <li>MealLavish</li>
+            <li>MealLavish_Veg</li>
+            <li>MealLavish_Meat</li>
+          </disallowedThingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <neverMultiSelect>true</neverMultiSelect>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VFEA_SuperNaniteInjectorPump</li>
+          <li>VFEA_SuperNaniteDialyzer</li>
+          <li>VFEA_SuperNaniteCentrifuge</li>
+          <li>VFEA_SimulationDrive</li>
+          <li>VFEA_GenomeStabilizer</li>
+          <li>VFEA_GenomeMacrothermometer</li>
+          <li>VFEA_StabilisedMucusInducer</li>
+          <li>VFEA_NanotechRetractor</li>
+          <li>VFEA_NaniteSampler</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>0.0</fuelConsumptionRate>
+        <fuelCapacity>5.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>VFEA_SuperNanites</li>
+          </thingDefs>
+        </fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <minimumFueledThreshold>1.0</minimumFueledThreshold>
+        <autoRefuelPercent>1.0</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+      </li>
+      <li>
+        <compClass>VFEAncients.CompGeneTailoringPod</compClass>
+      </li>
+	  <li Class="VFEAncients.CompProperties_SolarPowerUp" />
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase" Name="GeneTailoringLinkableBase" Abstract="True">
+    <statBases>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>0</Beauty>
+    </statBases>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>22</pathCost>
+    <blockWind>false</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <neverMultiSelect>false</neverMultiSelect>
+	<rotatable>false</rotatable>
+	<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Flickable" />
+	  <li Class="VFEAncients.CompProperties_SolarPowerUp" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_SuperNaniteInjectorPump</defName>
+    <label>super-nanite injector pump</label>
+    <description>A small element that links to the Gene-tailoring Pod that allows it to store and extract a dose of super-nanites, effectively shaving a day off of the process. No more than 10 can be linked as at least 5 days are needed for the patient to process and accept the transition.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will cut one day from the injection time.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/SuperNaniteInjectorPump/SuperNaniteInjectorPump</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.9,0.2,0.9)</volume>
+      </shadowData>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>10</Mass>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Plasteel>25</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <VFEA_InjectingTimeFactor>-0.065</VFEA_InjectingTimeFactor>
+        </statOffsets>
+        <maxSimultaneous>10</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_SuperNaniteDialyzer</defName>
+    <label>super-nanite dialyzer</label>
+    <description>An element designed to compare super-nanites to each other and remove weaker, competing strains from compromising the transition process. Ideally operating in pairs, each comparing two strains against each other and lowering the chances of side effects by 10% in total.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will cut reduce the chances of experiment failure by 5%.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/AncientSuperNaniteDialyzer/AncientSuperNaniteDialyzer</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(2.9,0.4,0.9)</volume>
+      </shadowData>
+      <drawSize>(3.5, 1.5)</drawSize>
+    </graphicData>
+	<rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>25</Mass>
+    </statBases>
+    <size>(3,1)</size>
+    <costList>
+      <Plasteel>40</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <VFEA_FailChance>-0.05</VFEA_FailChance>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+    <defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_SuperNaniteCentrifuge</defName>
+    <label>super-nanite centrifuge</label>
+    <description>A structure designed to remove compromised or redundant super-nanites. Ideally operating in pairs, allowing them to double check viability and lowering the chances of side effects by 10% in total.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will cut reduce the chances of experiment failure by 5%.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/AncientSuperNaniteCentrifuge/AncientSuperNaniteCentrifuge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(1.9,0.3,1.9)</volume>
+      </shadowData>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>30</Mass>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Plasteel>30</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <VFEA_FailChance>-0.05</VFEA_FailChance>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_SimulationDrive</defName>
+    <label>simulation drive</label>
+    <description>A compact supercomputer that runs simulations of the host DNA reacting to the super-nanites, reprogramming them as more optimal transition processes are calculated, reducing complications by roughly 1%. Any more than 10 computers will result in unnecessary duplications.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will cut reduce the chances of experiment failure by 1%.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/AncientSimulationDrive/AncientSimulationDrive</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(0.9,0.2,0.9)</volume>
+      </shadowData>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+	<rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>10</Mass>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Plasteel>25</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>75</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <VFEA_FailChance>-0.01</VFEA_FailChance>
+        </statOffsets>
+        <maxSimultaneous>10</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+    <defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_GenomeStabilizer</defName>
+    <label>genome stabilizer</label>
+    <description>A large element that performs reactionary measures to adverse effects during transition, attempting to stabilise the genome and reduce negative effects. Ideally operating in pairs, each one double checking the other to ensure success and lowering the chances of side effects by 20% in total.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will cut reduce the chances of experiment failure by 10%.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/AncientGenomeStabilizer/AncientGenomeStabilizer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(2.9,0.3,2.9)</volume>
+      </shadowData>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>30</Mass>
+    </statBases>
+    <size>(3,3)</size>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <VFEA_FailChance>-0.1</VFEA_FailChance>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_SuperNaniteContainment</defName>
+    <label>super-nanite containment</label>
+    <thingClass>Building_Storage</thingClass>
+    <description>A shelf that is capable of stabilizing doses of super-nanites for future use, as otherwise they are incredibly energetic and volatile. Prevents deterioration of Super-nanites.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/SuperNaniteContainment/SuperNaniteContainment</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(0.9,0.2,0.9)</volume>
+      </shadowData>
+      <drawSize>(1.5, 1.5)</drawSize>
+    </graphicData>
+	<rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>10</Mass>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>VFEA_SuperNanites</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <thingDefs>
+            <li>VFEA_SuperNanites</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <placeWorkers Inherit="False" />
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+    </comps>
+    <defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_GenomeMacrothermometer</defName>
+    <label>genome macrothermometer</label>
+    <description>An extension that was developed after several successful cases with the Gene-tailoring Pod, the Genome Macrothermometer was designed to further enhance successful super-soldiers. The primary function is for it to help prevent a thermal runaway, or fiery meat explosion, from occuring by having the super-nanites only interact with parts of the genomes that weren’t altered on the first Transition Phases.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will allow unlocking an additional ability over the limit of 3.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/GenomeMacrothermometer/GenomeMacrothermometer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(1.9,0.3,1.9)</volume>
+      </shadowData>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>35</Mass>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Plasteel>40</Plasteel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="VFEAncients.CompProperties_Facility_PowerUnlock">
+        <unlockedLevels>1</unlockedLevels>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">
+    <defName>VFEA_StabilisedMucusInducer</defName>
+    <label>stabilised mucus inducer</label>
+    <description>Whilst regular Gene Tailoring works by altering the genes as a whole, some scientists managed to create a work-around by instead creating small, isolated environments within which the alterations can occur independently. Thus, this machine is designed to insert partitions in the form of stabilised mucus that is completely non-reactive and doesn’t cause rejection in the patient’s body, becoming a permanent part of their genomes.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will allow unlocking an additional ability over the limit of 3.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/StabilisedMucusInducer/StabilisedMucusInducer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(1.9,0.3,1.9)</volume>
+      </shadowData>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>35</Mass>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+      <li Class="VFEAncients.CompProperties_Facility_PowerUnlock">
+        <unlockedLevels>1</unlockedLevels>
+        <maxSimultaneous>1</maxSimultaneous>
+		    <maxDistance>16</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GeneTailoringLinkableBase">    <!-- needs some C# -->
+    <defName>VFEA_NanotechRetractor</defName>
+    <label>nanotech retractor</label>
+    <description>A specialized device that allows genetic remodelling in a patient to try and remove a negative effect generated by the gene therapy. The process is similar and requires another dose of super-nanites, however in this case they are used in an attempt to undo very specific effects whilst leaving the benefits untouched. In the case of multiple downsides, the results of the transition process is purely up to chance.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will allow to perform a new 'Remove Weakness' operation.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/NanotechRetractor/NanotechRetractor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(2.9,0.5,2.9)</volume>
+      </shadowData>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>50</Mass>
+    </statBases>
+    <size>(3,3)</size>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="GeneTailoringLinkableBase">    <!-- needs some C# -->
+    <defName>VFEA_NaniteSampler</defName>
+    <label>nanite sampler</label>
+    <description>A curious machine that neither harms nor aids the transformation process. Instead it runs sample simulations alongside the operation, using real-time data to provide actual data. When the conversion process is nearing success, it creates a binary choice for the user to select. Once selected, the machine then performs some minor alterations and creates a dominant and recessive gene. In layman’s terms, this allows a successful operation to decide on one of two sets of abilities.\n\nAn add-on to gene-tailoring pod, this device needs to be placed in close proximity to it and will allow to select between two sets of abilities upon succesfull operation.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/NaniteSampler/NaniteSampler</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(2.9,0.5,2.9)</volume>
+      </shadowData>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Mass>75</Mass>
+    </statBases>
+    <size>(3,3)</size>
+    <costList>
+      <Plasteel>150</Plasteel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+      <ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>800</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>16</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

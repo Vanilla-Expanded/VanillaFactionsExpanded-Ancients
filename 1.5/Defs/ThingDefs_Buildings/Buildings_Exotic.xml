@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="CrateBase">
+    <defName>VFEA_LargeSupplyCrate</defName>
+    <label>large hermetic crate</label>
+    <description>A large crate with some building resources and components. Hacking it takes a short time and there is no risk of danger.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <canOverlapZones>true</canOverlapZones>
+    <fillPercent>1.0</fillPercent>
+    <size>(3,3)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/LargeSupplyCrate/LargeSupplyCrate</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(3.0, 1.0, 3.0)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <killedLeavings>
+      <Steel>50</Steel>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </killedLeavings>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(-1,0,2)</interactionCellOffset>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>2500</defence>  <!-- ~ 1 hour for 10 intellect hacker -->
+        <effectHacking>HackingTerminal</effectHacking>
+      </li>
+      <li Class="CompProperties_EmptyStateGraphic">
+        <graphicData>
+         <texPath>Things/Building/Misc/LargeSupplyCrateOpen/LargeSupplyCrateOpen</texPath>
+         <graphicClass>Graphic_Multi</graphicClass>
+         <drawSize>(3,3)</drawSize>
+         <shadowData>
+           <volume>(3.0, 1.0, 3.0)</volume>
+          </shadowData>
+        </graphicData>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
+      </li>
+    </comps>
+	<defaultPlacingRot>South</defaultPlacingRot>
+	<uiIconScale>0.8</uiIconScale>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientBroadcastStation</defName>
+    <label>ancient broadcast station</label>
+    <description>An old long range communication station often found within the ancient vaults. It can be hacked in order to find a location of the next vault.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <canOverlapZones>true</canOverlapZones>
+    <fillPercent>1.0</fillPercent>
+    <size>(3,3)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/AncientBroadcastStation/AncientBroadcastStation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(3.0, 1.0, 3.0)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <killedLeavings>
+      <Steel>100</Steel>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </killedLeavings>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>7500</defence>  <!-- ~ 3 hours for 10 intellect hacker -->
+        <effectHacking>HackingTerminal</effectHacking>
+      </li>
+      <li Class="VFEAncients.CompProperties_Quest">
+        <compClass>VFEAncients.CompQuestOnHacked</compClass>
+        <Quest>VFEA_OpportunitySite_SealedVault</Quest>
+        <hackedGraphic>
+          <texPath>Things/Building/Misc/AncientBroadcastStation/AncientBroadcastStationOpen</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(3,3)</drawSize>
+          <shadowData>
+            <volume>(3.0, 1.0, 3.0)</volume>
+           </shadowData>
+        </hackedGraphic>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(217,112,33,0)</glowColor>
+      </li>
+    </comps>
+	<defaultPlacingRot>South</defaultPlacingRot>
+	<uiIconScale>0.8</uiIconScale>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_PipelineJunction</defName>
+    <label>pipeline junction</label>
+    <description>A large underground chemfuel pipeline connects to an exterior port in this place. When hacked, it yields large quantities of chemfuel, but hacking itself can take a while and even summon infestations.</description>
+    <thingClass>VFEAncients.Building_PipelineJunction</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <canOverlapZones>true</canOverlapZones>
+    <fillPercent>1.0</fillPercent>
+    <size>(3,3)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/PipelineJunction/PipelineJunction</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(3.0, 1.0, 3.0)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <killedLeavings>
+      <Steel>100</Steel>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </killedLeavings>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>12500</defence>  <!-- ~ 5 hours for 10 intellect hacker -->
+        <effectHacking>HackingTerminal</effectHacking>
+      </li>
+      <li Class="CompProperties_EmptyStateGraphic">
+        <graphicData>
+         <texPath>Things/Building/Misc/PipelineJunction/PipelineJunctionOpen</texPath>
+         <graphicClass>Graphic_Single</graphicClass>
+         <drawSize>(3,3)</drawSize>
+         <shadowData>
+           <volume>(3.0, 1.0, 3.0)</volume>
+          </shadowData>
+        </graphicData>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
+      </li>
+    </comps>
+	<uiIconScale>0.8</uiIconScale>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_LargeLockedDoor</defName>
+    <label>large locked door</label>
+    <description>A large Vault door, often found in the entrance room. Due to self-preservation mechanism, the door is permanently locked and requires some degree of hacking to open.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <canOverlapZones>true</canOverlapZones>
+    <fillPercent>1.0</fillPercent>
+    <size>(3,1)</size>
+    <graphicData>
+      <texPath>Things/Building/Door/LargeLockedDoor/LargeLockedDoor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,1)</drawSize>
+      <shadowData>
+        <volume>(3.0, 0.2, 1.0)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>20000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <killedLeavings>
+      <Steel>150</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </killedLeavings>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <hasInteractionCell>false</hasInteractionCell>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+	  <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>25000</defence>  <!-- ~ 10 hours for 10 intellect hacker -->
+        <effectHacking>HackingTerminal</effectHacking>
+      </li>
+      <li><compClass>VFEAncients.CompDisappearOnHacked</compClass></li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
+      </li>
+    </comps>
+	<uiIconScale>0.8</uiIconScale>
+	<defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+  
+  <ThingDef ParentName="CrateBase">
+    <defName>VFEA_AncientSupplyCrate</defName>
+    <label>ancient supply crate</label>
+    <description>An ancient crate with some building resources and components that deployed using a parachute. Hacking it takes a short time and may cause a raid, but it's bound to contain ancient technology.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <canOverlapZones>true</canOverlapZones>
+    <fillPercent>1.0</fillPercent>
+    <size>(2,2)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/AncientSupplyCrate/AncientSupplyCrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(3.0, 1.0, 3.0)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <killedLeavings>
+      <Steel>50</Steel>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </killedLeavings>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(1,0,-1)</interactionCellOffset>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>15000</defence>  <!-- ~ 6 hours for 10 intellect hacker -->
+        <effectHacking>HackingTerminal</effectHacking>
+      </li>
+      <li Class="VFEAncients.CompProperties_SupplyCrate">
+        <raidChance>0.5</raidChance>
+        <expiryTicks>120000</expiryTicks>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
+      </li>
+    </comps>
+	<uiIconScale>0.8</uiIconScale>
+  </ThingDef>
+
+</Defs>

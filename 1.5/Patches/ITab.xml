@@ -1,0 +1,19 @@
+<Patch>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[@Name="BasePawn"]/inspectorTabs</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[@Name="BasePawn"]</xpath>
+            <value>
+                <inspectorTabs>
+                    <li>VFEAncients.ITab_Pawn_Powers</li>
+                </inspectorTabs>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[@Name="BasePawn"]/inspectorTabs</xpath>
+            <value>
+                <li>VFEAncients.ITab_Pawn_Powers</li>
+            </value>
+        </match>
+    </Operation>
+</Patch>

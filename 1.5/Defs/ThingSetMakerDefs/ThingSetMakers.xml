@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingSetMakerDef>
+    <defName>VFEA_Contents_SuuplyDrop</defName>
+    <root Class="VFEAncients.ThingSetMaker_SubNodes">
+        <subNodes>
+            <li Class="VFEAncients.ThingSetMaker_Some">
+                <count>1</count>
+                <choices>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>Steel</def>
+                        <count>350</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>Plasteel</def>
+                        <count>100</count>
+                    </li>
+                </choices>
+            </li>
+            <li Class="VFEAncients.ThingSetMaker_Some">
+                <count>1</count>
+                <choices>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>ComponentIndustrial</def>
+                        <count>15</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>ComponentSpacer</def>
+                        <count>5</count>
+                    </li>
+                </choices>
+            </li>
+            <li Class="VFEAncients.ThingSetMaker_Some">
+                <count>1</count>
+                <choices>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>MedicineIndustrial</def>
+                        <count>10</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>MealSurvivalPack</def>
+                        <count>20</count>
+                    </li>
+                </choices>
+            </li>
+            <li Class="VFEAncients.ThingSetMaker_Some">
+                <count>1</count>
+                <choices>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>Chemfuel</def>
+                        <count>100</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>Chemfuel</def>
+                        <count>200</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>Chemfuel</def>
+                        <count>350</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>WoodLog</def>
+                        <count>100</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>WoodLog</def>
+                        <count>200</count>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>WoodLog</def>
+                        <count>350</count>
+                    </li>
+                </choices>
+            </li>
+            <li Class="VFEAncients.ThingSetMaker_Some">
+                <count>3</count>
+                <choices>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientSolarGenerator</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientChemfuelPoweredGenerator</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientGeothermalPlant</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientBattery</def>
+                    </li>
+                    <!--<li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientBioBatteryTank</def>
+                    </li>-->
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientHydroponicFarm</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_Turret_AncientSecurityTurret</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientCryptosleepSuspender</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientVitalsMonitor</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientCookingStation</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientWorkshop</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientBroadcastStation</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientHeater</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientCooler</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_AncientEducator</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_GeneTailoringPod</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_SuperNaniteInjectorPump</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_SuperNaniteDialyzer</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_SuperNaniteCentrifuge</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_SimulationDrive</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_GenomeStabilizer</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_SuperNaniteContainment</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_GenomeMacrothermometer</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_StabilisedMucusInducer</def>
+                    </li>
+                    <li Class="VFEAncients.ThingSetMaker_Fixed">
+                        <def>VFEA_NanotechRetractor</def>
+                    </li>
+                </choices>
+            </li>
+        </subNodes>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>VFEA_FireBreath</defName>
+		<label>fire breath</label>
+		<thingClass>VFECore.FlamethrowProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectile/FireBreath</texPath>
+			<texPathFadeOut>Projectile/FireBreathFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<speed>45</speed>
+			<damageAmountBase>12</damageAmountBase>
+		</projectile>
+
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>0.85</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>1</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>VFEA_IceBreath</defName>
+		<label>ice breath</label>
+		<thingClass>VFEAncients.IceProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectile/IceBreath</texPath>
+			<texPathFadeOut>Projectile/IceBreathFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Frostbite</damageDef>
+			<speed>45</speed>
+			<damageAmountBase>12</damageAmountBase>
+		</projectile>
+
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>0.85</widthScaleFactor>
+		<heightScaleFactor>2.5</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>1</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFEA_LaserEyeBeam</defName>
+		<label>laser eye beam</label>
+		<thingClass>VFEAncients.LaserEyeBeam</thingClass>
+		<graphicData>
+			<texPath>Projectile/LaserEyeBeam</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<drawerType>None</drawerType>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>500</damageAmountBase>
+			<explosionRadius>5.9</explosionRadius>
+			<armorPenetrationBase>5</armorPenetrationBase>
+			<speed>10000</speed>
+			<flyOverhead>false</flyOverhead>
+		</projectile>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFEA_AcidSpit</defName>
+		<label>spit acid</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Projectile/AcidSpit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>VFEA_AcidBreath</damageDef>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBase>2</armorPenetrationBase>
+			<explosionRadius>1.9</explosionRadius>
+			<speed>100</speed>
+			<flyOverhead>false</flyOverhead>
+		</projectile>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFEA_Fireball</defName>
+		<label>fireball</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Projectile/Fireball</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<damageAmountBase>3</damageAmountBase>
+			<explosionRadius>1.9</explosionRadius>
+			<armorPenetrationBase>0.1</armorPenetrationBase>
+			<speed>200</speed>
+			<flyOverhead>false</flyOverhead>
+		</projectile>
+	</ThingDef>
+</Defs>

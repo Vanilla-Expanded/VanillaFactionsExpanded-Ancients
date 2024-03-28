@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PrisonerInteractionModeDef>
+    <defName>VFEA_Interrogate</defName>
+    <label>interrogate</label>
+    <listOrder>35</listOrder>
+    <description>Wardens will use various methods to extract information about nearby locations of interest from the prisoner.</description>
+  </PrisonerInteractionModeDef>
+
+  <PawnRenderTreeDef>
+    <defName>VFEA_Metamorphed</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <nodeClass>VFEAncients.PawnRenderNode_Metamorphed</nodeClass>
+          <useRottenColor>true</useRottenColor>
+          <children>
+            <li Class="PawnRenderNodeProperties_Overlay">
+              <debugLabel>Wounds - pre apparel</debugLabel>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <baseLayer>8</baseLayer>
+            </li>
+            <li Class="PawnRenderNodeProperties_Overlay">
+              <debugLabel>Wounds - post apparel</debugLabel>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayOverApparel>true</overlayOverApparel>
+              <overlayLayer>Body</overlayLayer>
+              <baseLayer>30</baseLayer>
+            </li>
+            <li Class="PawnRenderNodeProperties_Overlay">
+              <debugLabel>Firefoam</debugLabel>
+              <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <baseLayer>40</baseLayer>
+            </li>
+            <li Class="PawnRenderNodeProperties_Carried">
+              <debugLabel>Weapon/carried thing</debugLabel>
+              <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+</Defs>

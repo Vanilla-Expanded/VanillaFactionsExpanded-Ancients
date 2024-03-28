@@ -15,7 +15,7 @@ public static class PreceptPatches
     {
         LongEventHandler.ExecuteWhenFinished(() =>
         {
-            PrisonerHistory = new Dictionary<PrisonerInteractionModeDef, HistoryEventDef>();
+            PrisonerHistory = new();
             foreach (var def in DefDatabase<HistoryEventDef>.AllDefs)
                 if (def.TryGetModExtension<RelatedInteractionMode>(out var ext) && ext.related != null)
                     PrisonerHistory[ext.related] = def;
@@ -25,16 +25,17 @@ public static class PreceptPatches
     public static void Do(Harmony harm)
     {
         harm.Patch(AccessTools.Method(typeof(Ideo), nameof(Ideo.MemberWillingToDo)),
-            new HarmonyMethod(typeof(PreceptPatches), nameof(MemberWillingToDo_Prefix)));
+            new(typeof(PreceptPatches), nameof(MemberWillingToDo_Prefix)));
         harm.Patch(AccessTools.Method(typeof(WorkGiver_Warden), "ShouldTakeCareOfPrisoner"),
-            postfix: new HarmonyMethod(typeof(PreceptPatches), nameof(ShouldTakeCareOfPrisoner_Postfix)));
-        harm.Patch(typeof(ITab_Pawn_Visitor).GetNestedTypes(AccessTools.all).SelectMany(AccessTools.GetDeclaredMethods)
-                .First(m => m.Name.Contains("FillTab") && m.Name.Contains("CanUsePrisonerInteractionMode")),
-            postfix: new HarmonyMethod(typeof(PreceptPatches), nameof(CanUseInteractionMode_Postfix)));
+            postfix: new(typeof(PreceptPatches), nameof(ShouldTakeCareOfPrisoner_Postfix)));
+        harm.Patch(typeof(ITab_Pawn_Visitor).GetNestedTypes(AccessTools.all)
+               .SelectMany(AccessTools.GetDeclaredMethods)
+               .First(m => m.Name.Contains("DoPrisonerTab") && m.Name.Contains("CanUsePrisonerInteractionMode")),
+            postfix: new(typeof(PreceptPatches), nameof(CanUseInteractionMode_Postfix)));
         harm.Patch(AccessTools.Method(typeof(ITab_Pawn_Visitor), "InteractionModeChanged"),
-            postfix: new HarmonyMethod(typeof(PreceptPatches), nameof(InteractionModeChanged_Postfix)));
+            postfix: new(typeof(PreceptPatches), nameof(InteractionModeChanged_Postfix)));
         harm.Patch(AccessTools.Method(typeof(JobGiver_ReactToCloseMeleeThreat), "TryGiveJob"),
-            postfix: new HarmonyMethod(typeof(PreceptPatches), nameof(NoFightingInterrogator)));
+            postfix: new(typeof(PreceptPatches), nameof(NoFightingInterrogator)));
     }
 
     public static void NoFightingInterrogator(Pawn pawn, ref Job __result)
@@ -49,9 +50,9 @@ public static class PreceptPatches
 
     public static void ShouldTakeCareOfPrisoner_Postfix(Pawn warden, Thing prisoner, ref bool __result)
     {
-        if (__result && prisoner is Pawn { guest.interactionMode: { } } pawn && warden.Ideo != null)
+        if (__result && prisoner is Pawn { guest.interactionMode: not null } pawn && warden.Ideo != null)
         {
-            if (PrisonerHistory.ContainsKey(pawn.guest.interactionMode) )
+            if (PrisonerHistory.ContainsKey(pawn.guest.interactionMode))
             {
                 var eventDef = PrisonerHistory[pawn.guest.interactionMode];
                 var ev = new HistoryEvent(eventDef, warden.Named(HistoryEventArgsNames.Doer), pawn.Named(HistoryEventArgsNames.Victim),
@@ -93,14 +94,15 @@ public static class PreceptPatches
             !map.mapPawns.FreeColonistsSpawned.Any(pawn =>
                 pawn.workSettings.WorkIsActive(WorkTypeDefOf.Warden) &&
                 new HistoryEvent(PrisonerHistory[PrisonerInteractionModeDefOf.AttemptRecruit], pawn.Named(HistoryEventArgsNames.Doer)).DoerWillingToDo()))
-            Messages.Message("VFEAncients.MessageNoWardenCapableOfRecruitment".Translate(), new LookTargets(__instance.SelPawn), MessageTypeDefOf.CautionInput,
+            Messages.Message("VFEAncients.MessageNoWardenCapableOfRecruitment".Translate(), new(__instance.SelPawn), MessageTypeDefOf.CautionInput,
                 false);
     }
 
     public static bool VictimWillingToDo(this HistoryEvent ev)
     {
         var pawn = ev.args.GetArg<Pawn>(HistoryEventArgsNames.Victim);
-        return pawn?.Ideo == null || pawn.Ideo.PreceptsListForReading.SelectMany(precept => precept.def.comps).OfType<IVictimPreceptComp>()
-            .All(pc => pc.VictimWillingToDo(ev));
+        return pawn?.Ideo == null || pawn.Ideo.PreceptsListForReading.SelectMany(precept => precept.def.comps)
+           .OfType<IVictimPreceptComp>()
+           .All(pc => pc.VictimWillingToDo(ev));
     }
 }
