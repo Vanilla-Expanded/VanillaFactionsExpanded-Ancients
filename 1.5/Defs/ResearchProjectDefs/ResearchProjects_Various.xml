@@ -13,6 +13,13 @@
     <researchViewX>3.00</researchViewX>
     <researchViewY>3.0</researchViewY>
 	<tab>VanillaExpanded</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->craft of renewal</li>
+    <li>subject_story->created mending stations to fix up worn clothes and weapons, making them good as new</li>
+    <li>subject_gerund->turning old back into valuable again with smart repairs</li>
+  </rulesStrings>
+</generalRules>
   </ResearchProjectDef>
 
 
