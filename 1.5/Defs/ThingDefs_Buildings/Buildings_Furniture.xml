@@ -69,12 +69,13 @@
         <basePowerConsumption>30</basePowerConsumption>
       </li>
     </comps>
-	<designationCategory>Furniture</designationCategory>
+	<designationCategory inherit='False'>Furniture</designationCategory>
+    <researchPrerequisites inherit='False'/>
   </ThingDef>
   
   <ThingDef ParentName="VFEA_WallLampBaseA" Name="VFEA_WallLampBase">
     <defName>VFEA_WallLamp</defName>
-    <label>wall lamp</label>
+    <label>ancient wall lamp</label>
     <description>An electrical wall lamp, ideal to light up corridors in a vault.</description>
     <graphicData>
       <texPath>Things/Building/Furniture/VFEWallLamp/VFEWallLamp</texPath>
