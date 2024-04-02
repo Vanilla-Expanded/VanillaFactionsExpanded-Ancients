@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
 using Verse;
+using VFECore.Abilities;
 
 namespace VFEAncients;
 
@@ -10,9 +11,8 @@ public class Ability_Jump : Ability
     {
         base.Cast(targets);
         var map = Caster.Map;
-        var flyer = (SuperJumpingPawn)PawnFlyer.MakeFlyer(VFEA_DefOf.VFEA_SuperJumpingPawn, CasterPawn, targets[0].Cell, null, null);
+        var flyer = (AbilityPawnFlyer)PawnFlyer.MakeFlyer(VFEA_DefOf.VFEA_SuperJumpingPawn, CasterPawn, targets[0].Cell, null, null);
         flyer.ability = this;
-        flyer.target = targets[0].Cell.ToVector3();
         GenSpawn.Spawn(flyer, Caster.Position, map);
     }
 }

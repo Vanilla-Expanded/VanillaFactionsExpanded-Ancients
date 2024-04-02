@@ -42,6 +42,7 @@
         <statFactors>
             <MeleeDPS>2</MeleeDPS>
             <CarryingCapacity>2</CarryingCapacity>
+            <VEF_MassCarryCapacity>2</VEF_MassCarryCapacity>
         </statFactors>
         <effectDescription>Doubled melee damage. Doubled Caravan inventory size. Doubled local map inventory size.</effectDescription>
     </VFEAncients.PowerDef>

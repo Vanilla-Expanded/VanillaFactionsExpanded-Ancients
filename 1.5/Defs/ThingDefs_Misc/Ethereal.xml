@@ -44,10 +44,12 @@
     </ThingDef>
     <ThingDef ParentName="PawnFlyerBase">
         <defName>VFEA_SuperJumpingPawn</defName>
-        <thingClass>VFEAncients.SuperJumpingPawn</thingClass>
+        <thingClass>VFECore.Abilities.AbilityPawnFlyer</thingClass>
         <pawnFlyer>
             <flightDurationMin>0.1</flightDurationMin>
             <flightSpeed>30</flightSpeed>
+            <heightFactor>15</heightFactor>
+            <workerClass>VFEAncients.SuperJumpingPawn</workerClass>
         </pawnFlyer>
     </ThingDef>
 </Defs>
