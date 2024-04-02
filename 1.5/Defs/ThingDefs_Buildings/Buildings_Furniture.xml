@@ -69,7 +69,7 @@
         <basePowerConsumption>30</basePowerConsumption>
       </li>
     </comps>
-	<designationCategory inherit='False'>Furniture</designationCategory>
+	<designationCategory inherit="False" />
     <researchPrerequisites inherit='False'/>
   </ThingDef>
   
