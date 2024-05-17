@@ -27,6 +27,7 @@ namespace VFEAncients
             MetaMorphPatches.Do(Harm);
             StorytellerPatches.Do(Harm);
             MendingPatches.Do(Harm);
+            QuestPatches.Do(Harm);
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

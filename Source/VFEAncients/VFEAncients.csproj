@@ -89,6 +89,7 @@
     <Compile Include="HarmonyPatches\Helpers.cs" />
     <Compile Include="HarmonyPatches\MendingPatches.cs" />
     <Compile Include="HarmonyPatches\MetaMorphPatches.cs" />
+    <Compile Include="HarmonyPatches\QuestPatches.cs" />
     <Compile Include="HarmonyPatches\SolarFlarePowerNet.cs" />
     <Compile Include="HarmonyPatches\StorytellerPatches.cs" />
     <Compile Include="Jobs\JobDriver_CarryToBioBattery.cs" />

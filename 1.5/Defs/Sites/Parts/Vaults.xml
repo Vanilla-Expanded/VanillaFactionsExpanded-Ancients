@@ -83,7 +83,7 @@
   <SitePartDef>
     <defName>VFEA_AncientSoldierHostile</defName>
     <label>enemy presence</label>
-    <description>Ennemies are present in this place.</description>
+    <description>Enemies are present in this place.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/Ambush</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
