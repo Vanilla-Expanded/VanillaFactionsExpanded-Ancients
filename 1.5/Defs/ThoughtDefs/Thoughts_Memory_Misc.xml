@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+	<ThoughtDef>
+		<defName>VFEA_AcquiredSuperpower</defName>
+		<durationDays>1</durationDays>
+	
+		<stages>
+			<li>
+				<label>got a superpower</label>
+				<description>I feel... invincible!</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+
+
+
+</Defs>

@@ -34,6 +34,7 @@ namespace VFEAncients
             if (powers.Contains(power)) Log.Warning($"Attempted to add power that {Pawn} already has: {power}");
             powers.Add(power);
             power.Worker.Notify_Added(this);
+            Pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(VFEA_DefOf.VFEA_AcquiredSuperpower);
         }
 
         public void RemovePower(PowerDef power)

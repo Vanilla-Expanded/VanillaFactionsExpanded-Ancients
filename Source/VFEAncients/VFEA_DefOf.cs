@@ -45,6 +45,7 @@ public class VFEA_DefOf
     public static PowerDef PsychologicalParalysis;
     public static ThingDef VFEA_SlingshotDropOffSpot;
     public static PawnRenderTreeDef VFEA_Metamorphed;
+    public static ThoughtDef VFEA_AcquiredSuperpower;
 
     static VFEA_DefOf()
     {
