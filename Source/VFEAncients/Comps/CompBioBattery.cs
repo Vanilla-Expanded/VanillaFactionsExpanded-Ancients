@@ -15,6 +15,7 @@ namespace VFEAncients
         private ThingOwner innerContainer;
         private float massLeft = -1;
         private int ticksTillConsume = -1;
+        private static List<ThingDef> cachedBatteries;
 
         public CompBioBattery() => innerContainer = new ThingOwner<Thing>(this);
 
@@ -126,8 +127,35 @@ namespace VFEAncients
 
         public static IEnumerable<Thing> BatteriesFor(Pawn pawn, Pawn target)
         {
-            return DefDatabase<ThingDef>.AllDefs.Where(def => def.comps.Any(comp => comp.compClass == typeof(CompBioBattery))).SelectMany(batteryDef =>
-                pawn.Map.listerThings.ThingsOfDef(batteryDef)).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some));
+            if (cachedBatteries == null)
+            {
+                cachedBatteries = DefDatabase<ThingDef>.AllDefs.Where(def => def.comps.Any(comp => comp.compClass == typeof(CompBioBattery))).ToList();
+            }
+
+            List<Thing> availableBatteries = new List<Thing>();
+            for (int i = 0; i < cachedBatteries.Count; i++)
+            {
+                ThingDef def = cachedBatteries[i];
+
+                var batteries = pawn.Map.listerThings.ThingsOfDef(def);
+                int batteryCount = batteries.Count;
+                if (batteryCount == 0)
+                    continue;
+
+                Thing battery = pawn.Map.listerThings.ThingsOfDef(def).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some)).FirstOrFallback();
+                if (battery != null)
+                {
+                    availableBatteries.Add(battery);
+                }
+
+            }
+
+            return availableBatteries;
+
+
+
+         
+                
         }
 
         public override void PostDraw()

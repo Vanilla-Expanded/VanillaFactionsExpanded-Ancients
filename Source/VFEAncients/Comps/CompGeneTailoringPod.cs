@@ -6,6 +6,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using VFECore.OptionalFeatures;
 
 namespace VFEAncients
 {
@@ -17,6 +18,8 @@ namespace VFEAncients
         private readonly List<Operation> possibleOperations;
         private Operation currentOperation;
         private ThingOwner innerContainer;
+
+        private static List<ThingDef> cachedPods;
 
         private int ticksTillDone = -1;
 
@@ -242,9 +245,31 @@ namespace VFEAncients
 
         public static IEnumerable<Thing> FindPodsFor(Pawn pawn, Pawn target)
         {
-            return DefDatabase<ThingDef>.AllDefs.Where(def => def.comps.Any(comp => comp.compClass == typeof(CompGeneTailoringPod))).Select(podDef =>
-                GenClosest.ClosestThingReachable(target.Position, pawn.Map, ThingRequest.ForDef(podDef), PathEndMode.InteractionCell,
-                    TraverseParms.For(pawn), 9999f, pod => pod.TryGetComp<CompGeneTailoringPod>().CanAccept(pawn))).Where(thing => thing != null);
+            if (cachedPods == null)
+            {
+                cachedPods = DefDatabase<ThingDef>.AllDefs.Where(def => def.comps.Any(comp => comp.compClass == typeof(CompGeneTailoringPod))).ToList();
+            }
+            List<Thing> availablePods = new List<Thing>();
+            for (int i = 0; i < cachedPods.Count; i++)
+            {
+                ThingDef def = cachedPods[i];
+
+                var pods = pawn.Map.listerThings.ThingsOfDef(def);
+                int podsCount = pods.Count;
+                if (podsCount == 0)
+                    continue;
+
+                Thing pod = GenClosest.ClosestThingReachable(target.Position, pawn.Map, ThingRequest.ForDef(def), PathEndMode.InteractionCell,
+                    TraverseParms.For(pawn), 9999f, pod => pod.TryGetComp<CompGeneTailoringPod>().CanAccept(pawn));
+                if (pod != null)
+                {
+                    availablePods.Add(pod);
+                }
+ 
+            }
+
+        return availablePods;
+          
         }
 
         public override void PostDraw()

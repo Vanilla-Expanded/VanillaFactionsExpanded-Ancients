@@ -108,6 +108,7 @@ namespace VFEAncients.HarmonyPatches
         {
             if (parms.forced) return true;
             if (Faction.OfPlayer.ideos.PrimaryIdeo is not { } ideo) return true;
+            if(__instance.def != IncidentDefOf.WandererJoin && __instance.def != VFEA_DefOf.WandererJoinAbasia) return true;
             if (ideo.precepts.SelectMany(precept => precept.def.comps).OfType<PreceptComp_DisableIncident>()
                 .Any(disableIncident => disableIncident.Incident == __instance.def)) return __result = false;
 

@@ -46,6 +46,8 @@ public class VFEA_DefOf
     public static ThingDef VFEA_SlingshotDropOffSpot;
     public static PawnRenderTreeDef VFEA_Metamorphed;
     public static ThoughtDef VFEA_AcquiredSuperpower;
+    [MayRequireRoyalty]
+    public static IncidentDef WandererJoinAbasia;
 
     static VFEA_DefOf()
     {
