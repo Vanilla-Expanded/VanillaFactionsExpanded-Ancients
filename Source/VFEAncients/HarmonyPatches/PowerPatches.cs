@@ -76,7 +76,7 @@ public static class PowerPatches
 
     public static void ApplyStat(ref float __result, Pawn attacker, VerbProperties __instance)
     {
-        if (attacker != null && __instance.IsMeleeAttack) __result *= attacker.GetStatValue(VFEA_DefOf.VFEAncients_MeleeCooldownFactor);
+        if (attacker != null && __instance.IsMeleeAttack) __result *= attacker.GetStatValue(VFEA_DefOf.VFEAncients_MeleeCooldownFactor,cacheStaleAfterTicks:250);
     }
 
     public static IEnumerable<CodeInstruction> ForceInteraction(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
