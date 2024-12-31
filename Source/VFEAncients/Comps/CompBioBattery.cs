@@ -142,10 +142,10 @@ namespace VFEAncients
                 if (batteryCount == 0)
                     continue;
 
-                Thing battery = pawn.Map.listerThings.ThingsOfDef(def).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some)).FirstOrFallback();
+                List<Thing> battery = pawn.Map.listerThings.ThingsOfDef(def).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some)).ToList();
                 if (battery != null)
                 {
-                    availableBatteries.Add(battery);
+                    availableBatteries.AddRange(battery);
                 }
 
             }
