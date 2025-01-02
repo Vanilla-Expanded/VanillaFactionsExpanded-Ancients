@@ -26,7 +26,7 @@
     <VFEAncients.PowerDef>
         <defName>Assassin</defName>
         <label>assassin</label>
-        <description>The subject has become capable of landing very precise hits even in frantic melee or from very long range, knowing exactly where to aim in order to target the brain or the heart.</description>
+        <description>The subject has become capable of landing very precise hits even in frantic melee or from very long range, knowing exactly where to aim in order to target the brain, the heart, or other vital organ.</description>
         <powerType>Superpower</powerType>
         <texPath>Powers/Superpowers/Power_Assassin</texPath>
         <workerClass>VFEAncients.PowerWorker_VitalHits</workerClass>
