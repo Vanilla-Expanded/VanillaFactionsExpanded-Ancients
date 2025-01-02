@@ -29,8 +29,8 @@ namespace VFEAncients
             possibleOperations = typeof(Operation).AllSubclassesNonAbstract().Select(opType => (Operation) Activator.CreateInstance(opType, this)).ToList();
         }
 
-        public bool PowerOn => parent.GetComp<CompPowerTrader>().PowerOn;
-        public bool HasFuel => parent.GetComp<CompRefuelable>().HasFuel;
+        public bool PowerOn => !parent.TryGetComp<CompPowerTrader>(out var comp) || comp.PowerOn;
+        public bool HasFuel => !parent.TryGetComp<CompRefuelable>(out var comp) || comp.HasFuel;
 
         public Pawn Occupant => innerContainer.OfType<Pawn>().FirstOrDefault();
 
@@ -70,8 +70,16 @@ namespace VFEAncients
 
         public virtual void StartOperation(Operation op)
         {
+            // Check if operation still valid - handle situations where a machine was turned off with
+            // the start operation float menu open, allowing to still select the start operation option.
+            if (!op.CanRunOnPawn(Occupant))
+            {
+                Messages.Message("CannotUseReason".Translate("VFEAncient.AvailableOperationsCannotBeApplied".Translate()), parent, MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+
             currentOperation = op;
-            parent.GetComp<CompRefuelable>().ConsumeFuel(1f);
+            parent.GetComp<CompRefuelable>()?.ConsumeFuel(1f);
             var allPods = parent.Map.listerThings.ThingsOfDef(parent.def);
 
             ticksTillDone = currentOperation.StartOnPawnGetDuration() + allPods.IndexOf(parent);
@@ -125,16 +133,24 @@ namespace VFEAncients
             {
                 yield return new Command_Action
                 {
-                    action = () => Find.WindowStack.Add(new FloatMenu(possibleOperations.Where(op => op.CanRunOnPawn(Occupant))
-                        .Select(op => new FloatMenuOption(op.Label,
-                            () => Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("VFEAncients.ExperimentFailureWarning".Translate(
-                                    (Occupant?.GetPowerTracker()?.HasPower(VFEA_DefOf.PromisingCandidate) ?? false ? 0f : op.FailChanceOnPawn(Occupant)).ToStringPercent()
-                                    .Colorize(ColoredText.ThreatColor),
-                                    parent.def.GetCompProperties<CompProperties_AffectedByFacilities>().linkableFacilities.Where(def =>
-                                            def.GetCompProperties<CompProperties_Facility>()?.statOffsets?.Any(statMod => statMod.stat == VFEA_DefOf.VFEA_FailChance) ?? false)
-                                        .Select(def => def.label).ToLineList("  - "), op.TicksRequired.ToStringTicksToPeriodVerbose().Colorize(ColoredText.DateTimeColor),
-                                    TimeExplain, FailChanceExplain(op)),
-                                () => StartOperation(op), true)))).ToList())),
+                    action = () =>
+                    {
+                        var options = possibleOperations.Where(op => op.CanRunOnPawn(Occupant))
+                            .Select(op => new FloatMenuOption(op.Label,
+                                () => Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("VFEAncients.ExperimentFailureWarning".Translate(
+                                        (Occupant?.GetPowerTracker()?.HasPower(VFEA_DefOf.PromisingCandidate) ?? false ? 0f : op.FailChanceOnPawn(Occupant)).ToStringPercent()
+                                        .Colorize(ColoredText.ThreatColor),
+                                        parent.def.GetCompProperties<CompProperties_AffectedByFacilities>().linkableFacilities.Where(def =>
+                                                def.GetCompProperties<CompProperties_Facility>()?.statOffsets?.Any(statMod => statMod.stat == VFEA_DefOf.VFEA_FailChance) ?? false)
+                                            .Select(def => def.label).ToLineList("  - "), op.TicksRequired.ToStringTicksToPeriodVerbose().Colorize(ColoredText.DateTimeColor),
+                                        TimeExplain, FailChanceExplain(op)),
+                                    () => StartOperation(op), true)))).ToList();
+                        // Handle situations where one of the machines was turned off after
+                        // a pawn entered the pod, ending in situation with no valid operations.
+                        if (!options.Any())
+                            options.Add(new FloatMenuOption("CannotUseReason".Translate("VFEAncient.AvailableOperationsCannotBeApplied".Translate()), null));
+                        Find.WindowStack.Add(new FloatMenu(options));
+                    },
                     defaultLabel = "VFEAncients.StartOperation".Translate(),
                     icon = StartOperationTex
                 };
