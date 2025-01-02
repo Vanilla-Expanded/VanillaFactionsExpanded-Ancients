@@ -13,7 +13,20 @@ public class CompAncientSolar : CompPowerPlantSolar
     private static readonly Material POWER_PLANT_SOLAR_BAR_SUPER_MAT = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.45f, 0.1f, 0.9f));
 
     private static readonly Material POWER_PLANT_SOLAR_BAR_UNFILLED_MAT = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f));
-    public override float DesiredPowerOutput => Mathf.Lerp(0f, -Props.basePowerConsumption, parent.Map.skyManager.CurSkyGlow) * RoofedPowerOutputFactor;
+    
+    public override float DesiredPowerOutput
+    {
+        get
+        {
+            if (parent.Map?.skyManager != null)
+            {
+                return Mathf.Lerp(0f, -Props.basePowerConsumption, parent.Map.skyManager.CurSkyGlow) * RoofedPowerOutputFactor;
+            }
+            return 0;
+        }
+
+
+    } 
 
     public override void PostDraw()
     {
