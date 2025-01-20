@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -39,8 +40,12 @@ public static class MendingPatches
                 t.stackCount == 1 && (t.def.IsWeapon || t.def.IsApparel) && t.def.useHitPoints && t.HitPoints < t.MaxHitPoints);
             if (item != null)
             {
-                item.HitPoints = item.MaxHitPoints;
-                __result = Gen.YieldSingle(item);
+                Thing copiedThing = ThingMaker.MakeThing(item.def, item.Stuff);
+                copiedThing.stackCount = 1;
+
+                copiedThing.HitPoints = copiedThing.MaxHitPoints;
+
+                __result = Gen.YieldSingle<Thing>(copiedThing);
                 return false;
             }
         }
