@@ -41,20 +41,7 @@ public static class MendingPatches
             if (item != null)
             {
                 Thing copiedThing = ThingMaker.MakeThing(item.def, item.Stuff);
-                copiedThing.stackCount = item.stackCount;  
-                copiedThing.holdingOwner = item.holdingOwner;
-                copiedThing.questTags = item.questTags;
-                QualityCategory level = QualityCategory.Normal; 
-                if (item.TryGetQuality(out level)) 
-                {
-                    CompQuality qualityComp = copiedThing.TryGetComp<CompQuality>();
-                    if (qualityComp != null)
-                    {
-                        qualityComp.SetQuality(level, ArtGenerationContext.Colony);
-
-                        copiedThing.PostQualitySet();
-                    }
-                }
+                copiedThing.stackCount = 1;
 
                 copiedThing.HitPoints = copiedThing.MaxHitPoints;
 
