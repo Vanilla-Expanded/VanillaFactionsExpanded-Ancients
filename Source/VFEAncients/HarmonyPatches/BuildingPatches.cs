@@ -87,7 +87,7 @@ public static class BuildingPatches
     {
         if (t.TryGetComp<CompNeedsContainment>(out var comp) && comp.ShouldDeteriorate)
         {
-            __result += t.GetStatValue(StatDefOf.DeteriorationRate);
+            __result += StatDefOf.DeteriorationRate.Worker.GetBaseValueFor(StatRequest.For(t)) * 0.5f;
             reasons?.Add("VFEAncients.DeterioratingUncontained".Translate());
         }
     }
