@@ -36,22 +36,32 @@ public class PointDefensePatches
 
     private static bool TryFindPDTarget(Building_TurretPD searcher, out LocalTargetInfo target)
     {
-        var range = searcher.AttackVerb.verbProps.range;
         target = LocalTargetInfo.Invalid;
-        if (searcher.Opts.AtProjectiles)
-            target = searcher.Map.listerThings.ThingsInGroup(ThingRequestGroup.Projectile)
-                .Where(t => t is Projectile_Explosive pe && pe.Launcher.HostileTo(searcher) && t.Position.InHorDistOf(searcher.Position, range))
-                .OrderByDescending(t => t.Position.DistanceTo(searcher.Position))
-                .FirstOrDefault();
+        if (searcher != null)
+        {
+            var range = searcher.AttackVerb.verbProps.range;
+            
+            if (searcher.Opts.AtProjectiles)
+                target = searcher.Map.listerThings.ThingsInGroup(ThingRequestGroup.Projectile)
+                    .Where(t => t is Projectile_Explosive pe && pe?.Launcher?.HostileTo(searcher)==true && t.Position.InHorDistOf(searcher.Position, range))
+                    .OrderByDescending(t => t.Position.DistanceTo(searcher.Position))
+                    .FirstOrDefault();
 
-        if (target.IsValid) return true;
-        if (searcher.Opts.AtPods)
-            target = searcher.Map.listerThings.ThingsInGroup(ThingRequestGroup.ActiveDropPod)
-                .Where(t => t is DropPodIncoming pod && (pod.Contents.innerContainer.OfType<Pawn>().FirstOrDefault()?.HostileTo(searcher) ?? false) &&
-                            Mathf.Abs((t.DrawPos - searcher.DrawPos).magnitude) <= range)
-                .OrderByDescending(t => Mathf.Abs((t.DrawPos - searcher.DrawPos).magnitude))
-                .FirstOrDefault();
-        return target.IsValid;
+            if (target.IsValid) return true;
+            if (searcher.Opts.AtPods)
+                target = searcher.Map.listerThings.ThingsInGroup(ThingRequestGroup.ActiveDropPod)
+                    .Where(t => t is DropPodIncoming pod && (pod.Contents.innerContainer.OfType<Pawn>().FirstOrDefault()?.HostileTo(searcher) ?? false) &&
+                                Mathf.Abs((t.DrawPos - searcher.DrawPos).magnitude) <= range)
+                    .OrderByDescending(t => Mathf.Abs((t.DrawPos - searcher.DrawPos).magnitude))
+                    .FirstOrDefault();
+            return target.IsValid;
+        }
+        else
+        {
+           
+            return false;
+        }
+        
     }
 
     public static bool TryShootProjectile(Building_TurretGun __instance, ref LocalTargetInfo ___currentTargetInt, ref int ___burstWarmupTicksLeft)
