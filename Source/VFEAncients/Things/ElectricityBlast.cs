@@ -5,7 +5,7 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
-using AbilityDef = VFECore.Abilities.AbilityDef;
+using AbilityDef = VEF.Abilities.AbilityDef;
 
 namespace VFEAncients;
 

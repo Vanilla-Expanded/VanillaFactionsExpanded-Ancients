@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>VFEA_SupplyCrateIncoming</defName>
+    <label>supply crate (incoming)</label>
+    <size>(2, 2)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/AncientSupplyCrate/AncientSupplyCrateSkyfaller</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>9.9</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadowSize>(3.0, 3.0)</shadowSize>
+      <ticksToImpactRange>400~500</ticksToImpactRange>
+      <speed>0.05</speed>
+      <movementType>Decelerate</movementType>
+      <motesPerCell>1</motesPerCell>
+    </skyfaller>
+    <comps>
+      <li Class="CompProperties_SkyfallerRandomizeDirection">
+        <directionChangeInterval>40~55</directionChangeInterval>
+        <maxDeviationFromStartingAngle>30</maxDeviationFromStartingAngle>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>VFEA_SupplyCrateLeaving</defName>
+    <label>supply crate (leaving)</label>
+    <size>(2, 2)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/AncientSupplyCrate/AncientSupplyCrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>4.9</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadowSize>(3.0, 3.0)</shadowSize>
+      <speed>3</speed>
+      <movementType>Accelerate</movementType>
+      <reversed>true</reversed>
+    </skyfaller>
+  </ThingDef>
+</Defs>

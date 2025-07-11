@@ -6,7 +6,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
-using VFECore.OptionalFeatures;
+using VEF.OptionalFeatures;
 
 namespace VFEAncients
 {
@@ -233,29 +233,29 @@ namespace VFEAncients
             }
         }
 
-        public static void AddCarryToPodJobs(List<FloatMenuOption> opts, Pawn pawn, Pawn target)
+        public static IEnumerable<FloatMenuOption> GetCarryToPodJobs(Pawn pawn, Pawn target)
         {
-            if (!pawn.CanReserveAndReach(target, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, true)) return;
+            if (!pawn.CanReserveAndReach(target, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, true)) yield break;
             foreach (var thing in FindPodsFor(pawn, target))
             {
                 string text = "VFEAncients.CarryToGeneTailoringPod".Translate(target);
                 if (target.IsQuestLodger())
                 {
                     text += " (" + "CryptosleepCasketGuestsNotAllowed".Translate() + ")";
-                    opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, null), pawn, thing));
+                    yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, null), pawn, thing);
                 }
                 else if (target.GetExtraHostFaction() != null)
                 {
                     text += " (" + "CryptosleepCasketGuestPrisonersNotAllowed".Translate() + ")";
-                    opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, null), pawn, thing));
+                    yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, null), pawn, thing);
                 }
                 else if (thing.TryGetComp<CompGeneTailoringPod>().CanAccept(target))
-                    opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, () =>
+                    yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, () =>
                     {
                         var job = JobMaker.MakeJob(VFEA_DefOf.VFEA_CarryToGeneTailoringPod, target, thing);
                         job.count = 1;
                         pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-                    }), pawn, target));
+                    }), pawn, target);
             }
         }
 

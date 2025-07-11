@@ -55,10 +55,10 @@ public class CompSolarPowerUp : ThingComp
         Scribe_Values.Look(ref oldElectricityDisabled, "oldElectricityDisabled");
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
         SolarPoweredUp.Remove(powerComp);
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
     }
 }
 

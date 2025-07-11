@@ -14,8 +14,6 @@ public static class BuildingPatches
 {
     public static void Do(Harmony harm)
     {
-        harm.Patch(AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"),
-            postfix: new HarmonyMethod(typeof(BuildingPatches), nameof(AddCarryJobs)));
         harm.Patch(AccessTools.Method(typeof(SteadyEnvironmentEffects), nameof(SteadyEnvironmentEffects.FinalDeteriorationRate),
                 new[] { typeof(Thing), typeof(bool), typeof(bool), typeof(TerrainDef), typeof(List<string>) }),
             postfix: new HarmonyMethod(typeof(BuildingPatches), nameof(AddDeterioration)));
@@ -92,18 +90,40 @@ public static class BuildingPatches
         }
     }
 
-    public static void AddCarryJobs(List<FloatMenuOption> opts, Vector3 clickPos, Pawn pawn)
+    public class FloatMenuOptionProvider_CarryToPod : FloatMenuOptionProvider
     {
-        foreach (var localTargetInfo4 in GenUI.TargetsAt(clickPos, TargetingParameters.ForCarryToBiosculpterPod(pawn), true))
-        {
-            var target = localTargetInfo4.Pawn;
-            if ((target.IsColonist && target.Downed) || target.IsPrisonerOfColony) CompGeneTailoringPod.AddCarryToPodJobs(opts, pawn, target);
-        }
+        public override bool Drafted => true;
 
-        foreach (var info in GenUI.TargetsAt(clickPos, TargetingParameters.ForRescue(pawn)))
+        public override bool Undrafted => true;
+
+        public override bool Multiselect => false;
+
+        public override IEnumerable<FloatMenuOption> GetOptionsFor(Pawn target, FloatMenuContext context)
         {
-            var target = info.Pawn;
-            if (target.Downed) CompBioBattery.AddCarryToBatteryJobs(opts, pawn, target);
+            if ((target.IsColonist && target.Downed) || target.IsPrisonerOfColony)
+            {
+                foreach (FloatMenuOption item in CompGeneTailoringPod.GetCarryToPodJobs(context.FirstSelectedPawn, target)) { 
+                    yield return item;
+                }
+            }
+        }
+    }
+    public class FloatMenuOptionProvider_CarryToBattery : FloatMenuOptionProvider
+    {
+        public override bool Drafted => true;
+
+        public override bool Undrafted => true;
+
+        public override bool Multiselect => false;
+
+        public override IEnumerable<FloatMenuOption> GetOptionsFor(Pawn target, FloatMenuContext context)
+        {
+            if (target.Downed)
+            {
+                foreach (FloatMenuOption item in CompBioBattery.GetCarryToBatteryJobs(context.FirstSelectedPawn, target)) { 
+                    yield return item;
+                }
+            }
         }
     }
 }

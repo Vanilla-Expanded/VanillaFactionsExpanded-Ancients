@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DesignatorDropdownGroupDef>
+    <defName>VFEA_WallLampColoured</defName>
+    <label>wall lamp</label>
+  </DesignatorDropdownGroupDef>
+  
+</Defs>

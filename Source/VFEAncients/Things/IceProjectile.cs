@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using UnityEngine;
 using Verse;
-using VFECore;
+using VEF.Weapons;
 
 namespace VFEAncients;
 

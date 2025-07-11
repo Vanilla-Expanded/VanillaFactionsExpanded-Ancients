@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MentalBreakDef>
+    <defName>VFEA_Hallucinations</defName>
+    <mentalState>VFEA_Hallucinations</mentalState>
+    <baseCommonality>0</baseCommonality>
+    <intensity>Minor</intensity>
+    <workerClass>VFEAncients.MentalBreakWorker_Hallucinations</workerClass>
+  </MentalBreakDef>
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>VFEA_Hallucinations</defName>
+    <stateClass>MentalState_WanderConfused</stateClass>
+    <label>seeing things</label>
+    <category>Misc</category>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <minTicksBeforeRecovery>2000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>4000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.166</recoveryMtbDays>
+    <recoveryMessage>{0} is no longer seeing things.</recoveryMessage>
+    <baseInspectLine>Mental state: Seeing things</baseInspectLine>
+  </MentalStateDef>
+</Defs>

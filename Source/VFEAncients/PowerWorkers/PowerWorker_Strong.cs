@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using HarmonyLib;
-using HeavyWeapons;
+﻿using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
+using VEF.Weapons;
 using Verse;
 using VFEAncients.HarmonyPatches;
 
@@ -15,8 +15,10 @@ public class PowerWorker_Strong : PowerWorker
     {
         base.DoPatches(harm);
         harm.Patch(AccessTools.Method(typeof(Verb_MeleeAttackDamage), "DamageInfosToApply"), postfix: new(GetType(), nameof(AddDamage)));
-        harm.Patch(AccessTools.Method(typeof(Patch_FloatMenuMakerMap.AddHumanlikeOrders_Fix),
-            nameof(Patch_FloatMenuMakerMap.AddHumanlikeOrders_Fix.CanEquip)), new(GetType(), nameof(ForceCanEquip)));
+        harm.Patch(
+            AccessTools.Method(typeof(VanillaExpandedFramework_EquipmentUtility_CanEquip_Patch), nameof(VanillaExpandedFramework_EquipmentUtility_CanEquip_Patch.CanEquip)),
+            postfix: new(GetType(), nameof(ForceCanEquip))
+        );
     }
 
     public static IEnumerable<DamageInfo> AddDamage(IEnumerable<DamageInfo> dinfos, Verb_MeleeAttackDamage __instance)
@@ -29,10 +31,9 @@ public class PowerWorker_Strong : PowerWorker
         }
     }
 
-    public static bool ForceCanEquip(Pawn pawn, ref bool __result)
+    public static void ForceCanEquip(Pawn pawn, ref bool __result)
     {
-        if (!pawn.HasPower<PowerWorker_Strong>()) return true;
-        __result = true;
-        return false;
+        if (pawn.HasPower<PowerWorker_Strong>())
+            __result = true;
     }
 }

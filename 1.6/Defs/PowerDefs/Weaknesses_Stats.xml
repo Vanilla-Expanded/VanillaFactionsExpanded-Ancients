@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>Unstable</defName>
+        <label>unstable</label>
+        <description>The subject’s brain has become highly tuned to psychic wavelengths, making them vulnerable to Mechanoid psychic attacks but also a far more capable psycaster.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Unstable</texPath>
+        <statOffsets><PsychicSensitivity>1</PsychicSensitivity></statOffsets>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ExtremelyFlammable</defName>
+        <label>extremely flammable</label>
+        <description>The subject’s entire body has become highly flammable, with the slightest spark being able to send them bursting into flames.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_ExtremelyFlammable</texPath>
+        <statFactors><Flammability>4</Flammability></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ToxinIntolerance</defName>
+        <label>toxin intolerance</label>
+        <description>The subject’s organs are constantly lacking certain minerals (e.g. Iodine) and freely absorb them from the air, even if they're irradiated or bound to toxic chemicals.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_ToxinIntolerance</texPath>
+        <statFactors><ToxicResistance>0</ToxicResistance></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>HeatIntolerance</defName>
+        <label>heat intolerance</label>
+        <description>The subject can no longer sweat properly, meaning they overheat very easily as their body can no longer cool itself. This lowers their maximum comfortable temperature by 10 degrees.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_HeatIntolerance</texPath>
+        <statOffsets><ComfyTemperatureMax>-10</ComfyTemperatureMax></statOffsets>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ColdIntolerance</defName>
+        <label>cold intolerance</label>
+        <description>The subject’s muscles no longer shiver involuntarily, meaning they can no longer warm themselves when exposed to cold temperatures. This raises their minimum comfortable temperature by 10 degrees.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_ColdIntolerance</texPath>
+        <statOffsets><ComfyTemperatureMin>10</ComfyTemperatureMin></statOffsets>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ImmunologicalDisorder</defName>
+        <label>immunological disorder</label>
+        <description>The subject’s immune system has been ruined, requiring them to take frequent medicine and receive constant medical care, as even the sniffles could kill them.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_ImmunologicalDisorder</texPath>
+        <statFactors><ImmunityGainSpeed>0.25</ImmunityGainSpeed></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Finicky</defName>
+        <label>finicky</label>
+        <description>The subject has become incredibly fussy, demanding they pay extraneous attention to the most inconsequential of tasks and taking three times longer than usual.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Finicky</texPath>
+        <statFactors><WorkSpeedGlobal>0.3</WorkSpeedGlobal></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Unsure</defName>
+        <label>unsure</label>
+        <description>The subject has become incredibly doubtful and suffers frequent dizzy spells, taking twice as long to acquire targets with their weapons as they re-check that they’re ready to fire.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_Unsure</texPath>
+        <statFactors><AimingDelayFactor>2</AimingDelayFactor></statFactors>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>AlwaysKnowsBetter</defName>
+        <label>always knows better</label>
+        <description>The subject has developed a somewhat misplaced sense of pride due to their gene therapy and refuses to learn anything new, stating that they know better than everyone and no one can improve perfection.</description>
+        <powerType>Weakness</powerType>
+        <texPath>Powers/Weaknesses/Weakness_AlwaysKnowsBetter</texPath>
+        <statFactors><GlobalLearningFactor>0</GlobalLearningFactor></statFactors>
+    </VFEAncients.PowerDef>
+</Defs>

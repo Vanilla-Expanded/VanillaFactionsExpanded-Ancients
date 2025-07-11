@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorkGiverDef>
+        <defName>VFEA_DoBillsAncientWorkshop</defName>
+        <label>make things at ancient workshop</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>Smithing</workType>
+        <priorityInType>50</priorityInType>
+        <fixedBillGiverDefs>
+            <li>VFEA_AncientWorkshop</li>
+        </fixedBillGiverDefs>
+        <verb>work</verb>
+        <gerund>working at</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+	
+    <WorkGiverDef>
+        <defName>VFEA_DoBillsAncientCookingStation</defName>
+        <label>cook meals at ancient cooking station</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>Cooking</workType>
+        <priorityInType>50</priorityInType>
+        <fixedBillGiverDefs>
+            <li>VFEA_AncientCookingStation</li>
+        </fixedBillGiverDefs>
+        <verb>cook</verb>
+        <gerund>cooking at</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+	
+    <WorkGiverDef>
+        <defName>VFEA_DoBillsMending</defName>
+        <label>mend thing at mending station</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>Smithing</workType>
+        <priorityInType>50</priorityInType>
+        <fixedBillGiverDefs>
+            <li>VFEA_ElectricMendingStation</li>
+			<li>VFEA_FueledMendingStation</li>
+        </fixedBillGiverDefs>
+        <verb>mend</verb>
+        <gerund>mending at</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+
+    <WorkGiverDef>
+        <defName>VFEA_Interrogate</defName>
+        <label>interrogate prisoners</label>
+        <giverClass>VFEAncients.WorkGiver_Warden_Interrogate</giverClass>
+        <workType>Warden</workType>
+        <verb>interrogate</verb>
+        <gerund>interrogating</gerund>
+        <priorityInType>100</priorityInType>
+        <requiredCapacities>
+          <li>Talking</li>
+        </requiredCapacities>
+      </WorkGiverDef>
+</Defs>

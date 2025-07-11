@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MemeDef>
+    <defName>VFEA_Isolationist</defName>
+    <label>isolationist</label>
+    <description>Trust is a resource in low supply, as everyone we meet is the enemy.</description>
+    <iconPath>Ideology/Isolationist</iconPath>
+    <groupDef>GroupRelation</groupDef>
+    <impact>3</impact>
+    <consumableBuildings>
+      <li>SacrificialFlag</li>
+    </consumableBuildings>
+    <exclusionTags>
+      <li>SupremacistIndividualist</li>
+	  <li>IsolationistProselytizer</li>
+    </exclusionTags>
+    <requireOne>
+      <li>
+        <li>VFEA_Recruiting_Forbidden</li>
+      </li>
+      <li>
+        <li>VFEA_BeingRecruited_Forbidden</li>
+      </li>
+    </requireOne>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->isolated</li>
+        <li>memeAdjective->hidden</li>
+        <li>memeAdjective->lone</li>
+        <li>memeAdjective->secluded</li>
+        <li>memeAdjective->exceptional</li>
+        <li>memeAdjective->superior</li>
+        <li>memeAdjective->detached</li>
+        <li>memeCreed->army</li>
+        <li>memeCreed->nation</li>
+        <li>memeHyphenPrefix->hidden</li>
+        <li>memeConcept->war</li>
+        <li>memeConcept->isolation</li>
+        <li>memeConcept->loneliness</li>
+        <li>memeLeaderNoun->general</li>
+        <li>memeLeaderNoun->commander</li>
+        <li>memeLeaderNoun->marshal</li>
+        <li>memeLeaderNoun->captain</li>
+        <li>memeLeaderNoun->sergeant</li>
+        <li>memeLeaderNoun->dictator</li>
+        <li>memeLeaderNoun->president</li>
+        <li>memeLeaderNoun->leader</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+          <!-- theist myth -->
+          <li>creation(tag=meme_Isolationist)        ->The people of the [place_summary] [place_name] squabbled endlessly among themselves, and [deity0_name] became tired of discord and anointed [memberNamePlural] as the only rightful rulers of every living being.</li>
+          <li>episode(uses=1,tag=meme_Isolationist)  ->The faithful fought the unbelievers, and [deity0_name] said, "Fight them, everywhere, for they are your enemy, and peace with them was never an option"</li>
+          <!-- theist founder -->
+          <li>intro(tag=meme_Isolationist)           ->The people of the [place_summary] [place_name] worshipped [deity0_name]. [deity0_pronoun] saw that they were suited for [memeConcept], and ordained that they shall be the only faction worthy of ascension.</li>
+          <li>conflict(tag=meme_Isolationist)        ->A [foeLeader] passed a law forbidding [memberNamePlural] from rising to the ruling classes of [place_name]. As such, [memberNamePlural] began to conspire and create hidden, secret alliances.</li>
+          <li>founderJoin(tag=meme_Isolationist)     ->A warrior named [founderName] used [place_massWeapon] to destroy a [place_community]. [deity0_name] saw [founderName]'s ruthlessness told [founder_objective] to lead a life of isolation and secrecy.</li>
+          <li>victory(tag=meme_Isolationist)         ->[founderName] destroyed the capital of [place_name] with [place_massWeapon], killing the [foeLeader]. [founder_pronoun] did not take [founder_possessive] place as ruler of [place_name] - instead, [founderName] went into hiding.</li>
+          <!-- ideological founder -->
+          <li>setup(tag=meme_Isolationist)           ->[founderName] built an army that spread [founder_possessive] power and glory across the land, placing those who refused to follow rightly at the end of [founder_possessive] knife.</li>
+          <li>story(uses=1,tag=meme_Isolationist)    ->[founderName] instructed all outsiders to fight to the death, as peace was never an option. When the first city refused and begged to join [founder_objective], [founder_pronoun] used [place_massWeapon] to kill everyone inside.</li>
+          <!-- ideological lesson -->
+          <li>lessonIntro(tag=meme_Isolationist)         ->I looked at this [foeLeader], with [foeLeader_possessive] pitiful [foeSoldiers], all that power left fallow. I tried to convince [foeLeader_objective] that</li>
+          <li>lesson(tag=meme_Isolationist)              ->we've long since proven that we have the strength to strike from the shadows, isolated but not weakened</li>
+          <li>lessonReinforcement(tag=meme_Isolationist) ->That's why we're proud to express the strength of our hearts using the edges of our blades and the heads of our hammers.</li>
+          <!-- archist -->
+          <li>archistBasis(tag=meme_Isolationist)    ->It took the most superior humans to create the archotechs. With being as powerful as them, it's only proper that we hide in the shadows.</li>
+          <li>archistFact(tag=meme_Isolationist)     ->The archotechs can wipe us out without hesitation - just as we should wipe out our enemies.</li>
+          <li>archistProphecy(tag=meme_Isolationist) ->The archotechs will never take us to join them - and we should never give this opportunity to our enemies.</li>
+          <!-- animist -->
+          <li>animistFact(tag=meme_Isolationist)     ->Powerful spirits of [spiritElement] decide who is fit to rule, and lend power to their chosen when they slay others.</li>
+          <li>animistProphecy(tag=meme_Isolationist) ->[itIsSaid] that a new order will be created when one supreme ruler emerges from the shadows on a planet filled to the brim with blood and viscera.</li>
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    <symbolPacks>
+      <li>
+        <theme>isolation</theme>
+        <adjective>isolated</adjective>
+        <member>isolator</member>
+      </li>
+      <li>
+        <theme>seclusion</theme>
+        <adjective>secluded</adjective>
+        <member>secludist</member>
+      </li>
+      <li>
+        <theme>secret</theme>
+        <adjective>secret</adjective>
+        <member>secret</member>
+      </li>
+    </symbolPacks>
+  </MemeDef>
+
+</Defs>

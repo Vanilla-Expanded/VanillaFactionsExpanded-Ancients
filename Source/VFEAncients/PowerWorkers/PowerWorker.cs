@@ -7,7 +7,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 using VFEAncients.HarmonyPatches;
-using VFECore.Abilities;
+using VEF.Abilities;
 
 namespace VFEAncients
 {

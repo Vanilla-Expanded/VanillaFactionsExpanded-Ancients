@@ -31,8 +31,8 @@ public class PawnRenderNode_Metamorphed : PawnRenderNode_AnimalPart
         {
             case RotDrawMode.Fresh:
                 if (ModsConfig.AnomalyActive && pawn.IsMutant && pawn.mutant.HasTurned)
-                    return graphic.GetColoredVersion(ShaderDatabase.Cutout, MutantUtility.GetSkinColor(pawn, graphic.Color).Value,
-                        MutantUtility.GetSkinColor(pawn, graphic.ColorTwo).Value);
+                    return graphic.GetColoredVersion(ShaderDatabase.Cutout, MutantUtility.GetMutantSkinColor(pawn, graphic.Color),
+                        MutantUtility.GetMutantSkinColor(pawn, graphic.ColorTwo));
                 return graphic;
             case RotDrawMode.Rotting:
                 return graphic.GetColoredVersion(ShaderDatabase.Cutout, PawnRenderUtility.GetRottenColor(graphic.Color),

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>VFEA_LootedVault</defName>
+    <label>looted vault</label>
+    <description>A recently-discovered looted vault.</description>
+    <siteTexture>UI/Map/VaultExpanding</siteTexture>
+    <expandingIconTexture>UI/Map/QuestIcons/VaultLooted</expandingIconTexture>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <tags>
+      <li>VFEA_LootedVault</li>
+    </tags>
+  </SitePartDef>
+
+  <SitePartDef>
+    <defName>VFEA_SealedVault</defName>
+    <label>sealed vault</label>
+    <description>A recently-discovered sealed vault.</description>
+    <siteTexture>UI/Map/VaultExpanding</siteTexture>
+    <expandingIconTexture>UI/Map/QuestIcons/VaultSealed</expandingIconTexture>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <tags>
+      <li>VFEA_SealedVault</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>VFEA_LootedVault</defName>
+    <linkWithSite>VFEA_LootedVault</linkWithSite>
+    <order>450</order>
+    <genStep Class="KCSG.GenStep_CustomStructureGen">
+      <structureLayoutDefs>
+        <li>VFEA_LootedVaultAlpha</li>
+        <li>VFEA_LootedVaultBravo</li>
+        <li>VFEA_LootedVaultCharlie</li>
+        <li>VFEA_LootedVaultDelta</li>
+        <li>VFEA_LootedVaultEpsilon</li>
+        <li>VFEA_LootedVaultF</li>
+        <li>VFEA_LootedVaultG</li>
+        <li>VFEA_LootedVaultH</li>
+        <li>VFEA_LootedVaultI</li>
+        <li>VFEA_LootedVaultJ</li>
+      </structureLayoutDefs>
+      <filthTypes>
+        <li>Filth_Dirt</li>
+        <li>Filth_Trash</li>
+        <li>Filth_RubbleBuilding</li>
+      </filthTypes>
+      <symbolResolvers>
+        <li>kcsg_randomdamage</li>
+        <li>kcsg_randomfilth</li>
+        <li>kcsg_randomterrainremoval</li>
+        <li>kcsg_randomroofremoval</li>
+        <li>kcsg_randomitemremoval</li>
+        <li>kcsg_removeperishable</li>
+        <li>kcsg_destroyrefuelablelightsource</li>
+      </symbolResolvers>
+      <preventBridgeable>true</preventBridgeable>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>VFEA_SealedVault</defName>
+    <linkWithSite>VFEA_SealedVault</linkWithSite>
+    <order>450</order>
+    <genStep Class="KCSG.GenStep_CustomStructureGen">
+      <structureLayoutDefs>
+        <li>VFEA_SealedVaultAlpha</li>
+        <li>VFEA_SealedVaultBravo</li>
+        <li>VFEA_SealedVaultCharlie</li>
+        <li>VFEA_SealedVaultDelta</li>
+        <li>VFEA_SealedVaultEpsilon</li>
+        <li>VFEA_SealedVaultF</li>
+        <li>VFEA_SealedVaultG</li>
+        <li>VFEA_SealedVaultH</li>
+        <li>VFEA_SealedVaultI</li>
+        <li>VFEA_SealedVaultJ</li>
+      </structureLayoutDefs>
+      <preventBridgeable>true</preventBridgeable>
+    </genStep>
+  </GenStepDef>
+
+  <SitePartDef>
+    <defName>VFEA_AncientSoldierHostile</defName>
+    <label>enemy presence</label>
+    <description>Enemies are present in this place.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Ambush</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <tags>
+      <li>VFEA_AncientSoldierHostile</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>VFEA_AncientSoldierHostile</defName>
+    <linkWithSite>VFEA_AncientSoldierHostile</linkWithSite>
+    <order>400</order>
+    <genStep Class="KCSG.GenStep_EnnemiesPresence">
+      <forcedfaction>VFEA_AncientSoldiers</forcedfaction>
+      <defaultPointsRange>90~90</defaultPointsRange> <!-- Settlement alike -->
+    </genStep>
+  </GenStepDef>
+</Defs>

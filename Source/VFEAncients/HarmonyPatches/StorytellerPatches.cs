@@ -115,7 +115,7 @@ namespace VFEAncients.HarmonyPatches
             return true;
         }
 
-        public static void AncientsShouldNotArrive(ref bool __result, Faction f, Map map, bool desperate = false)
+        public static void AncientsShouldNotArrive(ref bool __result, Faction f, IncidentParms parms, bool desperate = false)
         {
             if (f != null && f.def == VFEA_DefOf.VFEA_AncientSoldiers) __result = false;
         }

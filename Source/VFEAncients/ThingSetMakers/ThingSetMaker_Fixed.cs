@@ -7,7 +7,7 @@ namespace VFEAncients
     public class ThingSetMaker_Fixed : ThingSetMaker
     {
         public int count = 1;
-        public IntRange countRange = IntRange.zero;
+        public IntRange countRange = IntRange.Zero;
 
         public ThingDef def;
 

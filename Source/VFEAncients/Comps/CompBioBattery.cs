@@ -81,9 +81,9 @@ namespace VFEAncients
 
         public virtual bool CanAcceptPawn(Pawn pawn) => Occupant is null;
 
-        public static void AddCarryToBatteryJobs(List<FloatMenuOption> opts, Pawn pawn, Pawn target)
+        public static IEnumerable<FloatMenuOption> GetCarryToBatteryJobs(Pawn pawn, Pawn target)
         {
-            if (!pawn.CanReserveAndReach(target, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, true)) return;
+            if (!pawn.CanReserveAndReach(target, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, true)) yield break;
             var label = "";
             Action action = null;
             foreach (var thing in BatteriesFor(pawn, target))
@@ -109,7 +109,7 @@ namespace VFEAncients
                 }
             }
 
-            if (!label.NullOrEmpty()) opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), pawn, target));
+            if (!label.NullOrEmpty()) yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), pawn, target);
         }
 
         public override void PostExposeData()

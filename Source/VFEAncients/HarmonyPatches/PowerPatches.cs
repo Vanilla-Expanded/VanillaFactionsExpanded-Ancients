@@ -23,8 +23,8 @@ public static class PowerPatches
             postfix: new HarmonyMethod(typeof(Pawn_PowerTracker), nameof(Pawn_PowerTracker.Save)));
         harm.Patch(AccessTools.Method(typeof(StatWorker), nameof(StatWorker.GetValueUnfinalized)),
             transpiler: new HarmonyMethod(GetType(), nameof(StatGetValueTranspile)));
-        harm.Patch(AccessTools.Method(typeof(StatWorker), nameof(StatWorker.GetExplanationUnfinalized)),
-            transpiler: new HarmonyMethod(GetType(), nameof(StatExplanationTranspile)));
+        harm.Patch(AccessTools.Method(typeof(StatWorker), nameof(StatWorker.GetOffsetsAndFactorsExplanation)),
+            transpiler: new HarmonyMethod(GetType(), nameof(GetOffsetsAndFactorsExplanationTranspile)));
         harm.Patch(AccessTools.Method(typeof(Pawn_InteractionsTracker), "TryInteractRandomly"),
             transpiler: new HarmonyMethod(typeof(PowerPatches), nameof(ForceInteraction)));
         harm.Patch(AccessTools.Method(typeof(VerbProperties), nameof(VerbProperties.AdjustedCooldown), new[] { typeof(Tool), typeof(Pawn), typeof(Thing) }),
@@ -133,7 +133,7 @@ public static class PowerPatches
             }
     }
 
-    public static IEnumerable<CodeInstruction> StatExplanationTranspile(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+    public static IEnumerable<CodeInstruction> GetOffsetsAndFactorsExplanationTranspile(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
     {
         var list = instructions.ToList();
         var info1 = AccessTools.Field(typeof(Pawn), nameof(Pawn.ageTracker));
@@ -143,8 +143,8 @@ public static class PowerPatches
         list[idx2 + 1].labels.Remove(label1);
         list.InsertRange(idx2 + 1, new[]
         {
-            new CodeInstruction(OpCodes.Ldloc_2).WithLabels(label1),
-            new CodeInstruction(OpCodes.Ldloc_0),
+            new CodeInstruction(OpCodes.Ldloc_0).WithLabels(label1),
+            new CodeInstruction(OpCodes.Ldarg_2),
             new CodeInstruction(OpCodes.Ldarg_0),
             new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StatWorker), "stat")),
             new CodeInstruction(OpCodes.Ldarg_0),

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>VFEA_Fleck_HealSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/MistHealing</texPath>
+    </graphicData>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+      <fadeInTime>0.50</fadeInTime>
+      <solidTime>1.5</solidTime>
+      <fadeOutTime>2</fadeOutTime>
+  </FleckDef>
+  
+</Defs>

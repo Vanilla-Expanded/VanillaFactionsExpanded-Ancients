@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VFEAncients.PowerDef>
+        <defName>EagleEye</defName>
+        <label>eagle eye</label>
+        <description>The depth perception in this subject has been remarkably improved alongside their reaction speed, allowing them to rapidly adjust the firing arc to hit targets twice as far away than otherwise possible.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_EagleEye</texPath>
+        <workerClass>VFEAncients.PowerWorker_WeaponRange</workerClass>
+        <workerData Class="VFEAncients.WorkerData_WeaponRange">
+            <rangeFactor>2</rangeFactor>
+        </workerData>
+        <effectDescription>Ranged weapon range doubled.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Marksmanship</defName>
+        <label>marksmanship</label>
+        <description>The depth perception in this subject has been remarkably improved alongside their visual acuity, giving them perfect, pinpoint accuracy with ranged weapons.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Marksmanship</texPath>
+        <setStats>
+            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+        </setStats>
+        <workerClass>VFEAncients.PowerWorker_ForceHit</workerClass>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Assassin</defName>
+        <label>assassin</label>
+        <description>The subject has become capable of landing very precise hits even in frantic melee or from very long range, knowing exactly where to aim in order to target the brain, the heart, or other vital organ.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Assassin</texPath>
+        <workerClass>VFEAncients.PowerWorker_VitalHits</workerClass>
+        <effectDescription>All attacks hit vital organs (brain and heart).</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>SuperStrength</defName>
+        <label>super strength</label>
+        <description>The muscles in this subject have been enhanced with spindles of dense fibre, greatly improving their power-to-mass ratio and making them almost twice as strong as before. This doubles their melee damage and both local and caravan inventory capacity.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SuperStrength</texPath>
+        <workerClass>VFEAncients.PowerWorker_Strong</workerClass>
+        <statFactors>
+            <MeleeDPS>2</MeleeDPS>
+            <CarryingCapacity>2</CarryingCapacity>
+            <VEF_MassCarryCapacity>2</VEF_MassCarryCapacity>
+        </statFactors>
+        <effectDescription>Doubled melee damage. Doubled Caravan inventory size. Doubled local map inventory size.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>MartialArtist</defName>
+        <label>martial artist</label>
+        <description>The reaction speed in this subject has been greatly improved alongside their hand-eye coordination, allowing them to always land hits and never be hit in melee engagements.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_MartialArtist</texPath>
+        <workerClass>VFEAncients.PowerWorker_MeleeSkill</workerClass>
+        <setStats>
+            <MeleeDodgeChance>1</MeleeDodgeChance>
+        </setStats>
+        <effectDescription>Never misses melee attacks. Always dodges melee attacks.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>BulletproofSkin</defName>
+        <label>bulletproof skin</label>
+        <description>The skin and muscle fibre in this subject have become incredibly dense, preventing them from suffering any cuts. It does nothing to prevent bruising or their bones from breaking.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_BulletproofSkin</texPath>
+        <workerClass>VFEAncients.PowerWorker_Blunt</workerClass>
+        <effectDescription>All sharp damage dealt to this pawn changes into blunt damage.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>PlasteelSkeleton</defName>
+        <label>plasteel skeleton</label>
+        <description>The subject’s skeletal structure has been slowly but entirely replaced with Plasteel, with no flaws to be found anywhere. Their bones can be neither cracked nor broken.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_PlasteelSkeleton</texPath>
+        <workerClass>VFEAncients.PowerWorker_Bones</workerClass>
+        <effectDescription>Immune to cracks and broken bones.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>SelfResurrection</defName>
+        <label>self resurrection</label>
+        <description>The subject is practically a zombie, as when their bodily and mental functions cease their body enters suspended animation. Over the course of 3 days, their body will recover from any grave wounds and forcibly resurrect, with the majority of their wounds remaining.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_SelfResurrection</texPath>
+        <workerClass>VFEAncients.PowerWorker_Resurrect</workerClass>
+        <effectDescription>This pawn cannot die, and as long as the body exists, a few moments after dying, the pawn will spring back to live with no wounds at all.</effectDescription>
+        <tickerType>Normal</tickerType>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>RedundantStomach</defName>
+        <label>redundant stomach</label>
+        <description>The subject’s body has become so adept at extracting energy from the environment that they no longer need to eat. Such energy sources could be toxins, EMI fields, sunlight, static charges or radiation.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_RedundantStomach</texPath>
+        <workerClass>VFEAncients.PowerWorker_Hunger</workerClass>
+        <effectDescription>Regenerate hunger passively, removing the need to eat completely.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Darkvision</defName>
+        <label>darkvision</label>
+        <description>The subject develops reflective membranes in the back of their eyes that are also very slightly bioluminescent, and their pupils are converted into vertical slits. This means they can see even in pitch dark as if it was broad daylight.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Darkvision</texPath>
+        <workerClass>VFEAncients.PowerWorker_PrefersDarkness</workerClass>
+        <nullifiedThoughts><li>EnvironmentDark</li></nullifiedThoughts>
+        <effectDescription>No darkness penalty or mood debuff.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>RegeneratingLimbs</defName>
+        <label>regenerating limbs</label>
+        <description>The subject’s body has developed a mutated fungal colony that can replicate missing organs or limbs by “remembering” what the body is missing.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_RegeneratingLimbs</texPath>
+        <workerClass>VFEAncients.PowerWorker_LimbRegen</workerClass>
+        <effectDescription>Missing limbs and organs will grow back after some time has passed.</effectDescription>
+        <tickerType>Normal</tickerType>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>EfficientBuilder</defName>
+        <label>efficient builder</label>
+        <description>The subject has developed an unusual ability for sensing and predicting stresses in structures, allowing them to save a quarter of the resources half of the time without risking structural integrity.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_EfficientBuilder</texPath>
+        <workerClass>VFEAncients.PowerWorker_Construct</workerClass>
+        <effectDescription>50% chance that building something will refund 25% resources used to build it.</effectDescription>
+        <workerData Class="VFEAncients.WorkerData_Construct">
+            <RefundChance>0.5</RefundChance>
+            <RefundAmount>0.25</RefundAmount>
+        </workerData>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>MasterfulCraft</defName>
+        <label>masterful craft</label>
+        <description>The subject’s tactile sensitivity and hand-eye-coordination has skyrocketed, giving them superb handicraft skills and consistently being able to put out items 2 grades higher than similar workers.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_MasterfulCraft</texPath>
+        <workerClass>VFEAncients.PowerWorker_Craft</workerClass>
+        <effectDescription>Items crafted are always 2 quality levels higher, capped at Legendary.</effectDescription>
+        <workerData Class="VFEAncients.WorkerData_Craft">
+            <LevelBonus>2</LevelBonus>
+        </workerData>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>ColdResistance</defName>
+        <label>cold resistance</label>
+        <description>The subject has developed tiny nodules all over their body that are capable of preventing them from suffering the cold. They function by overstimulating the body’s muscles to generate heat, a feeling similar to twitching almost non-stop that they learn to ignore even if it happens during sleep.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_ColdResistance</texPath>
+        <statOffsets><ComfyTemperatureMin>-1000</ComfyTemperatureMin></statOffsets>
+        <nullifiedThoughts><li>SleptInCold</li></nullifiedThoughts>
+		<effectDescription>Will never suffer hypothermia. Does not suffer Slept in Cold debuff.</effectDescription>
+        <workerClass>VFEAncients.PowerWorker_Damages</workerClass>
+        <workerData Class="VFEAncients.WorkerData_Damages">
+            <Resist>
+                <li>Frostbite</li>
+            </Resist>
+        </workerData>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>HeatResistance</defName>
+        <label>heat resistance</label>
+        <description>The subject has developed tiny nodules all over their body that are capable of preventing them from suffering the heat. They function by overstimulating the body’s sweat glands and as such they will never suffer from heatstroke, they cannot be set on fire and ignore the disgust of being Sweaty.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_HeatResistance</texPath>
+        <statOffsets><ComfyTemperatureMax>1000</ComfyTemperatureMax></statOffsets>
+        <statFactors><Flammability>0</Flammability></statFactors>
+        <nullifiedThoughts><li>SleptInHeat</li></nullifiedThoughts>
+		<effectDescription>Will never suffer heat stroke. Does not suffer Sweaty debuff. Cannot be set on fire.</effectDescription>
+        <workerClass>VFEAncients.PowerWorker_Damages</workerClass>
+        <workerData Class="VFEAncients.WorkerData_Damages">
+            <Resist>
+                <li>Flame</li>
+                <li>Burn</li>
+            </Resist>
+        </workerData>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Celebrity</defName>
+        <label>celebrity</label>
+        <description>The subject’s social awareness and general likeability has become almost legendary. They always know the right thing to say and no one can get over just how gosh darned likeable they are.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Celebrity</texPath>
+        <workerClass>VFEAncients.PowerWorker_Celebrity</workerClass>
+        <effectDescription>All social interactions are Kind Words. People tend to like Celebrity pawn 2x as much.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>MasterHacker</defName>
+        <label>master hacker</label>
+        <description>The subject has developed an unusual mental alacrity when it comes to resolving computer code. When forced to explain, they can only respond “it just works”. This allows the subject to conduct all the hacking operations instantaneously.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_MasterHacker</texPath>
+        <workerClass>VFEAncients.PowerWorker_Hack</workerClass>
+        <effectDescription>All hacking operations initiated by this pawn are instant.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>Loner</defName>
+        <label>loner</label>
+        <description>The subject is capable of attaining a form of meditative Zen when they are by themselves, able to replenish Recreation if in solitude.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_Loner</texPath>
+        <workerClass>VFEAncients.PowerWorker_Loner</workerClass>
+        <effectDescription>Recreation replenishes if alone in the room.</effectDescription>
+        <tickerType>Rare</tickerType>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>BlastResistance</defName>
+        <label>blast resistance</label>
+        <description>The subject’s skin has changed to be non-Newtonian, hardening when exposed to extremely high impact velocities such as grenade shrapnel.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_BlastResistance</texPath>
+        <workerClass>VFEAncients.PowerWorker_NoExplode</workerClass>
+        <effectDescription>Takes no damage from explosions.</effectDescription>
+    </VFEAncients.PowerDef>
+    <VFEAncients.PowerDef>
+        <defName>PromisingCandidate</defName>
+        <label>promising candidate</label>
+        <description>For a lack of better term, the subject’s genes have been perfected for genetic alterations. They are completely malleable and can be improved without issue or risk of the critical experiment failure.</description>
+        <powerType>Superpower</powerType>
+        <texPath>Powers/Superpowers/Power_PromisingCandidate</texPath>
+        <effectDescription>Chances of Experiment failed are always reduced to 0%.</effectDescription>
+    </VFEAncients.PowerDef>
+</Defs>

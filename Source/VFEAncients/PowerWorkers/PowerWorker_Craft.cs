@@ -15,11 +15,12 @@ namespace VFEAncients
         public override void DoPatches(Harmony harm)
         {
             base.DoPatches(harm);
-            harm.Patch(AccessTools.Method(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn), new[] {typeof(Pawn), typeof(SkillDef)}),
+            harm.Patch(
+                AccessTools.Method(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn), new[] {typeof(Pawn), typeof(SkillDef), typeof(bool)}),
                 postfix: new HarmonyMethod(GetType(), nameof(AddLevels)));
         }
 
-        public static void AddLevels(ref QualityCategory __result, Pawn pawn, SkillDef relevantSkill)
+        public static void AddLevels(ref QualityCategory __result, Pawn pawn, SkillDef relevantSkill, bool consumeInspiration)
         {
             if (relevantSkill == SkillDefOf.Crafting && pawn.HasPower<PowerWorker_Craft>() && pawn.GetData<WorkerData_Craft>() is WorkerData_Craft data)
                 __result = (QualityCategory) Mathf.Min((int) (__result + (byte) data.LevelBonus), 6);

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientMonitorBank</defName>
+    <label>ancient monitor bank</label>
+    <description>A small set of old computer screens.</description>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientMonitorBank/AncientMonitorBank</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5, 1.5)</drawSize>
+      <shadowData>
+        <volume>(3, 0.4, 1)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>40</Steel>
+		<ComponentIndustrial>1</ComponentIndustrial>
+	</costList>
+    <size>(3, 1)</size>
+    <fillPercent>0.40</fillPercent>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+	<defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientBrokenDefensiveTurret</defName>
+    <label>ancient broken defensive turret</label>
+    <description>A destroyed defensive turret top.</description>
+    <size>(2, 2)</size>
+    <fillPercent>0.50</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientBrokenDefensiveTurret/AncientBrokenDefensiveTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <shadowData>
+        <volume>(2, 0.35, 2)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>30</Steel>
+		<ComponentIndustrial>2</ComponentIndustrial>
+	</costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientBustedTurretPlatform</defName>
+    <label>ancient busted turret platform</label>
+    <description>A destroyed platform for a turret.</description>
+    <size>(2, 2)</size>
+    <fillPercent>0.50</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientBustedTurretPlatform/AncientBustedTurretPlatform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <shadowData>
+        <volume>(2, 0.35, 2)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>30</Steel>
+	</costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientFuelTank</defName>
+    <label>ancient fuel tank</label>
+    <description>A large fuel tank that can be deconstructed for fuel.</description>
+    <size>(2, 3)</size>
+    <fillPercent>0.50</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientFuelTank/AncientFuelTank</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2, 3)</drawSize>
+      <shadowData>
+        <volume>(2, 0.35, 3)</volume>
+      </shadowData>
+    </graphicData>
+	<tickerType>Normal</tickerType>
+	<costList>
+	    <Chemfuel>120</Chemfuel>
+	</costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+	<comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>5.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
+      </li>
+	</comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientInputTerminal</defName>
+    <label>ancient input terminal</label>
+    <description>A station with buttons and levers.</description>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientInputTerminal/AncientInputTerminal</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5, 1.5)</drawSize>
+      <shadowData>
+        <volume>(3, 0.4, 1)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>30</Steel>
+		<ComponentIndustrial>1</ComponentIndustrial>
+	</costList>
+    <size>(3, 1)</size>
+    <fillPercent>0.40</fillPercent>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+	<defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientTransmitter</defName>
+    <label>ancient transmitter</label>
+    <description>A transmitter used to send signals over long range.</description>
+    <size>(3, 3)</size>
+    <fillPercent>0.50</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientTransmitter/AncientTransmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(3, 0.35, 3)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>50</Steel>
+		<ComponentIndustrial>3</ComponentIndustrial>
+	</costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientMachinery</defName>
+    <label>ancient machinery</label>
+    <description>A set of old machine blocks. Their purpose, if they ever had any, has long been forgotten.</description>
+    <size>(3,3)</size>
+    <fillPercent>0.50</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientMachinery</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(3, 0.35, 3)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>50</Steel>
+		<ComponentIndustrial>10</ComponentIndustrial>
+	</costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+	<rotatable>false</rotatable>
+    <pathCost>50</pathCost>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientWaterFilter</defName>
+    <label>ancient water filter</label>
+    <description>A large water filtration system.</description>
+    <size>(3, 3)</size>
+    <fillPercent>0.50</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientWaterFilter/AncientWaterFilter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(3, 0.35, 3)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>60</Steel>
+		<ComponentIndustrial>4</ComponentIndustrial>
+	</costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientComputerDesk</defName>
+    <label>ancient computer desk</label>
+    <description>An old, no longer operational computer desk.</description>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientComputerDesk/AncientComputerDesk</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(2, 0.3, 1)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>30</Steel>
+		<ComponentIndustrial>1</ComponentIndustrial>
+	</costList>
+    <size>(2, 1)</size>
+    <fillPercent>0.40</fillPercent>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+	<defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEA_AncientShuttle</defName>
+    <label>ancient shuttle</label>
+    <description>An ancient, no longer operational shuttle that can be disassembled for scrap.</description>
+    <size>(5, 3)</size>
+    <fillPercent>0.50</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Junk/AncientShuttle/AncientShuttle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5, 3)</drawSize>
+      <shadowData>
+        <volume>(4.3, 0.4, 2.5)</volume>
+      </shadowData>
+    </graphicData>
+	<costList>
+	    <Steel>150</Steel>
+		<ComponentIndustrial>6</ComponentIndustrial>
+	</costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+  </ThingDef>
+
+</Defs>

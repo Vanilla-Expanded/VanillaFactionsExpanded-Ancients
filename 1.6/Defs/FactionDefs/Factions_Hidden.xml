@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase" Abstract="True" Name="AncientSoldiersBase">
+    <pawnSingular>ancient super-soldier</pawnSingular>
+    <pawnsPlural>ancient super-soldiers</pawnsPlural>
+    <categoryTag>Ancient</categoryTag>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <fixedName>Ancient soldiers</fixedName>
+    <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
+    <techLevel>Spacer</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <hidden>true</hidden>
+    <rescueesCanJoin>true</rescueesCanJoin>
+    <autoFlee>false</autoFlee>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Hyperweave</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+    <structureMemeWeights>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">1</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">2</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">VFEA_Isolationist</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+    </disallowedMemes>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0.015</Sanguophage>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.6</Hussar>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.6</Baseliner>
+      </xenotypeChances>
+    </xenotypeSet>
+  </FactionDef>
+
+  <FactionDef ParentName="AncientSoldiersBase">
+    <defName>VFEA_AncientSoldiers</defName>
+    <label>ancient super-soldiers</label>
+    <permanentEnemyToEveryoneExcept>
+      <li>VFEA_NewVault</li>
+      <li>Ancients</li>
+    </permanentEnemyToEveryoneExcept>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,0)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <raidCommonalityFromPointsCurve> <!-- Never raid -->
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, standard mix -->
+        <kindDef>Combat</kindDef>
+        <options>
+          <VFEA_AncientSoldierOneAbility>15</VFEA_AncientSoldierOneAbility>
+          <VFEA_AncientSoldierTwoAbilities>5</VFEA_AncientSoldierTwoAbilities>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0.015</Sanguophage>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.6</Hussar>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.6</Baseliner>
+      </xenotypeChances>
+    </xenotypeSet>
+  </FactionDef>
+</Defs>

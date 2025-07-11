@@ -3,7 +3,7 @@ using System.Linq;
 using HarmonyLib;
 using RimWorld.Planet;
 using Verse;
-using VFECore.Abilities;
+using VEF.Abilities;
 
 namespace VFEAncients.HarmonyPatches
 {

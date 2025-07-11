@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <DamageDef>
+		<defName>VFEA_AcidBreath</defName>
+		<label>acid breath</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<hediff>VEF_AcidBurn</hediff>
+		<defaultDamage>5</defaultDamage>
+
+		<deathMessage>{0} has been dissolved to nothing.</deathMessage>
+		<additionalHediffs>
+			<li>
+				<hediff>VEF_AcidBuildup</hediff>
+				<severityPerDamageDealt>0.01</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
+
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+
+		<armorCategory>Heat</armorCategory>
+		<explosionAffectOutsidePartsOnly>true</explosionAffectOutsidePartsOnly>
+		<explosionHeatEnergyPerCell>0</explosionHeatEnergyPerCell>
+		<explosionCellFleck>BlastDry</explosionCellFleck>
+		<explosionColorCenter>(0.224, 1.0, 0.078)</explosionColorCenter>
+		<explosionColorEdge>(0.133, 0.545, 0.133)</explosionColorEdge>
+		<soundExplosion>VFEA_AcidSpit_Shot</soundExplosion>
+		<combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+	
+</Defs>

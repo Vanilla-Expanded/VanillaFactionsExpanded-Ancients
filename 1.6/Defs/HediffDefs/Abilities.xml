@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef Name="PowerHediffBase" Abstract = "True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="PowerHediffBase">
+    <defName>VFEA_Invisiblity</defName>
+    <label>invisibility</label>
+    <description>Light is bending around in order to disguise.</description>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Invisibility">
+				<visibleToPlayer>true</visibleToPlayer>
+			</li>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <disappearsAfterTicks>3600~3600</disappearsAfterTicks>
+      </li>
+      <li Class="VFEAncients.HediffCompProperties_SoundOnRemove">
+        <sound>VFEA_InvisibilityOver</sound>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="PowerHediffBase">
+    <defName>VFEA_Phasing</defName>
+    <label>phasing</label>
+    <description>Out of phase with normal reality, allowing walking through solid matter.</description>
+    <comps>
+      <li Class="HediffCompProperties">
+        <compClass>VEF.Hediffs.HediffComp_Phasing</compClass>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <disappearsAfterTicks>600~600</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="PowerHediffBase">
+    <defName>VFEA_SpeedBurst</defName>
+    <label>speed burst</label>
+    <description>Muscle stimulation that greatly increases moving and melee combat speed.</description>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>4</MoveSpeed>
+          <VFEAncients_MeleeCooldownFactor>0.5</VFEAncients_MeleeCooldownFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <disappearsAfterTicks>1800~1800</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="PowerHediffBase">
+    <defName>VFEA_MetaMorph</defName>
+    <label>metamorphosis</label>
+    <description>Morphed into a different form</description>
+    <comps>
+      <li Class="HediffCompProperties">
+        <compClass>VFEAncients.HediffComp_MetaMorph</compClass>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <disappearsAfterTicks>3600~3600</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
