@@ -5,6 +5,7 @@ using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace VFEAncients.HarmonyPatches;
 
@@ -19,6 +20,45 @@ public static class MendingPatches
         harm.Patch(AccessTools.Method(typeof(GenRecipe), nameof(GenRecipe.MakeRecipeProducts)), new HarmonyMethod(typeof(MendingPatches), nameof(RepairItem)));
         harm.Patch(AccessTools.Method(typeof(Thing), nameof(Thing.SpecialDisplayStats)),
             postfix: new HarmonyMethod(typeof(MendingPatches), nameof(MendingDisplayStats)));
+        harm.Patch(AccessTools.Method(typeof(Toils_Recipe), nameof(Toils_Recipe.DoRecipeWork)),
+            postfix: new HarmonyMethod(typeof(MendingPatches), nameof(ScaleWorkToDamage)));
+    }
+
+    // A mending bill costs the recipe's flat workAmount however little is wrong with the item.
+    // RecipeExtension_Mend has carried a WorkPerHP field since 1.3, marked TODO and never read: a
+    // weapon one scratch from mint costs the same bill as one hit from breaking. This charges it -
+    // work is the missing hit points times WorkPerHP, so the old flat workAmount becomes the price
+    // of a fully ruined item. A recipe that leaves WorkPerHP at its default of 0 is untouched.
+    //
+    // The work is set on the toil rather than on the recipe because only here is the actual item
+    // known. DoRecipeWork builds its Toil fresh per job and hands it back, so wrapping initAction
+    // is enough here - no transpiler, and nothing that depends on the compiler's closure shape.
+    public static void ScaleWorkToDamage(Toil __result)
+    {
+        var toil = __result;
+        var inner = toil.initAction;
+        toil.initAction = delegate
+        {
+            inner?.Invoke();
+
+            var job = toil.actor?.jobs?.curJob;
+            var ext = job?.bill?.recipe?.GetModExtension<RecipeExtension_Mend>();
+            // Every other recipe in the game reaches this delegate too, and leaves it here.
+            if (ext == null || ext.WorkPerHP <= 0f) return;
+            if (!(toil.actor.jobs.curDriver is JobDriver_DoBill driver)) return;
+            if (job.placedThings == null) return;
+
+            foreach (var placed in job.placedThings)
+            {
+                var item = placed?.thing;
+                if (item == null || item.stackCount != 1) continue;
+                if (!item.def.useHitPoints || !(item.def.IsWeapon || item.def.IsApparel)) continue;
+                if (item.HitPoints >= item.MaxHitPoints) continue;
+
+                driver.workLeft = Mathf.Max(1f, (item.MaxHitPoints - item.HitPoints) * ext.WorkPerHP);
+                return;
+            }
+        };
     }
 
 
