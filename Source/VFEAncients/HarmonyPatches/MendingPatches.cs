@@ -26,7 +26,7 @@ public static class MendingPatches
     {
         if (bill.recipe is null || !bill.recipe.HasModExtension<RecipeExtension_Mend>()) return true;
         if (!t.def.useHitPoints || !(t.def.IsWeapon || t.def.IsApparel))
-            __result = bill.recipe.ingredients[0].filter.AllowedThingDefs.Any(IsStuffIngredient(t));
+            __result = bill.recipe.ingredients.Count > 0 && bill.recipe.ingredients[0].filter.AllowedThingDefs.Any(IsStuffIngredient(t));
         else __result = bill.IsFixedOrAllowedIngredient(t) && t.HitPoints < t.MaxHitPoints;
         return false;
     }
