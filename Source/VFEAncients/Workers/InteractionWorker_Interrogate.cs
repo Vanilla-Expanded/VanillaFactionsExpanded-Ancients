@@ -13,10 +13,14 @@ namespace VFEAncients
             out LetterDef letterDef, out LookTargets lookTargets)
         {
             var chance = SuccessChance(initiator, recipient);
-            if (Rand.Chance(chance))
+            var opportunityScripts = DefDatabase<QuestScriptDef>.AllDefs.Where(def => def.defName.Contains("Opportunity") && def.IsRootRandomSelected).ToList();
+            var succeeded = Rand.Chance(chance);
+            if (succeeded && opportunityScripts.Count == 0)
+                Log.Warning("VFEAncients: interrogation succeeded but no \"Opportunity\" quest script is loaded to generate; treating it as a refusal.");
+            if (succeeded && opportunityScripts.Count > 0)
             {
                 extraSentencePacks.Add(VFEA_DefOf.VFEA_InterrogationSuccess);
-                var script = DefDatabase<QuestScriptDef>.AllDefs.Where(def => def.defName.Contains("Opportunity") && def.IsRootRandomSelected).RandomElement();
+                var script = opportunityScripts.RandomElement();
                 var quest = QuestGen.Generate(script, new Slate());
                 quest.SetInitiallyAccepted();
                 Find.QuestManager.Add(quest);
