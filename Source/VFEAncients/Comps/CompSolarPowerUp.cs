@@ -10,6 +10,7 @@ public class CompSolarPowerUp : ThingComp
     public static HashSet<CompPower> SolarPoweredUp = new();
     private bool oldElectricityDisabled;
     private CompPowerTrader powerComp;
+    private CompPowerBattery batteryComp;
 
     public CompProperties_SolarPowerUp Props => props as CompProperties_SolarPowerUp;
 
@@ -22,7 +23,7 @@ public class CompSolarPowerUp : ThingComp
         powerComp = parent.TryGetComp<CompPowerTrader>();
         if (powerComp is not null)
             SolarPoweredUp.Add(powerComp);
-        if (parent.TryGetComp<CompPowerBattery>(out var battery)) SolarPoweredUp.Add(battery);
+        if (parent.TryGetComp<CompPowerBattery>(out batteryComp)) SolarPoweredUp.Add(batteryComp);
     }
 
     public override void CompTick()
@@ -58,6 +59,7 @@ public class CompSolarPowerUp : ThingComp
     public override void PostDeSpawn(Map map)
     {
         SolarPoweredUp.Remove(powerComp);
+        SolarPoweredUp.Remove(batteryComp);
         base.PostDeSpawn(map);
     }
 }
