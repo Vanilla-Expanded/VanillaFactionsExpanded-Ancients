@@ -72,7 +72,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFEA_AncientCooler</defName>
     <label>ancient cooler</label>
-    <description>An ancient air-cooling machine. Cool air comes out one side, while the hot air gets funneled through a series of pipes deep into the ground. Can be used to cool down rooms during summer, or to create a walk-in freezer.\n\nThis structure was built by a long forgotten civilisation and the technology can no longer be replicated. It will never suffer breakdowns, and it operates more efficiently during solar flare incidents.</description>
+    <description>An ancient air-cooling machine. Cool air comes out one side, while the hot air gets funneled through a series of pipes deep into the ground. It can be used to cool down rooms during summer, or to create a walk-in freezer.\n\nThis structure was built by a long forgotten civilisation and the technology can no longer be replicated. It will never suffer breakdowns, and it operates more efficiently during solar flare incidents.</description>
     <thingClass>VFEAncients.Building_Cooler</thingClass>
     <graphicData>
       <texPath>Things/Building/Misc/TempControl/AncientCooler/AncientCooler</texPath>

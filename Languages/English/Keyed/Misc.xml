@@ -41,7 +41,7 @@
     <VFEAncients.MessageNoWardenCapableOfRecruitment>No warden is capable of this recruitment.</VFEAncients.MessageNoWardenCapableOfRecruitment>
     <VFEAncients.InterrogationSuccess>Interrogation Success</VFEAncients.InterrogationSuccess>
     <VFEAncients.InterrogationSuccessDetail>{0} has successfully interrogated {1}, who has revealed the location of {2}.</VFEAncients.InterrogationSuccessDetail>
-    <VFEAncients.InterrogationFailure>Interrogation failed!</VFEAncients.InterrogationFailure>
+    <VFEAncients.InterrogationFailure>Interrogation failed! ({0})</VFEAncients.InterrogationFailure>
     <VFEAncients.DeterioratingUncontained>uncontained</VFEAncients.DeterioratingUncontained>
     <VFEAncients.FireAtPods>Fire at drop pods</VFEAncients.FireAtPods>
     <VFEAncients.FireAtPawns>Fire at enemies</VFEAncients.FireAtPawns>

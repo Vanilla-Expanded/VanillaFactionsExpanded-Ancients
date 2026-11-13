@@ -52,7 +52,7 @@
       <rules>
         <rulesStrings>
           <!-- theist myth -->
-          <li>creation(tag=meme_Isolationist)        ->The people of the [place_summary] [place_name] squabbled endlessly among themselves, and [deity0_name] became tired of discord and anointed [memberNamePlural] as the only rightful rulers of every living being.</li>
+          <li>creation(tag=meme_Isolationist)        ->The people of the [place_summary] [place_name] squabbled endlessly among themselves, and [deity0_name] became tired of discord and anointed [memberNamePlural] as the sole rightful rulers of all living beings.</li>
           <li>episode(uses=1,tag=meme_Isolationist)  ->The faithful fought the unbelievers, and [deity0_name] said, "Fight them, everywhere, for they are your enemy, and peace with them was never an option"</li>
           <!-- theist founder -->
           <li>intro(tag=meme_Isolationist)           ->The people of the [place_summary] [place_name] worshipped [deity0_name]. [deity0_pronoun] saw that they were suited for [memeConcept], and ordained that they shall be the only faction worthy of ascension.</li>

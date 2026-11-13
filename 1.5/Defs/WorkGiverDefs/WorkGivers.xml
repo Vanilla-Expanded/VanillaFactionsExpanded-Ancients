@@ -37,7 +37,7 @@
 	
     <WorkGiverDef>
         <defName>VFEA_DoBillsMending</defName>
-        <label>mend thing at mending station</label>
+        <label>mend things at mending station</label>
         <giverClass>WorkGiver_DoBill</giverClass>
         <workType>Smithing</workType>
         <priorityInType>50</priorityInType>
