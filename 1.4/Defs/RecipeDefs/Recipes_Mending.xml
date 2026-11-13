@@ -3,7 +3,7 @@
   <RecipeDef>
     <defName>VFEA_MendWeapon</defName>
     <label>mend weapon</label>
-    <description>Repair a weapon, using some materials</description>
+    <description>Repair a weapon, using some materials.</description>
     <jobString>Mending weapon.</jobString>
     <workSkill>Crafting</workSkill>
     <effectWorking>Smelt</effectWorking>
@@ -40,7 +40,7 @@
   <RecipeDef>
     <defName>VFEA_MendApparel</defName>
     <label>mend apparel</label>
-    <description>Repair clothing using some materials</description>
+    <description>Repair clothing using some materials.</description>
     <jobString>Mending apparel.</jobString>
     <workSkill>Crafting</workSkill>
     <effectWorking>Tailor</effectWorking>
@@ -80,7 +80,7 @@
   <RecipeDef>
     <defName>VFEA_MendArmor</defName>
     <label>mend armor</label>
-    <description>Repair armor using some materials</description>
+    <description>Repair armor using some materials.</description>
     <jobString>Mending armor.</jobString>
     <workSkill>Crafting</workSkill>
     <effectWorking>Smelt</effectWorking>
